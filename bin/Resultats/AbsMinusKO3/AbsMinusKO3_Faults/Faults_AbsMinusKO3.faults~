@@ -1,0 +1,76 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/1_Conditions_Fausses/AbsMinusKO3.java
+Loops are unwound 10 times.
+	CPLEX 12.3.0.0
+/***************************************************************/
+We will deviate 0 condition:
+
+absMinus_0_i_0 := 0
+absMinus_0_j_0 := 1
+absMinus_0_result_0 := 0
+absMinus_0_k_0 := 0
+absMinus_0_k_1 := ( absMinus_0_k_0 + 2 )
+absMinus_0_result_1 := ( absMinus_0_i_0 - absMinus_0_j_0 )
+absMinus_0_Result_0 := absMinus_0_result_1
+( ( absMinus_0_result_1 == 1 ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{POST}
+{absMinus_0_j_0 := 1}
+{absMinus_0_i_0 := 0}
+{line 20}
+
+The execution time of the Method CAMUS:0.089
+
+MIVcard(ctrs,absMinus_0_i_0 := 0)=1.0
+MIVcard(ctrs,absMinus_0_j_0 := 1)=1.0
+MIVcard(ctrs,line 20)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 2
+/***************************************************************/
+
++++++++++++++++++++++++++++++++++++++++++++++++
+We will deviate 1 condition:
+line 16 : ( ( absMinus_0_k_1 == 1 ) && !( ( absMinus_0_i_0 == absMinus_0_j_0 ) ) )
++++++++++++++++++++++++++++++++++++++++++++++++
+This condition is suspected
+
+absMinus_0_i_0 := 0
+absMinus_0_j_0 := 1
+absMinus_0_result_0 := 0
+absMinus_0_k_0 := 0
+absMinus_0_k_1 := ( absMinus_0_k_0 + 2 )
+( ( absMinus_0_k_1 == 1 ) && !( ( absMinus_0_i_0 == absMinus_0_j_0 ) ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{line 14}
+{line 12}
+{POST}
+
+The execution time of the Method CAMUS:0.028
+
+MIVcard(ctrs,line 12)=1.0
+MIVcard(ctrs,line 14)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 3
+/***************************************************************/
+
+
+The pretreatment time (the time of CFG building):0.69
+The time of DFS exploration and of MCSes calculation:0.153
+Suspicious instructions:20,16,12,14
+The number of suspicious instructions:4
+The sum of execution times of CAMUS method:0.11699999999999999
+
+Total elapsed time: 0.971 s.

@@ -1,0 +1,176 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/2_Conditions_Fausses/TritypeKO.java
+Loops are unwound 10 times.
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most '2' conditional statements.
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 2 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_trityp_3 := ( caller_0_trityp_2 + 2 ) --> line 30
+caller_0_trityp_4 := caller_0_trityp_3 --> line 0
+caller_0_trityp_5 := 1 --> line 54
+caller_0_Result_0 := caller_0_trityp_5 --> line 68
+( ( caller_0_trityp_5 == 2 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{POST}
+{line 54}
+
+Runtime of the method that compute MCS: 0.024
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.034
+2. The sum of computation time of MCS isolations only: 0.024
+3. MCS found:
+Assignments
+{line 54}
+Conditions
+
+/***************************************************************/
+By deviating '1' condition(s), we obtain:
+
+1. CSP_d:
+line 26(Else) : ( caller_0_i_0 == caller_0_j_0 )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 2 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+( caller_0_i_0 == caller_0_j_0 ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{caller_0_j_0 := 3}
+{POST}
+{caller_0_i_0 := 2}
+
+Runtime of the method that compute MCS: 0.029
+1. CSP_d:
+line 48(Else) : ( ( caller_0_trityp_4 == 1 ) && ( ( caller_0_i_0 + caller_0_j_0 ) > caller_0_k_0 ) )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 2 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_trityp_3 := ( caller_0_trityp_2 + 2 ) --> line 30
+caller_0_trityp_4 := caller_0_trityp_3 --> line 0
+( ( caller_0_trityp_4 == 1 ) && ( ( caller_0_i_0 + caller_0_j_0 ) > caller_0_k_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 30}
+{line 25}
+{line 0}
+{line 0}
+{POST}
+
+Runtime of the method that compute MCS: 0.064
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.099
+2. The sum of computation time of MCS isolations only: 0.093
+3. MCS found:
+Assignments
+{line 30}
+{line 25}
+Conditions
+{line 26}
+{line 48}
+
+/***************************************************************/
+By deviating '2' condition(s), we obtain:
+
+1. CSP_d:
+line 29(If) : ( caller_0_i_0 == caller_0_k_0 )
+line 32(Else) : ( caller_0_j_0 == caller_0_k_0 )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 2 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_trityp_3 := caller_0_trityp_2 --> line 0
+( caller_0_j_0 == caller_0_k_0 ) --> line -2
+!( ( caller_0_i_0 == caller_0_k_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{caller_0_k_0 := 2}
+{caller_0_i_0 := 2,POST}
+{caller_0_i_0 := 2,caller_0_j_0 := 3}
+{POST,POST}
+{caller_0_j_0 := 3,POST}
+
+Runtime of the method that compute MCS: 0.062
+1. CSP_d:
+line 53(If) : ( ( caller_0_trityp_4 == 2 ) && ( ( caller_0_i_0 + caller_0_k_0 ) > caller_0_j_0 ) )
+line 57(Else) : ( ( caller_0_trityp_4 == 3 ) && ( ( caller_0_j_0 + caller_0_k_0 ) > caller_0_i_0 ) )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 2 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_trityp_3 := ( caller_0_trityp_2 + 2 ) --> line 30
+caller_0_trityp_4 := caller_0_trityp_3 --> line 0
+!( ( ( caller_0_trityp_4 == 2 ) && ( ( caller_0_i_0 + caller_0_k_0 ) > caller_0_j_0 ) ) ) --> line -2
+( ( caller_0_trityp_4 == 3 ) && ( ( caller_0_j_0 + caller_0_k_0 ) > caller_0_i_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 25}
+{line 0}
+{line 30}
+{line 0}
+{caller_0_j_0 := 3,POST}
+{caller_0_i_0 := 2,POST}
+{POST,POST}
+{caller_0_k_0 := 2,POST}
+
+Runtime of the method that compute MCS: 0.092
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.17
+2. The sum of computation time of MCS isolations only: 0.154
+3. MCS found:
+Assignments
+{line 25}
+{line 30}
+Conditions
+{line 29,line 32}
+{line 53,line 57}
+
+/***************************************************************/
+The final resulats:
+1. The pretreatment(CFG building) time: 0.502
+2. Elapsed time during DFS exploration and MCS calculation: 0.303
+Total elapsed time: 0.891 s.

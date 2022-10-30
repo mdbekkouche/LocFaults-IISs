@@ -1,0 +1,47 @@
+Command exited with non-zero status 10
+0.36user 0.02system 0:00.55elapsed 69%CPU (0avgtext+0avgdata 5740maxresident)k
+16inputs+536outputs (0major+28227minor)pagefaults 0swaps
+
+Generating GOTO Program
+Pointer Analysis
+Adding Pointer Checks
+Starting Bounded Model Checking
+size of program expression: 94 assignments
+Generated 17 claims, 17 remaining
+Passing problem to MiniSAT
+Passing to decision procedure
+Running MiniSAT
+Solving with MiniSAT
+3260 variables, 7984 clauses
+SAT checker: negated claim is SATISFIABLE, i.e., does not hold
+Building error trace
+
+Counterexample:
+
+Violated property:
+  file /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO25/TcasKO25_SpecsC/TcasKO25_t165.c line 117
+  assertion
+  alt_sep == 2
+
+< 1 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO25/TcasKO25_SpecsC/TcasKO25_t165.c:77
+
+< 2 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO25/TcasKO25_SpecsC/TcasKO25_t165.c:98
+
+< 4 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO25/TcasKO25_SpecsC/TcasKO25_t165.c:101
+
+< 5 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO25/TcasKO25_SpecsC/TcasKO25_t165.c:102
+
+< 6 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO25/TcasKO25_SpecsC/TcasKO25_t165.c:111
+
+< 7 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO25/TcasKO25_SpecsC/TcasKO25_t165.c:117
+
+< 10 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO25/TcasKO25_SpecsC/TcasKO25_t165.c:68
+
+< 11 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO25/TcasKO25_SpecsC/TcasKO25_t165.c:94
+
+BUG Assist: No More suspects:
+VERIFICATION FAILED
+
+Suspicious instructions:77,98,101,102,111,117,68,94
+The number of suspicious instructions:8
+User time:0.36

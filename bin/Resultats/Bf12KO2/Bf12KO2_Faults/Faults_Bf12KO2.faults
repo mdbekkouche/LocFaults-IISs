@@ -1,0 +1,529 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/0_Conditions_Fausses/BfKO2/Bf12KO2.java
+Loops are unwound 12 times.
+	CPLEX 12.3.0.0
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most 'k' conditional statements.
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+bf_0_distance_0[0] := 0 --> line -1
+bf_0_distance_0[1] := 0 --> line -1
+bf_0_distance_0[2] := 0 --> line -1
+bf_0_distance_0[3] := 0 --> line -1
+bf_0_distance_0[4] := 0 --> line -1
+bf_0_distance_0[5] := 0 --> line -1
+bf_0_distance_0[6] := 0 --> line -1
+bf_0_distance_0[7] := 0 --> line -1
+bf_0_distance_0[8] := 0 --> line -1
+bf_0_distance_0[9] := 0 --> line -1
+bf_0_distance_0[10] := 0 --> line -1
+bf_0_distance_0[11] := 0 --> line -1
+bf_0_Source_0[0] := 0 --> line -1
+bf_0_Source_0[1] := 2 --> line -1
+bf_0_Source_0[2] := 0 --> line -1
+bf_0_Source_0[3] := 2 --> line -1
+bf_0_Source_0[4] := 0 --> line -1
+bf_0_Source_0[5] := 1 --> line -1
+bf_0_Source_0[6] := 4 --> line -1
+bf_0_Source_0[7] := 1 --> line -1
+bf_0_Source_0[8] := 4 --> line -1
+bf_0_Source_0[9] := 0 --> line -1
+bf_0_Source_0[10] := 1 --> line -1
+bf_0_Source_0[11] := 4 --> line -1
+bf_0_Dest_0[0] := 1 --> line -1
+bf_0_Dest_0[1] := 4 --> line -1
+bf_0_Dest_0[2] := 1 --> line -1
+bf_0_Dest_0[3] := 1 --> line -1
+bf_0_Dest_0[4] := 4 --> line -1
+bf_0_Dest_0[5] := 1 --> line -1
+bf_0_Dest_0[6] := 4 --> line -1
+bf_0_Dest_0[7] := 1 --> line -1
+bf_0_Dest_0[8] := 2 --> line -1
+bf_0_Dest_0[9] := 1 --> line -1
+bf_0_Dest_0[10] := 2 --> line -1
+bf_0_Dest_0[11] := 3 --> line -1
+bf_0_Weight_0[0] := 0 --> line -1
+bf_0_Weight_0[1] := 1 --> line -1
+bf_0_Weight_0[2] := 2 --> line -1
+bf_0_Weight_0[3] := 3 --> line -1
+bf_0_Weight_0[4] := 4 --> line -1
+bf_0_Weight_0[5] := 5 --> line -1
+bf_0_Weight_0[6] := 6 --> line -1
+bf_0_Weight_0[7] := 7 --> line -1
+bf_0_Weight_0[8] := 8 --> line -1
+bf_0_Weight_0[9] := 9 --> line -1
+bf_0_Weight_0[10] := 10 --> line -1
+bf_0_Weight_0[11] := 11 --> line -1
+bf_0_nodecount_0 := 5 --> line -1
+bf_0_INFINITY_0 := 899 --> line 14
+bf_0_edgecount_0 := 12 --> line 15
+bf_0_source_0 := 0 --> line 16
+bf_0_x_0 := 0 --> line 17
+bf_0_y_0 := 0 --> line 17
+bf_0_val_0 := 0 --> line 17
+bf_0_i_0 := 0 --> line 18
+bf_0_j_0 := 0 --> line 18
+bf_0_i_1 := 0 --> line 20
+bf_0_i_2 := ( bf_0_i_1 + 1 ) --> line 28
+bf_0_i_3 := ( bf_0_i_2 + 1 ) --> line 28
+bf_0_i_4 := ( bf_0_i_3 + 1 ) --> line 28
+bf_0_i_5 := ( bf_0_i_4 + 1 ) --> line 28
+bf_0_i_6 := ( bf_0_i_5 + 1 ) --> line 28
+bf_0_i_13 := bf_0_i_6 --> line 0
+bf_0_i_14 := 0 --> line 30
+bf_0_j_1 := 0 --> line 33
+bf_0_x_1 := bf_0_Dest_0[bf_0_j_1] --> line 36
+bf_0_y_1 := bf_0_Source_0[bf_0_j_1] --> line 37
+bf_0_val_1 := ( bf_0_distance_12[bf_0_y_1] - bf_0_Weight_0[bf_0_j_1] ) --> line 38
+bf_0_j_2 := ( bf_0_j_1 + 1 ) --> line 43
+bf_0_x_2 := bf_0_Dest_0[bf_0_j_2] --> line 36
+bf_0_y_2 := bf_0_Source_0[bf_0_j_2] --> line 37
+bf_0_val_2 := ( bf_0_distance_13[bf_0_y_2] - bf_0_Weight_0[bf_0_j_2] ) --> line 38
+bf_0_j_3 := ( bf_0_j_2 + 1 ) --> line 43
+bf_0_x_3 := bf_0_Dest_0[bf_0_j_3] --> line 36
+bf_0_y_3 := bf_0_Source_0[bf_0_j_3] --> line 37
+bf_0_val_3 := ( bf_0_distance_14[bf_0_y_3] - bf_0_Weight_0[bf_0_j_3] ) --> line 38
+bf_0_j_4 := ( bf_0_j_3 + 1 ) --> line 43
+bf_0_x_4 := bf_0_Dest_0[bf_0_j_4] --> line 36
+bf_0_y_4 := bf_0_Source_0[bf_0_j_4] --> line 37
+bf_0_val_4 := ( bf_0_distance_15[bf_0_y_4] - bf_0_Weight_0[bf_0_j_4] ) --> line 38
+bf_0_j_5 := ( bf_0_j_4 + 1 ) --> line 43
+bf_0_x_5 := bf_0_Dest_0[bf_0_j_5] --> line 36
+bf_0_y_5 := bf_0_Source_0[bf_0_j_5] --> line 37
+bf_0_val_5 := ( bf_0_distance_16[bf_0_y_5] - bf_0_Weight_0[bf_0_j_5] ) --> line 38
+bf_0_j_6 := ( bf_0_j_5 + 1 ) --> line 43
+bf_0_x_6 := bf_0_Dest_0[bf_0_j_6] --> line 36
+bf_0_y_6 := bf_0_Source_0[bf_0_j_6] --> line 37
+bf_0_val_6 := ( bf_0_distance_17[bf_0_y_6] - bf_0_Weight_0[bf_0_j_6] ) --> line 38
+bf_0_j_7 := ( bf_0_j_6 + 1 ) --> line 43
+bf_0_x_7 := bf_0_Dest_0[bf_0_j_7] --> line 36
+bf_0_y_7 := bf_0_Source_0[bf_0_j_7] --> line 37
+bf_0_val_7 := ( bf_0_distance_18[bf_0_y_7] - bf_0_Weight_0[bf_0_j_7] ) --> line 38
+bf_0_j_8 := ( bf_0_j_7 + 1 ) --> line 43
+bf_0_x_8 := bf_0_Dest_0[bf_0_j_8] --> line 36
+bf_0_y_8 := bf_0_Source_0[bf_0_j_8] --> line 37
+bf_0_val_8 := ( bf_0_distance_19[bf_0_y_8] - bf_0_Weight_0[bf_0_j_8] ) --> line 38
+bf_0_j_9 := ( bf_0_j_8 + 1 ) --> line 43
+bf_0_x_9 := bf_0_Dest_0[bf_0_j_9] --> line 36
+bf_0_y_9 := bf_0_Source_0[bf_0_j_9] --> line 37
+bf_0_val_9 := ( bf_0_distance_20[bf_0_y_9] - bf_0_Weight_0[bf_0_j_9] ) --> line 38
+bf_0_j_10 := ( bf_0_j_9 + 1 ) --> line 43
+bf_0_x_10 := bf_0_Dest_0[bf_0_j_10] --> line 36
+bf_0_y_10 := bf_0_Source_0[bf_0_j_10] --> line 37
+bf_0_val_10 := ( bf_0_distance_21[bf_0_y_10] - bf_0_Weight_0[bf_0_j_10] ) --> line 38
+bf_0_j_11 := ( bf_0_j_10 + 1 ) --> line 43
+bf_0_x_11 := bf_0_Dest_0[bf_0_j_11] --> line 36
+bf_0_y_11 := bf_0_Source_0[bf_0_j_11] --> line 37
+bf_0_val_11 := ( bf_0_distance_22[bf_0_y_11] - bf_0_Weight_0[bf_0_j_11] ) --> line 38
+bf_0_j_12 := ( bf_0_j_11 + 1 ) --> line 43
+bf_0_x_12 := bf_0_Dest_0[bf_0_j_12] --> line 36
+bf_0_y_12 := bf_0_Source_0[bf_0_j_12] --> line 37
+bf_0_val_12 := ( bf_0_distance_23[bf_0_y_12] - bf_0_Weight_0[bf_0_j_12] ) --> line 38
+bf_0_j_13 := ( bf_0_j_12 + 1 ) --> line 43
+bf_0_i_15 := ( bf_0_i_14 + 1 ) --> line 45
+bf_0_j_14 := 0 --> line 33
+bf_0_x_13 := bf_0_Dest_0[bf_0_j_14] --> line 36
+bf_0_y_13 := bf_0_Source_0[bf_0_j_14] --> line 37
+bf_0_val_13 := ( bf_0_distance_24[bf_0_y_13] - bf_0_Weight_0[bf_0_j_14] ) --> line 38
+bf_0_j_15 := ( bf_0_j_14 + 1 ) --> line 43
+bf_0_x_14 := bf_0_Dest_0[bf_0_j_15] --> line 36
+bf_0_y_14 := bf_0_Source_0[bf_0_j_15] --> line 37
+bf_0_val_14 := ( bf_0_distance_25[bf_0_y_14] - bf_0_Weight_0[bf_0_j_15] ) --> line 38
+bf_0_j_16 := ( bf_0_j_15 + 1 ) --> line 43
+bf_0_x_15 := bf_0_Dest_0[bf_0_j_16] --> line 36
+bf_0_y_15 := bf_0_Source_0[bf_0_j_16] --> line 37
+bf_0_val_15 := ( bf_0_distance_26[bf_0_y_15] - bf_0_Weight_0[bf_0_j_16] ) --> line 38
+bf_0_j_17 := ( bf_0_j_16 + 1 ) --> line 43
+bf_0_x_16 := bf_0_Dest_0[bf_0_j_17] --> line 36
+bf_0_y_16 := bf_0_Source_0[bf_0_j_17] --> line 37
+bf_0_val_16 := ( bf_0_distance_27[bf_0_y_16] - bf_0_Weight_0[bf_0_j_17] ) --> line 38
+bf_0_j_18 := ( bf_0_j_17 + 1 ) --> line 43
+bf_0_x_17 := bf_0_Dest_0[bf_0_j_18] --> line 36
+bf_0_y_17 := bf_0_Source_0[bf_0_j_18] --> line 37
+bf_0_val_17 := ( bf_0_distance_28[bf_0_y_17] - bf_0_Weight_0[bf_0_j_18] ) --> line 38
+bf_0_j_19 := ( bf_0_j_18 + 1 ) --> line 43
+bf_0_x_18 := bf_0_Dest_0[bf_0_j_19] --> line 36
+bf_0_y_18 := bf_0_Source_0[bf_0_j_19] --> line 37
+bf_0_val_18 := ( bf_0_distance_29[bf_0_y_18] - bf_0_Weight_0[bf_0_j_19] ) --> line 38
+bf_0_j_20 := ( bf_0_j_19 + 1 ) --> line 43
+bf_0_x_19 := bf_0_Dest_0[bf_0_j_20] --> line 36
+bf_0_y_19 := bf_0_Source_0[bf_0_j_20] --> line 37
+bf_0_val_19 := ( bf_0_distance_30[bf_0_y_19] - bf_0_Weight_0[bf_0_j_20] ) --> line 38
+bf_0_j_21 := ( bf_0_j_20 + 1 ) --> line 43
+bf_0_x_20 := bf_0_Dest_0[bf_0_j_21] --> line 36
+bf_0_y_20 := bf_0_Source_0[bf_0_j_21] --> line 37
+bf_0_val_20 := ( bf_0_distance_31[bf_0_y_20] - bf_0_Weight_0[bf_0_j_21] ) --> line 38
+bf_0_j_22 := ( bf_0_j_21 + 1 ) --> line 43
+bf_0_x_21 := bf_0_Dest_0[bf_0_j_22] --> line 36
+bf_0_y_21 := bf_0_Source_0[bf_0_j_22] --> line 37
+bf_0_val_21 := ( bf_0_distance_32[bf_0_y_21] - bf_0_Weight_0[bf_0_j_22] ) --> line 38
+bf_0_j_23 := ( bf_0_j_22 + 1 ) --> line 43
+bf_0_x_22 := bf_0_Dest_0[bf_0_j_23] --> line 36
+bf_0_y_22 := bf_0_Source_0[bf_0_j_23] --> line 37
+bf_0_val_22 := ( bf_0_distance_33[bf_0_y_22] - bf_0_Weight_0[bf_0_j_23] ) --> line 38
+bf_0_j_24 := ( bf_0_j_23 + 1 ) --> line 43
+bf_0_x_23 := bf_0_Dest_0[bf_0_j_24] --> line 36
+bf_0_y_23 := bf_0_Source_0[bf_0_j_24] --> line 37
+bf_0_val_23 := ( bf_0_distance_34[bf_0_y_23] - bf_0_Weight_0[bf_0_j_24] ) --> line 38
+bf_0_j_25 := ( bf_0_j_24 + 1 ) --> line 43
+bf_0_x_24 := bf_0_Dest_0[bf_0_j_25] --> line 36
+bf_0_y_24 := bf_0_Source_0[bf_0_j_25] --> line 37
+bf_0_val_24 := ( bf_0_distance_35[bf_0_y_24] - bf_0_Weight_0[bf_0_j_25] ) --> line 38
+bf_0_j_26 := ( bf_0_j_25 + 1 ) --> line 43
+bf_0_i_16 := ( bf_0_i_15 + 1 ) --> line 45
+bf_0_j_27 := 0 --> line 33
+bf_0_x_25 := bf_0_Dest_0[bf_0_j_27] --> line 36
+bf_0_y_25 := bf_0_Source_0[bf_0_j_27] --> line 37
+bf_0_val_25 := ( bf_0_distance_36[bf_0_y_25] - bf_0_Weight_0[bf_0_j_27] ) --> line 38
+bf_0_j_28 := ( bf_0_j_27 + 1 ) --> line 43
+bf_0_x_26 := bf_0_Dest_0[bf_0_j_28] --> line 36
+bf_0_y_26 := bf_0_Source_0[bf_0_j_28] --> line 37
+bf_0_val_26 := ( bf_0_distance_37[bf_0_y_26] - bf_0_Weight_0[bf_0_j_28] ) --> line 38
+bf_0_j_29 := ( bf_0_j_28 + 1 ) --> line 43
+bf_0_x_27 := bf_0_Dest_0[bf_0_j_29] --> line 36
+bf_0_y_27 := bf_0_Source_0[bf_0_j_29] --> line 37
+bf_0_val_27 := ( bf_0_distance_38[bf_0_y_27] - bf_0_Weight_0[bf_0_j_29] ) --> line 38
+bf_0_j_30 := ( bf_0_j_29 + 1 ) --> line 43
+bf_0_x_28 := bf_0_Dest_0[bf_0_j_30] --> line 36
+bf_0_y_28 := bf_0_Source_0[bf_0_j_30] --> line 37
+bf_0_val_28 := ( bf_0_distance_39[bf_0_y_28] - bf_0_Weight_0[bf_0_j_30] ) --> line 38
+bf_0_j_31 := ( bf_0_j_30 + 1 ) --> line 43
+bf_0_x_29 := bf_0_Dest_0[bf_0_j_31] --> line 36
+bf_0_y_29 := bf_0_Source_0[bf_0_j_31] --> line 37
+bf_0_val_29 := ( bf_0_distance_40[bf_0_y_29] - bf_0_Weight_0[bf_0_j_31] ) --> line 38
+bf_0_j_32 := ( bf_0_j_31 + 1 ) --> line 43
+bf_0_x_30 := bf_0_Dest_0[bf_0_j_32] --> line 36
+bf_0_y_30 := bf_0_Source_0[bf_0_j_32] --> line 37
+bf_0_val_30 := ( bf_0_distance_41[bf_0_y_30] - bf_0_Weight_0[bf_0_j_32] ) --> line 38
+bf_0_j_33 := ( bf_0_j_32 + 1 ) --> line 43
+bf_0_x_31 := bf_0_Dest_0[bf_0_j_33] --> line 36
+bf_0_y_31 := bf_0_Source_0[bf_0_j_33] --> line 37
+bf_0_val_31 := ( bf_0_distance_42[bf_0_y_31] - bf_0_Weight_0[bf_0_j_33] ) --> line 38
+bf_0_j_34 := ( bf_0_j_33 + 1 ) --> line 43
+bf_0_x_32 := bf_0_Dest_0[bf_0_j_34] --> line 36
+bf_0_y_32 := bf_0_Source_0[bf_0_j_34] --> line 37
+bf_0_val_32 := ( bf_0_distance_43[bf_0_y_32] - bf_0_Weight_0[bf_0_j_34] ) --> line 38
+bf_0_j_35 := ( bf_0_j_34 + 1 ) --> line 43
+bf_0_x_33 := bf_0_Dest_0[bf_0_j_35] --> line 36
+bf_0_y_33 := bf_0_Source_0[bf_0_j_35] --> line 37
+bf_0_val_33 := ( bf_0_distance_44[bf_0_y_33] - bf_0_Weight_0[bf_0_j_35] ) --> line 38
+bf_0_j_36 := ( bf_0_j_35 + 1 ) --> line 43
+bf_0_x_34 := bf_0_Dest_0[bf_0_j_36] --> line 36
+bf_0_y_34 := bf_0_Source_0[bf_0_j_36] --> line 37
+bf_0_val_34 := ( bf_0_distance_45[bf_0_y_34] - bf_0_Weight_0[bf_0_j_36] ) --> line 38
+bf_0_j_37 := ( bf_0_j_36 + 1 ) --> line 43
+bf_0_x_35 := bf_0_Dest_0[bf_0_j_37] --> line 36
+bf_0_y_35 := bf_0_Source_0[bf_0_j_37] --> line 37
+bf_0_val_35 := ( bf_0_distance_46[bf_0_y_35] - bf_0_Weight_0[bf_0_j_37] ) --> line 38
+bf_0_j_38 := ( bf_0_j_37 + 1 ) --> line 43
+bf_0_x_36 := bf_0_Dest_0[bf_0_j_38] --> line 36
+bf_0_y_36 := bf_0_Source_0[bf_0_j_38] --> line 37
+bf_0_val_36 := ( bf_0_distance_47[bf_0_y_36] - bf_0_Weight_0[bf_0_j_38] ) --> line 38
+bf_0_j_39 := ( bf_0_j_38 + 1 ) --> line 43
+bf_0_i_17 := ( bf_0_i_16 + 1 ) --> line 45
+bf_0_j_40 := 0 --> line 33
+bf_0_x_37 := bf_0_Dest_0[bf_0_j_40] --> line 36
+bf_0_y_37 := bf_0_Source_0[bf_0_j_40] --> line 37
+bf_0_val_37 := ( bf_0_distance_48[bf_0_y_37] - bf_0_Weight_0[bf_0_j_40] ) --> line 38
+bf_0_j_41 := ( bf_0_j_40 + 1 ) --> line 43
+bf_0_x_38 := bf_0_Dest_0[bf_0_j_41] --> line 36
+bf_0_y_38 := bf_0_Source_0[bf_0_j_41] --> line 37
+bf_0_val_38 := ( bf_0_distance_49[bf_0_y_38] - bf_0_Weight_0[bf_0_j_41] ) --> line 38
+bf_0_j_42 := ( bf_0_j_41 + 1 ) --> line 43
+bf_0_x_39 := bf_0_Dest_0[bf_0_j_42] --> line 36
+bf_0_y_39 := bf_0_Source_0[bf_0_j_42] --> line 37
+bf_0_val_39 := ( bf_0_distance_50[bf_0_y_39] - bf_0_Weight_0[bf_0_j_42] ) --> line 38
+bf_0_j_43 := ( bf_0_j_42 + 1 ) --> line 43
+bf_0_x_40 := bf_0_Dest_0[bf_0_j_43] --> line 36
+bf_0_y_40 := bf_0_Source_0[bf_0_j_43] --> line 37
+bf_0_val_40 := ( bf_0_distance_51[bf_0_y_40] - bf_0_Weight_0[bf_0_j_43] ) --> line 38
+bf_0_j_44 := ( bf_0_j_43 + 1 ) --> line 43
+bf_0_x_41 := bf_0_Dest_0[bf_0_j_44] --> line 36
+bf_0_y_41 := bf_0_Source_0[bf_0_j_44] --> line 37
+bf_0_val_41 := ( bf_0_distance_52[bf_0_y_41] - bf_0_Weight_0[bf_0_j_44] ) --> line 38
+bf_0_j_45 := ( bf_0_j_44 + 1 ) --> line 43
+bf_0_x_42 := bf_0_Dest_0[bf_0_j_45] --> line 36
+bf_0_y_42 := bf_0_Source_0[bf_0_j_45] --> line 37
+bf_0_val_42 := ( bf_0_distance_53[bf_0_y_42] - bf_0_Weight_0[bf_0_j_45] ) --> line 38
+bf_0_j_46 := ( bf_0_j_45 + 1 ) --> line 43
+bf_0_x_43 := bf_0_Dest_0[bf_0_j_46] --> line 36
+bf_0_y_43 := bf_0_Source_0[bf_0_j_46] --> line 37
+bf_0_val_43 := ( bf_0_distance_54[bf_0_y_43] - bf_0_Weight_0[bf_0_j_46] ) --> line 38
+bf_0_j_47 := ( bf_0_j_46 + 1 ) --> line 43
+bf_0_x_44 := bf_0_Dest_0[bf_0_j_47] --> line 36
+bf_0_y_44 := bf_0_Source_0[bf_0_j_47] --> line 37
+bf_0_val_44 := ( bf_0_distance_55[bf_0_y_44] - bf_0_Weight_0[bf_0_j_47] ) --> line 38
+bf_0_j_48 := ( bf_0_j_47 + 1 ) --> line 43
+bf_0_x_45 := bf_0_Dest_0[bf_0_j_48] --> line 36
+bf_0_y_45 := bf_0_Source_0[bf_0_j_48] --> line 37
+bf_0_val_45 := ( bf_0_distance_56[bf_0_y_45] - bf_0_Weight_0[bf_0_j_48] ) --> line 38
+bf_0_j_49 := ( bf_0_j_48 + 1 ) --> line 43
+bf_0_x_46 := bf_0_Dest_0[bf_0_j_49] --> line 36
+bf_0_y_46 := bf_0_Source_0[bf_0_j_49] --> line 37
+bf_0_val_46 := ( bf_0_distance_57[bf_0_y_46] - bf_0_Weight_0[bf_0_j_49] ) --> line 38
+bf_0_j_50 := ( bf_0_j_49 + 1 ) --> line 43
+bf_0_x_47 := bf_0_Dest_0[bf_0_j_50] --> line 36
+bf_0_y_47 := bf_0_Source_0[bf_0_j_50] --> line 37
+bf_0_val_47 := ( bf_0_distance_58[bf_0_y_47] - bf_0_Weight_0[bf_0_j_50] ) --> line 38
+bf_0_j_51 := ( bf_0_j_50 + 1 ) --> line 43
+bf_0_x_48 := bf_0_Dest_0[bf_0_j_51] --> line 36
+bf_0_y_48 := bf_0_Source_0[bf_0_j_51] --> line 37
+bf_0_val_48 := ( bf_0_distance_59[bf_0_y_48] - bf_0_Weight_0[bf_0_j_51] ) --> line 38
+bf_0_j_52 := ( bf_0_j_51 + 1 ) --> line 43
+bf_0_i_18 := ( bf_0_i_17 + 1 ) --> line 45
+bf_0_j_53 := 0 --> line 33
+bf_0_x_49 := bf_0_Dest_0[bf_0_j_53] --> line 36
+bf_0_y_49 := bf_0_Source_0[bf_0_j_53] --> line 37
+bf_0_val_49 := ( bf_0_distance_60[bf_0_y_49] - bf_0_Weight_0[bf_0_j_53] ) --> line 38
+bf_0_j_54 := ( bf_0_j_53 + 1 ) --> line 43
+bf_0_x_50 := bf_0_Dest_0[bf_0_j_54] --> line 36
+bf_0_y_50 := bf_0_Source_0[bf_0_j_54] --> line 37
+bf_0_val_50 := ( bf_0_distance_61[bf_0_y_50] - bf_0_Weight_0[bf_0_j_54] ) --> line 38
+bf_0_j_55 := ( bf_0_j_54 + 1 ) --> line 43
+bf_0_x_51 := bf_0_Dest_0[bf_0_j_55] --> line 36
+bf_0_y_51 := bf_0_Source_0[bf_0_j_55] --> line 37
+bf_0_val_51 := ( bf_0_distance_62[bf_0_y_51] - bf_0_Weight_0[bf_0_j_55] ) --> line 38
+bf_0_j_56 := ( bf_0_j_55 + 1 ) --> line 43
+bf_0_x_52 := bf_0_Dest_0[bf_0_j_56] --> line 36
+bf_0_y_52 := bf_0_Source_0[bf_0_j_56] --> line 37
+bf_0_val_52 := ( bf_0_distance_63[bf_0_y_52] - bf_0_Weight_0[bf_0_j_56] ) --> line 38
+bf_0_j_57 := ( bf_0_j_56 + 1 ) --> line 43
+bf_0_x_53 := bf_0_Dest_0[bf_0_j_57] --> line 36
+bf_0_y_53 := bf_0_Source_0[bf_0_j_57] --> line 37
+bf_0_val_53 := ( bf_0_distance_64[bf_0_y_53] - bf_0_Weight_0[bf_0_j_57] ) --> line 38
+bf_0_j_58 := ( bf_0_j_57 + 1 ) --> line 43
+bf_0_x_54 := bf_0_Dest_0[bf_0_j_58] --> line 36
+bf_0_y_54 := bf_0_Source_0[bf_0_j_58] --> line 37
+bf_0_val_54 := ( bf_0_distance_65[bf_0_y_54] - bf_0_Weight_0[bf_0_j_58] ) --> line 38
+bf_0_j_59 := ( bf_0_j_58 + 1 ) --> line 43
+bf_0_x_55 := bf_0_Dest_0[bf_0_j_59] --> line 36
+bf_0_y_55 := bf_0_Source_0[bf_0_j_59] --> line 37
+bf_0_val_55 := ( bf_0_distance_66[bf_0_y_55] - bf_0_Weight_0[bf_0_j_59] ) --> line 38
+bf_0_j_60 := ( bf_0_j_59 + 1 ) --> line 43
+bf_0_x_56 := bf_0_Dest_0[bf_0_j_60] --> line 36
+bf_0_y_56 := bf_0_Source_0[bf_0_j_60] --> line 37
+bf_0_val_56 := ( bf_0_distance_67[bf_0_y_56] - bf_0_Weight_0[bf_0_j_60] ) --> line 38
+bf_0_j_61 := ( bf_0_j_60 + 1 ) --> line 43
+bf_0_x_57 := bf_0_Dest_0[bf_0_j_61] --> line 36
+bf_0_y_57 := bf_0_Source_0[bf_0_j_61] --> line 37
+bf_0_val_57 := ( bf_0_distance_68[bf_0_y_57] - bf_0_Weight_0[bf_0_j_61] ) --> line 38
+bf_0_j_62 := ( bf_0_j_61 + 1 ) --> line 43
+bf_0_x_58 := bf_0_Dest_0[bf_0_j_62] --> line 36
+bf_0_y_58 := bf_0_Source_0[bf_0_j_62] --> line 37
+bf_0_val_58 := ( bf_0_distance_69[bf_0_y_58] - bf_0_Weight_0[bf_0_j_62] ) --> line 38
+bf_0_j_63 := ( bf_0_j_62 + 1 ) --> line 43
+bf_0_x_59 := bf_0_Dest_0[bf_0_j_63] --> line 36
+bf_0_y_59 := bf_0_Source_0[bf_0_j_63] --> line 37
+bf_0_val_59 := ( bf_0_distance_70[bf_0_y_59] - bf_0_Weight_0[bf_0_j_63] ) --> line 38
+bf_0_j_64 := ( bf_0_j_63 + 1 ) --> line 43
+bf_0_x_60 := bf_0_Dest_0[bf_0_j_64] --> line 36
+bf_0_y_60 := bf_0_Source_0[bf_0_j_64] --> line 37
+bf_0_val_60 := ( bf_0_distance_71[bf_0_y_60] - bf_0_Weight_0[bf_0_j_64] ) --> line 38
+bf_0_j_65 := ( bf_0_j_64 + 1 ) --> line 43
+bf_0_i_19 := ( bf_0_i_18 + 1 ) --> line 45
+bf_0_j_156 := bf_0_j_65 --> line 0
+bf_0_x_144 := bf_0_x_60 --> line 0
+bf_0_y_144 := bf_0_y_60 --> line 0
+bf_0_i_26 := bf_0_i_19 --> line 0
+bf_0_val_144 := bf_0_val_60 --> line 0
+bf_0_Result_0 := 0 --> line 60
+bf_0_distance_1[bf_0_i_1] := 0 --> line 23
+bf_0_distance_2[bf_0_i_2] := bf_0_INFINITY_0 --> line 26
+bf_0_distance_3[bf_0_i_3] := bf_0_INFINITY_0 --> line 26
+bf_0_distance_4[bf_0_i_4] := bf_0_INFINITY_0 --> line 26
+bf_0_distance_5[bf_0_i_5] := bf_0_INFINITY_0 --> line 26
+bf_0_distance_12 := bf_0_distance_5 --> line 0
+bf_0_distance_13[bf_0_x_1] := bf_0_val_1 --> line 41
+bf_0_distance_14[bf_0_x_2] := bf_0_val_2 --> line 41
+bf_0_distance_15[bf_0_x_3] := bf_0_val_3 --> line 41
+bf_0_distance_16 := bf_0_distance_15 --> line 0
+bf_0_distance_17[bf_0_x_5] := bf_0_val_5 --> line 41
+bf_0_distance_18[bf_0_x_6] := bf_0_val_6 --> line 41
+bf_0_distance_19[bf_0_x_7] := bf_0_val_7 --> line 41
+bf_0_distance_20[bf_0_x_8] := bf_0_val_8 --> line 41
+bf_0_distance_21[bf_0_x_9] := bf_0_val_9 --> line 41
+bf_0_distance_22 := bf_0_distance_21 --> line 0
+bf_0_distance_23[bf_0_x_11] := bf_0_val_11 --> line 41
+bf_0_distance_24[bf_0_x_12] := bf_0_val_12 --> line 41
+bf_0_distance_25 := bf_0_distance_24 --> line 0
+bf_0_distance_26[bf_0_x_14] := bf_0_val_14 --> line 41
+bf_0_distance_27 := bf_0_distance_26 --> line 0
+bf_0_distance_28[bf_0_x_16] := bf_0_val_16 --> line 41
+bf_0_distance_29 := bf_0_distance_28 --> line 0
+bf_0_distance_30[bf_0_x_18] := bf_0_val_18 --> line 41
+bf_0_distance_31[bf_0_x_19] := bf_0_val_19 --> line 41
+bf_0_distance_32[bf_0_x_20] := bf_0_val_20 --> line 41
+bf_0_distance_33[bf_0_x_21] := bf_0_val_21 --> line 41
+bf_0_distance_34 := bf_0_distance_33 --> line 0
+bf_0_distance_35[bf_0_x_23] := bf_0_val_23 --> line 41
+bf_0_distance_36[bf_0_x_24] := bf_0_val_24 --> line 41
+bf_0_distance_37 := bf_0_distance_36 --> line 0
+bf_0_distance_38[bf_0_x_26] := bf_0_val_26 --> line 41
+bf_0_distance_39 := bf_0_distance_38 --> line 0
+bf_0_distance_40[bf_0_x_28] := bf_0_val_28 --> line 41
+bf_0_distance_41 := bf_0_distance_40 --> line 0
+bf_0_distance_42[bf_0_x_30] := bf_0_val_30 --> line 41
+bf_0_distance_43[bf_0_x_31] := bf_0_val_31 --> line 41
+bf_0_distance_44[bf_0_x_32] := bf_0_val_32 --> line 41
+bf_0_distance_45[bf_0_x_33] := bf_0_val_33 --> line 41
+bf_0_distance_46 := bf_0_distance_45 --> line 0
+bf_0_distance_47[bf_0_x_35] := bf_0_val_35 --> line 41
+bf_0_distance_48[bf_0_x_36] := bf_0_val_36 --> line 41
+bf_0_distance_49 := bf_0_distance_48 --> line 0
+bf_0_distance_50[bf_0_x_38] := bf_0_val_38 --> line 41
+bf_0_distance_51 := bf_0_distance_50 --> line 0
+bf_0_distance_52[bf_0_x_40] := bf_0_val_40 --> line 41
+bf_0_distance_53 := bf_0_distance_52 --> line 0
+bf_0_distance_54[bf_0_x_42] := bf_0_val_42 --> line 41
+bf_0_distance_55[bf_0_x_43] := bf_0_val_43 --> line 41
+bf_0_distance_56[bf_0_x_44] := bf_0_val_44 --> line 41
+bf_0_distance_57[bf_0_x_45] := bf_0_val_45 --> line 41
+bf_0_distance_58 := bf_0_distance_57 --> line 0
+bf_0_distance_59[bf_0_x_47] := bf_0_val_47 --> line 41
+bf_0_distance_60[bf_0_x_48] := bf_0_val_48 --> line 41
+bf_0_distance_61 := bf_0_distance_60 --> line 0
+bf_0_distance_62[bf_0_x_50] := bf_0_val_50 --> line 41
+bf_0_distance_63 := bf_0_distance_62 --> line 0
+bf_0_distance_64[bf_0_x_52] := bf_0_val_52 --> line 41
+bf_0_distance_65 := bf_0_distance_64 --> line 0
+bf_0_distance_66[bf_0_x_54] := bf_0_val_54 --> line 41
+bf_0_distance_67[bf_0_x_55] := bf_0_val_55 --> line 41
+bf_0_distance_68[bf_0_x_56] := bf_0_val_56 --> line 41
+bf_0_distance_69[bf_0_x_57] := bf_0_val_57 --> line 41
+bf_0_distance_70 := bf_0_distance_69 --> line 0
+bf_0_distance_71[bf_0_x_59] := bf_0_val_59 --> line 41
+bf_0_distance_72[bf_0_x_60] := bf_0_val_60 --> line 41
+bf_0_distance_156 := bf_0_distance_72 --> line 0
+( ( ( ( ( ( bf_0_distance_156[0] >= 0 ) && ( bf_0_distance_156[1] >= 0 ) ) && ( bf_0_distance_156[2] >= 0 ) ) && ( bf_0_distance_156[3] >= 0 ) ) && ( bf_0_distance_156[4] >= 0 ) ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 23}
+{line 26}
+{line 26}
+{line 26}
+{line 26}
+{line 0}
+{line 41}
+{line 41}
+{line 41}
+{line 0}
+{line 41}
+{line 41}
+{line 41}
+{line 41}
+{line 41}
+{line 0}
+{line 41}
+{line 41}
+{line 0}
+{line 41}
+{line 0}
+{line 41}
+{line 0}
+{line 41}
+{line 41}
+{line 41}
+{line 41}
+{line 0}
+{line 41}
+{line 41}
+{line 0}
+{line 41}
+{line 0}
+{line 41}
+{line 0}
+{line 41}
+{line 41}
+{line 41}
+{line 41}
+{line 0}
+{line 41}
+{line 41}
+{line 0}
+{line 41}
+{line 0}
+{line 41}
+{line 0}
+{line 41}
+{line 41}
+{line 41}
+{line 41}
+{line 0}
+{line 41}
+{line 41}
+{line 0}
+{line 41}
+{line 0}
+{line 0}
+{line 0}
+{line 41}
+{line 41}
+{line 0}
+{line 41}
+{line 41}
+{line 41}
+{line 41}
+{POST}
+{line 41}
+{line 38}
+{bf_0_Weight_0[7] := 7}
+{bf_0_Weight_0[5] := 5}
+{bf_0_Weight_0[10] := 10}
+{bf_0_Weight_0[2] := 2}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{line 38}
+{bf_0_Weight_0[3] := 3}
+{bf_0_Weight_0[1] := 1,line 38}
+{line 38,line 38}
+{bf_0_Weight_0[1] := 1,line 38}
+{line 38,line 38}
+{bf_0_Weight_0[6] := 6,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{bf_0_Weight_0[1] := 1,line 38}
+{bf_0_Weight_0[6] := 6,line 38}
+{bf_0_Weight_0[6] := 6,line 38}
+
+Runtime of the method that compute MCS: 15.908
+
+The final resulats:
+1. The pretreatment(CFG building) time: 0.594
+2. Elapsed time during DFS exploration and MCS calculation: 16.155
+3. The sum of computation time of MCS isolations only: 15.908
+3. MCS found:
+Assignments
+{line 23}
+{line 26}
+{line 41}
+{line 38}
+Conditions
+
+Suspicious instructions:
+The number of suspicious instructions:0
+
+Total elapsed time: 16.851 s.

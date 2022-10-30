@@ -1,0 +1,31 @@
+Command exited with non-zero status 10
+0.08user 0.02system 0:00.12elapsed 87%CPU (0avgtext+0avgdata 5664maxresident)k
+8inputs+432outputs (0major+6586minor)pagefaults 0swaps
+1171
+Generating GOTO Program
+Pointer Analysis
+Adding Pointer Checks
+Starting Bounded Model Checking
+size of program expression: 94 assignments
+Generated 17 claims, 17 remaining
+Passing problem to MiniSAT
+Passing to decision procedure
+Running MiniSAT
+Solving with MiniSAT
+3161 variables, 7689 clauses
+SAT checker: negated claim is SATISFIABLE, i.e., does not hold
+Building error trace
+
+Counterexample:
+
+Violated property:
+  file /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO33/TcasKO33_SpecsC/TcasKO33_t1171.c line 60
+  array `Positive_RA_Alt_Thresh' upper bound
+  4 < 4
+
+BUG Assist: No More suspects:
+VERIFICATION FAILED
+
+Suspicious instructions:
+The number of suspicious instructions:0
+User time:0.08

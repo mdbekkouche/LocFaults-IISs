@@ -1,0 +1,83 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/3_Conditions_Fausses/AbsMinusKO2.java
+Loops are unwound 10 times.
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most '3' conditional statements.
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+AbsMinusKO2_0_i_0 := 0 --> line -1
+AbsMinusKO2_0_j_0 := 1 --> line -1
+AbsMinusKO2_0_result_0 := ( AbsMinusKO2_0_i_0 + 1 ) --> line 11
+AbsMinusKO2_0_k_0 := 0 --> line 12
+AbsMinusKO2_0_k_1 := ( AbsMinusKO2_0_k_0 + 1 ) --> line 14
+AbsMinusKO2_0_result_1 := ( AbsMinusKO2_0_j_0 - AbsMinusKO2_0_result_0 ) --> line 17
+AbsMinusKO2_0_Result_0 := AbsMinusKO2_0_result_1 --> line 22
+( ( AbsMinusKO2_0_result_1 == 1 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{AbsMinusKO2_0_j_0 := 1}
+{AbsMinusKO2_0_i_0 := 0}
+{POST}
+{line 11}
+{line 17}
+
+Runtime of the method that compute MCS: 0.048
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.059
+2. The sum of computation time of MCS isolations only: 0.048
+3. MCS found:
+Assignments
+{line 11}
+{line 17}
+Conditions
+
+/***************************************************************/
+By deviating '1' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.002
+2. The sum of computation time of MCS isolations only: 0.0
+3. MCS found:
+Assignments
+Conditions
+
+/***************************************************************/
+By deviating '2' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.002
+2. The sum of computation time of MCS isolations only: 0.0
+3. MCS found:
+Assignments
+Conditions
+
+/***************************************************************/
+By deviating '3' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.001
+2. The sum of computation time of MCS isolations only: 0.0
+3. MCS found:
+Assignments
+Conditions
+
+/***************************************************************/
+The final resulats:
+1. The pretreatment(CFG building) time: 0.477
+2. Elapsed time during DFS exploration and MCS calculation: 0.064
+Total elapsed time: 0.63 s.

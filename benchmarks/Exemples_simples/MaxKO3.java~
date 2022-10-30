@@ -1,0 +1,57 @@
+/*
+ * Find the maximum of three values.
+ */
+class Foo{
+    
+    /*@ requires ( (a!=b) && (b!=c) && (c!=d) && (d!=e) && (e!=f) );
+      @ ensures ( (max >= a) && (max >= b) && (max >= c) && (max >= d) && (max >= e) && (max >= f) );
+      @*/
+    static void max (int a, int b, int c, int d, int e, int f) {
+	int max;
+	if (a>b){ 
+	    if (a>c){
+		if (a>d){
+		    if (a>e){
+                        if (a>f){
+			    max=a;
+                        }
+		    }  
+		}     
+	    }   
+	}else{
+	    if (b<c){ // error, the instruction should be (b>c)
+		if (b>d){
+		    if (b>e){
+                        if (b>f){
+			    max=b;
+                        }
+		    }
+		}  
+	    }    
+	    else{
+		if (c>d){
+		    if (c>e){
+			if (c>f){
+			    max=c;
+			}
+		    }  
+		}
+		else{
+		    if (d>e){
+			if (d>f){
+			    max=d;
+			} 
+		    }
+		    else{
+			if (e>f){
+			    max=e;   
+			}
+			else{
+			    max=f; 
+			}
+		    }
+		}
+	    }
+        }                 
+    }
+}

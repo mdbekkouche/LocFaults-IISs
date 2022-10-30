@@ -1,0 +1,45 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/0_Conditions_Fausses/ExempleMCSCardinalite2.java
+Loops are unwound 10 times.
+	CPLEX 12.3.0.0
+/***************************************************************/
+We will deviate 0 condition:
+
+foo_0_i_0 := 0
+foo_0_v_0 := 5
+foo_0_w_0 := 6
+foo_0_z_0 := ( foo_0_i_0 + ( foo_0_v_0 + foo_0_w_0 ) )
+( ( ( ( ( ( foo_0_z_0 == 0 ) || !( ( foo_0_i_0 == 0 ) ) ) ) && ( ( foo_0_v_0 >= 0 ) ) ) && ( ( foo_0_w_0 >= 0 ) ) ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{foo_0_i_0 := 0}
+{POST}
+{line 9}
+{line 7,line 8}
+
+The execution time of the Method CAMUS:0.029
+
+MIVcard(ctrs,foo_0_i_0 := 0)=1.0
+MIVcard(ctrs,line 7)=0.5
+MIVcard(ctrs,line 8)=0.5
+MIVcard(ctrs,line 9)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 4
+/***************************************************************/
+
+
+The pretreatment time (the time of CFG building):0.7
+The time of DFS exploration and of MCSes calculation:0.045
+Suspicious instructions:7,8,9
+The number of suspicious instructions:3
+The sum of execution times of CAMUS method:0.029
+
+Total elapsed time: 0.878 s.

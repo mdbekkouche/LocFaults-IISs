@@ -1,0 +1,103 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Exemples_simples/Maxmin6varLoFaults/Maxmin6varKO4.java
+Loops are unwound 10 times.
+	CPLEX 12.3.0.0
+/***************************************************************/
+We will deviate 0 condition:
+
+maxmin_0_a_0 := 1
+maxmin_0_b_0 := -3
+maxmin_0_c_0 := -4
+maxmin_0_d_0 := -2
+maxmin_0_e_0 := -1
+maxmin_0_f_0 := -2
+maxmin_0_max_0 := 0
+maxmin_0_min_0 := 0
+maxmin_0_max_1 := maxmin_0_e_0
+maxmin_0_min_1 := maxmin_0_c_0
+( ( ( ( ( ( ( ( ( ( ( ( ( ( maxmin_0_max_1 >= maxmin_0_a_0 ) ) && ( ( maxmin_0_max_1 >= maxmin_0_b_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_c_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_d_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_e_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_f_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_a_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_b_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_c_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_d_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_e_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_f_0 ) ) ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{maxmin_0_a_0 := 1}
+{POST}
+{maxmin_0_e_0 := -1}
+{line 116}
+
+The execution time of the Method CAMUS:0.17
+
+MIVcard(ctrs,maxmin_0_a_0 := 1)=1.0
+MIVcard(ctrs,maxmin_0_e_0 := -1)=1.0
+MIVcard(ctrs,line 116)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 2
+/***************************************************************/
+
++++++++++++++++++++++++++++++++++++++++++++++++
+We will deviate 3 condition:
+line 19 : ( ( ( maxmin_0_c_0 < maxmin_0_d_0 ) && ( maxmin_0_c_0 > maxmin_0_e_0 ) ) && ( maxmin_0_c_0 < maxmin_0_f_0 ) )
+line 15 : ( ( ( ( maxmin_0_b_0 > maxmin_0_c_0 ) && ( maxmin_0_b_0 < maxmin_0_d_0 ) ) && ( maxmin_0_b_0 < maxmin_0_e_0 ) ) && ( maxmin_0_b_0 < maxmin_0_f_0 ) )
+line 12 : ( ( ( ( ( maxmin_0_a_0 > maxmin_0_b_0 ) && ( maxmin_0_a_0 > maxmin_0_c_0 ) ) && ( maxmin_0_b_0 > maxmin_0_d_0 ) ) && ( maxmin_0_a_0 > maxmin_0_e_0 ) ) && ( maxmin_0_a_0 > maxmin_0_f_0 ) )
++++++++++++++++++++++++++++++++++++++++++++++++
+These conditions are suspected
+
+maxmin_0_a_0 := 1
+maxmin_0_b_0 := -3
+maxmin_0_c_0 := -4
+maxmin_0_d_0 := -2
+maxmin_0_e_0 := -1
+maxmin_0_f_0 := -2
+maxmin_0_max_0 := 0
+maxmin_0_min_0 := 0
+maxmin_0_max_1 := maxmin_0_a_0
+( ( ( maxmin_0_c_0 < maxmin_0_d_0 ) && ( maxmin_0_c_0 > maxmin_0_e_0 ) ) && ( maxmin_0_c_0 < maxmin_0_f_0 ) )
+!( ( ( ( ( maxmin_0_b_0 > maxmin_0_c_0 ) && ( maxmin_0_b_0 < maxmin_0_d_0 ) ) && ( maxmin_0_b_0 < maxmin_0_e_0 ) ) && ( maxmin_0_b_0 < maxmin_0_f_0 ) ) )
+( ( ( ( ( maxmin_0_a_0 > maxmin_0_b_0 ) && ( maxmin_0_a_0 > maxmin_0_c_0 ) ) && ( maxmin_0_b_0 > maxmin_0_d_0 ) ) && ( maxmin_0_a_0 > maxmin_0_e_0 ) ) && ( maxmin_0_a_0 > maxmin_0_f_0 ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{maxmin_0_e_0 := -1,POST}
+{maxmin_0_b_0 := -3,maxmin_0_e_0 := -1}
+{maxmin_0_d_0 := -2,POST}
+{maxmin_0_b_0 := -3,POST}
+{maxmin_0_c_0 := -4,maxmin_0_d_0 := -2,maxmin_0_e_0 := -1}
+{maxmin_0_c_0 := -4,POST,POST}
+{maxmin_0_f_0 := -2,POST,POST}
+{POST,POST,POST}
+{maxmin_0_c_0 := -4,maxmin_0_d_0 := -2,maxmin_0_f_0 := -2,POST}
+
+The execution time of the Method CAMUS:0.937
+
+MIVcard(ctrs,maxmin_0_b_0 := -3)=1.0
+MIVcard(ctrs,maxmin_0_c_0 := -4)=0.9166666666666666
+MIVcard(ctrs,maxmin_0_d_0 := -2)=1.0833333333333333
+MIVcard(ctrs,maxmin_0_e_0 := -1)=1.3333333333333333
+MIVcard(ctrs,maxmin_0_f_0 := -2)=0.5833333333333333
+MIVcard(ctrs,POST)=1.9999999999999998
+MIVcard(ctrs,POST)=0.3333333333333333
+MIVcard(ctrs,POST)=1.7499999999999998
+
+The number of instructions suspected: 3
+/***************************************************************/
+
+
+The pretreatment time (the time of CFG building):0.595
+The time of DFS exploration and of MCSes calculation:1.177
+MCS found:
+Assignments
+{line 116}
+Conditions
+{line 19,line 15,line 12}
+Suspicious instructions:116,19,15,12
+The number of suspicious instructions:4
+The sum of execution times of CAMUS method:1.107
+
+Total elapsed time: 1.874 s.

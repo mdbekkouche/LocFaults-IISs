@@ -1,0 +1,34 @@
+Command exited with non-zero status 10
+1.29user 0.07system 0:01.48elapsed 92%CPU (0avgtext+0avgdata 12268maxresident)k
+16inputs+1568outputs (0major+32503minor)pagefaults 0swaps
+ating GOTO Program
+Pointer Analysis
+Adding Pointer Checks
+Starting Bounded Model Checking
+size of program expression: 196 assignments
+Generated 1 claims, 1 remaining
+Passing problem to MiniSAT
+Passing to decision procedure
+Running MiniSAT
+Solving with MiniSAT
+10138 variables, 32050 clauses
+SAT checker: negated claim is SATISFIABLE, i.e., does not hold
+Building error trace
+
+Counterexample:
+
+Violated property:
+  file /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Exemples_simples/Maxmin6varBugAssist/Maxmin6varKO3.c line 166
+  assertion
+  max >= a && max >= b && max >= c && max >= d && max >= e && max >= f && min <= a && min <= b && min <= c && min <= d && min <= e && min <= f
+
+< 1 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Exemples_simples/Maxmin6varBugAssist/Maxmin6varKO3.c:166
+
+< 4 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Exemples_simples/Maxmin6varBugAssist/Maxmin6varKO3.c:12
+
+< 5 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Exemples_simples/Maxmin6varBugAssist/Maxmin6varKO3.c:15
+
+< 7 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Exemples_simples/Maxmin6varBugAssist/Maxmin6varKO3.c:64
+
+BUG Assist: No More suspects:
+VERIFICATION FAILED

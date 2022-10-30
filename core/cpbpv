@@ -1,0 +1,26 @@
+#!/bin/sh
+
+#Runs CPBPV with arguments passed on the command line.
+#Paths are set according to "Crabe" server configuration.
+#CPBPV classes are expected to be in a subdirectory named "classes"
+
+#This script current working directory
+CWD=`dirname $0`
+
+#Path to Java class external libraries
+CP=$CWD/lib/CP/ILOG.CP.jar:$CWD/lib/cplex/cplex.jar:$CWD/lib/java2CFG/*
+
+#Path to CPBPV Java classes
+CPBPV_CLASSES=$CWD/java/classes
+
+#Path to non Java external libraries
+DLIB=$CPBPV_CLASSES/JNI:/home/bekkouche/Documents/Logiciels/ibmCplex/cpoptimizer/bin/x86-64_linux:/home/bekkouche/Documents/Logiciels/ibmCplex/cplex/bin/x86-64_linux
+
+export FLUCTUATHOME=/home/ponsini/Outils/Fluctuat/fluctuat_v3_873_32bits/
+export LD_LIBRARY_PATH=/home/bekkouche/Documents/Logiciels/ibmCplex/opl/bin/x86-64_linux
+
+java -Xss256m -cp $CP:$CPBPV_CLASSES -Djava.library.path=$DLIB -DCPBPV.dir=$CWD validation.ValidationLauncher $*
+
+#java -Xms512m -Xmx1024m -XX:MaxPermSize=128m: option conseillée par M. Lecomte
+#pour éviter les explosions mémoire
+

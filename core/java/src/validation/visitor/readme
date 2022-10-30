@@ -1,0 +1,6 @@
+package that contains classes to visit XML files
+
+XMLVisitAndValidate visits et validates the program
+
+JavaBlockVisistAndValidate visits the program nodes
+(java return, assignment, if else, ...)

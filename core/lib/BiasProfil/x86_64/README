@@ -1,0 +1,10 @@
+La compilation de BiasProfil avec Ibex en une libraire dynamique pour amd64 
+nécessite quelques adaptations du code source car le fichier assembleur 
+fpRound.s n'est pas relogeable ("position independent") :
+
+  - remplacer fpRound.s par le C correspondant fpRound.c disponible dans le 
+    présent répertoire ;
+  - modifier le src/BIAS/Makefile pour fpRound.o dépende de fpRound.c au lieu 
+    de fpRound.s
+  - modifier src/Rules.mak (je crois) pour que les compilations C utilisent 
+    les options définies dans $CFLAGS (notamment l'option -fPIC)

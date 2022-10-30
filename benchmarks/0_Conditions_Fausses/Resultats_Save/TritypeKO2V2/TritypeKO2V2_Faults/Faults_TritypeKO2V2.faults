@@ -1,0 +1,46 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/0_Conditions_Fausses/TritypeKO2V2.java
+Loops are unwound 10 times.
+	CPLEX 12.3.0.0
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most 'k' conditional statements.
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+caller_0_i_0 := 1 --> line -1
+caller_0_j_0 := 2 --> line -1
+caller_0_k_0 := 1 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_trityp_3 := ( caller_0_trityp_2 + 1 ) --> line 31
+caller_0_trityp_4 := caller_0_trityp_3 --> line 0
+caller_0_trityp_5 := 2 --> line 50
+caller_0_Result_0 := caller_0_trityp_5 --> line 68
+( ( caller_0_trityp_5 == 4 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{POST}
+{line 50}
+
+Runtime of the method that compute MCS: 0.019
+
+The final resulats:
+1. The pretreatment(CFG building) time: 0.5
+2. Elapsed time during DFS exploration and MCS calculation: 0.03
+3. The sum of computation time of MCS isolations only: 0.019
+3. MCS found:
+Assignments
+{line 50}
+Conditions
+
+Total elapsed time: 0.617 s.

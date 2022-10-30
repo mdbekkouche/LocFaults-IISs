@@ -1,0 +1,19 @@
+#!/bin/sh
+
+#Runs dfs_java with arguments passed on the command line.
+#CPBPV classes are expected to be in a subdirectory named "java/classes"
+
+#This script current working directory
+CWD=`dirname $0`
+
+#Path to Java class external libraries
+CP=lib/java2CFG/*
+
+#Path to CPBPV Java classes
+CPBPV_CLASSES=$CWD/java/classes
+
+java -cp $CP:$CPBPV_CLASSES solver.java.CFG_DFS_javaLauncher $*
+
+#java -Xms512m -Xmx1024m -XX:MaxPermSize=128m: option conseillée par M. Lecomte
+#pour éviter les explosions mémoire
+

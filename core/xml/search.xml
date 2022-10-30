@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/css" href="method.css"?>
+<!DOCTYPE method SYSTEM "method.dtd">
+
+<!--  exemple du linear search      -->
+
+<!-- entete -->
+<method>
+
+<methodComment>
+     exemple du search
+</methodComment>
+    
+  <IDSMethod>
+    <IDSSignature returnType="int" name="linearSearch">
+    <IDSParameter type="int">
+      <IDSArrayExprIdent name="tab" length="256"/>
+    </IDSParameter>
+    <IDSParameter type="int">
+      <IDSExprIdent name="x"/>
+    </IDSParameter>
+    </IDSSignature>
+
+    <!-- specification -->
+    <IDSMethodSpecification>
+      <IDSEnsuresClause> 
+	<IDSExprLogicalAnd>
+	  <IDSExprJMLImplies>
+	    <IDSExprEquality>
+              <IDSExprJMLResult/>
+	      <IDSExprDecimalIntegerLiteral value="-1" />
+	    </IDSExprEquality>
+	    <IDSJMLForAll>
+	      <IDSExprIdent name="i"/>
+	      <IDSExprLogicalAnd>
+		<IDSExprSupEqual>
+		  <IDSExprIdent name="i"/>
+		  <IDSExprDecimalIntegerLiteral value="0" />
+		</IDSExprSupEqual>
+		<IDSExprInf>
+		  <IDSExprIdent name="i"/>
+		  <LengthIdent name="tab" length="256"/>
+		</IDSExprInf>
+	      </IDSExprLogicalAnd>
+	      <IDSExprLogicalNot>
+		<IDSExprEquality>
+		  <IDSArrayExprIndex name="tab">
+		    <IDSExprIdent name="i"/>
+		  </IDSArrayExprIndex>
+         	  <IDSExprIdent name="x"/>
+		</IDSExprEquality>
+	      </IDSExprLogicalNot>
+	    </IDSJMLForAll>
+	  </IDSExprJMLImplies>
+	  <IDSExprJMLImplies>
+	    <IDSExprLogicalNot>
+              <IDSExprEquality>
+                 <IDSExprJMLResult/>
+	         <IDSExprDecimalIntegerLiteral value="-1" />
+	      </IDSExprEquality>
+	    </IDSExprLogicalNot>
+            <IDSExprEquality>
+	      <IDSArrayExprIndex name="tab">
+		    <IDSExprJMLResult/>
+	      </IDSArrayExprIndex>
+              <IDSExprIdent name="x"/>
+	    </IDSExprEquality>
+	  </IDSExprJMLImplies>
+	</IDSExprLogicalAnd>
+      </IDSEnsuresClause> 
+  </IDSMethodSpecification>
+
+  <!-- programme -->
+  <IDSJavaBloc> 
+  <IDSJavaDeclVarStatment name="result">
+	<IDSExprDecimalIntegerLiteral value="-1" />
+  </IDSJavaDeclVarStatment>
+  <IDSJavaDeclVarStatment name="i">
+	<IDSExprDecimalIntegerLiteral value="0" />
+  </IDSJavaDeclVarStatment>
+  <IDSJavaWhileStatment id="1">
+     <whileCond>
+        <IDSExprLogicalAnd>
+	    <IDSExprInf>
+            <IDSExprIdent name="i"/>
+            <LengthIdent name="tab" length="256"/>
+	</IDSExprInf>
+	    <IDSExprEquality>
+            <IDSExprIdent name="result"/>
+            	<IDSExprDecimalIntegerLiteral value="-1" />
+	</IDSExprEquality>
+      </IDSExprLogicalAnd>
+     </whileCond>
+     <whileBloc>
+        <IDSJavaBloc> 
+           <IDSJavaIfStatment>
+             <cond>
+                <IDSExprEquality>
+        	    <IDSArrayExprIndex name="tab">
+                       <IDSExprIdent name="i"/>
+        	    </IDSArrayExprIndex>
+	            <IDSExprIdent name="x"/>
+                </IDSExprEquality>
+             </cond>
+             <if>
+	        <IDSJavaBloc> 
+	            <IDSJavaAssignmentStatment name="result">
+                        <IDSExprIdent name="i"/>
+	            </IDSJavaAssignmentStatment>
+	        </IDSJavaBloc> 
+             </if>
+          </IDSJavaIfStatment>
+          <IDSJavaAssignmentStatment name="i">
+	       <IDSExprPlus>
+	          <IDSExprIdent name="i"/>
+                  <IDSExprDecimalIntegerLiteral value="1" />
+	        </IDSExprPlus>
+	  </IDSJavaAssignmentStatment>
+        </IDSJavaBloc> 
+     </whileBloc>
+  </IDSJavaWhileStatment>
+  <IDSJavaReturnStatment>
+    <IDSExprIdent name="result"/>
+  </IDSJavaReturnStatment>
+  </IDSJavaBloc> 
+</IDSMethod>
+</method>
+

@@ -1,0 +1,4 @@
+to represent expressions : logical and numeric
+
+Expressions values are represented by Java class Number.
+For logical expressions, Number possible values are only 0 or 1.

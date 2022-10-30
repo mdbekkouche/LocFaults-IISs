@@ -1,0 +1,378 @@
+/* style pour afficher une methode */
+/* ******************************** /
+
+/* DEFAULTS for everyone */
+
+*{
+   font-size: 12pt; 
+   font-family: "Palatino", serif;
+   color: #000000;	
+}
+
+/* ROOT ELEMENT */
+method { 
+   margin-right: 10.000000pt;
+   margin-left: 20.000000pt;
+ }
+
+
+/* method signature */
+
+methodComment{ 
+  display: block;
+  color: green;
+ }
+methodComment:before { 
+  content: "/*";
+}
+methodComment:after { 
+  content: "*/";
+}
+
+
+IDSMethod {
+   display: block;
+}
+
+IDSSignature:before {
+  content:attr(returnType) " method " attr(name);
+  color: blue;
+}
+
+IDSParameter {    
+  display: block;
+   margin-left: 20.000003pt;
+}
+IDSParameter:before { 
+  content:"param : " attr(type) ;
+  color: blue;
+}
+
+/* JML specification */
+
+IDSMethodSpecification {    
+  display: block;
+}
+
+IDSMethodSpecification:after {  
+  content:"program" ;
+  color: blue;
+}
+
+
+IDSRequiresClause {    
+  display: block;
+}
+IDSRequiresClause:before { 
+  content:"requires  ";
+  color: red;
+}
+
+IDSEnsuresClause {    
+  display: block;
+}
+IDSEnsuresClause:before { 
+  content:"ensures  ";
+  color: red;
+}
+IDSJMLAssert {    
+  display: block;
+}
+IDSJMLAssert:before { 
+  content:"assert ( ";
+  color: red;
+}
+IDSJMLAssert:after { 
+  content:" )";
+  color: red;
+}
+IDSJMLAllDiff {    
+  display: block;
+}
+IDSJMLAllDiff:before { 
+  content:"AllDiff (";
+  color: green;
+}
+IDSJMLAllDiff:after{ 
+  color: green;
+  content:")";
+}
+
+IDSExprJMLImplies {  
+ display: block;
+}
+IDSExprJMLImplies:before{ 
+  content:"(==> ";
+}
+IDSExprJMLImplies:after{ 
+  content:") ";
+}
+
+IDSJMLForAll {  
+ display: block;
+}
+
+IDSJMLForAll:before {
+  content:"for all ( ";
+  color:green;
+}
+IDSJMLForAll:after {
+  content:" )";
+  color:green;
+}
+
+IDSJMLExist {  
+ display: block;
+}
+
+IDSJMLExist:before {
+  content:"exist ( ";
+  color:green;
+}
+IDSJMLExist:after {
+  content:" )";
+  color:green;
+}
+
+/* expressions */
+
+
+IDSExprPlus:before {
+  content:"( + ";
+}
+IDSExprPlus:after {
+  content:" ) ";
+}
+
+IDSExprMinus:before {
+content:"( - ";
+}
+IDSExprMinus:after {
+content:" ) ";
+}
+
+IDSExprTimes:before {
+  content:"( * ";
+}
+IDSExprTimes:after {
+  content:" ) ";
+}
+
+IDSExprDiv:before {
+  content:"( / ";
+}
+IDSExprDiv:after {
+  content:" ) ";
+}
+
+IDSExprDecimalIntegerLiteral[value]:before { 
+  content:attr(value);
+}
+
+
+IDSExprLogicalOr:before {
+content:"(or ";
+}
+IDSExprLogicalOr:after {
+content:") ";
+}
+
+IDSExprLogicalAnd:before {
+content:"(and ";
+}
+IDSExprLogicalAnd:after {
+content:") ";
+}
+ 
+IDSExprLogicalNot:before {
+content:"(not ";
+}
+IDSExprLogicalNot:after {
+content:") ";
+}
+
+
+IDSExprEquality:before {
+content:"(= ";
+} 
+IDSExprEquality:after {
+  content:") ";
+}
+ 
+IDSExprSup:before {
+content:"(> ";
+} 
+IDSExprSup:after {
+content:") ";
+} 
+
+IDSExprSupEqual:before {
+content:"(>= ";
+} 
+IDSExprSupEqual:after {
+content:") ";
+} 
+
+IDSExprInf:before {
+content:"(< ";
+} 
+IDSExprInf:after {
+content:") ";
+}
+ 
+IDSExprInfEqual:before {
+content:"(<= ";
+} 
+IDSExprInfEqual:after {
+content:") ";
+}
+
+IDSExprParenthesis {    
+  display: block;
+} 
+IDSExprParenthesis:before {
+content:"( ";
+}
+IDSExprParenthesis:after {
+content:") ";
+}
+
+
+/* if control structure */
+
+IDSJavaIfStatment {    
+  counter-reset: Cptif; 
+  display: block;
+}
+IDSJavaIfStatment:after {    
+  content: "end if";
+  color: green;
+}
+cond {    
+  display: block;
+}
+cond:before { 
+  content:"if " ;
+  color: green;
+}
+if {    
+  display: block;
+  margin-left:20.0pt;
+}
+else {    
+  display: block;
+  margin-left:20.0pt;
+}
+else:before { 
+  content: "else  ";
+  color: green;
+}
+else:after { 
+  margin-left:10.0pt;
+}
+
+/* while control structure */
+
+IDSJavaWhileStatment {    
+  counter-reset: Cptwhile; 
+  display: block;
+}
+
+
+IDSJavaWhileStatment:after {    
+  content: "end while" ;
+  color: green;
+}
+whileCond {    
+  display: block;
+}
+whileCond:before { 
+  content:"while"  ;
+  color: green;
+}
+whileBloc {    
+  display: block;
+  margin-left:20.0pt;
+}
+
+
+/* return */
+
+IDSJavaReturnStatment {    
+  display: block;
+}
+IDSJavaReturnStatment:before{ 
+  content:"return ";
+  color:blue;
+}
+
+
+/* simple variables */
+
+IDSExprIdent[name]:before { 
+  content:attr(name);
+}
+
+IDSExprJMLResult:before { 
+  content:"JMLresult";
+}
+
+IDSJavaBloc {    
+  display: block;
+}
+
+IDSJavaDeclVarStatment {    
+  display: block;
+}
+
+IDSJavaDeclVarStatment:before { 
+  content:" var " attr(name) ;
+}
+
+IDSJavaAssignmentStatment {    
+  display: block;
+}
+IDSJavaAssignmentStatment[name]:before { 
+  content: attr(name) " = ";
+}
+
+
+/* arrays variables */
+
+IDSJavaArrayAssignmentStatment {    
+  display: block;
+}
+IDSJavaArrayAssignmentStatment:before { 
+  content: "(assign " attr(name);
+}
+IDSJavaArrayAssignmentStatment:after { 
+  content: ")";
+}
+
+IDSJavaDeclArrayStatment {    
+  display: block;
+}
+
+IDSJavaDeclArrayStatment[name]:before { 
+  content:" var " attr(name)"["attr(length)"]" ;
+} 
+
+
+LengthIdent:before { 
+  content:attr(name)".length";
+}
+
+IDSArrayExprIdent:before { 
+  content:attr(name)"["attr(length)"]";
+}
+
+IDSArrayExprIndex:before { 
+  content:attr(name)"[";
+}
+IDSArrayExprIndex:after { 
+  content:"]";
+}
+
+
+
+

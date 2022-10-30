@@ -1,0 +1,15 @@
+Program_name: Mid
+Type_parameters_method: mid(int,int,int)
+Number_parameters_method: 3
+Program_file_name: /home/bekkouche/Documents/Outil/eclipse-workspace/OakGP/src/org/oakgp/errorcorrection/programstotest/Mid.java
+Suspicious_instructions:
+Instruction: m=c
+Line_number: 9
+Instruction: m=b
+Line_number: 15
+Instruction: return m
+Line_number: 26
+Instruction: if(b<c)
+Line_number: 10
+Instruction: if(a<c)
+Line_number: 14

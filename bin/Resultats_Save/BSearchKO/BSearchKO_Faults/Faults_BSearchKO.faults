@@ -1,0 +1,87 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/0_Conditions_Fausses/BSearchKO.java
+Loops are unwound 10 times.
+	CPLEX 12.3.0.0
+/***************************************************************/
+We will deviate 0 condition:
+
+BSearchKO_0_tab_0[0] := -2147477728
+BSearchKO_0_tab_0[1] := -2147470009
+BSearchKO_0_tab_0[2] := -2147468773
+BSearchKO_0_tab_0[3] := -2147466336
+BSearchKO_0_tab_0[4] := -2147457481
+BSearchKO_0_tab_0[5] := -2147457481
+BSearchKO_0_tab_0[6] := -2147457481
+BSearchKO_0_tab_0[7] := -2147457481
+BSearchKO_0_tab_0[8] := 2147457481
+BSearchKO_0_tab_0[9] := -2147457480
+BSearchKO_0_x_0 := -2147457480
+BSearchKO_0_result_0 := -1
+BSearchKO_0_milieu_0 := 0
+BSearchKO_0_gauche_0 := 0
+BSearchKO_0_droite_0 := ( 10 - 1 )
+BSearchKO_0_milieu_1 := ( ( BSearchKO_0_gauche_0 + BSearchKO_0_droite_0 ) / 2 )
+BSearchKO_0_droite_1 := ( BSearchKO_0_milieu_1 - 1 )
+BSearchKO_0_result_1 := BSearchKO_0_result_0
+BSearchKO_0_milieu_2 := ( ( BSearchKO_0_gauche_0 + BSearchKO_0_droite_1 ) / 2 )
+BSearchKO_0_droite_2 := ( BSearchKO_0_milieu_2 - 1 )
+BSearchKO_0_result_2 := BSearchKO_0_result_1
+BSearchKO_0_milieu_3 := ( ( BSearchKO_0_gauche_0 + BSearchKO_0_droite_2 ) / 2 )
+BSearchKO_0_droite_3 := ( BSearchKO_0_milieu_3 - 1 )
+BSearchKO_0_result_3 := BSearchKO_0_result_2
+BSearchKO_0_milieu_10 := BSearchKO_0_milieu_3
+BSearchKO_0_droite_10 := BSearchKO_0_droite_3
+BSearchKO_0_result_10 := BSearchKO_0_result_3
+BSearchKO_0_Result_0 := BSearchKO_0_result_10
+( ( BSearchKO_0_result_10 == 9 ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{line 13,POST}
+{line 10,line 13}
+{line 13,line 0}
+{line 13,line 0}
+{line 13,line 0}
+{line 13,line 0}
+{line 15,POST}
+{line 12,POST}
+{line 10,line 15}
+{line 10,line 12}
+{line 15,line 0}
+{line 12,line 0}
+{line 15,line 0}
+{line 12,line 0}
+{line 15,line 0}
+{line 15,line 0}
+{line 12,line 0}
+{line 12,line 0}
+
+The execution time of the Method CAMUS:1.173
+
+MIVcard(ctrs,line 10)=1.5
+MIVcard(ctrs,line 12)=3.0
+MIVcard(ctrs,line 13)=3.0
+MIVcard(ctrs,line 15)=3.0
+MIVcard(ctrs,line 0)=1.5
+MIVcard(ctrs,line 0)=1.5
+MIVcard(ctrs,line 0)=1.5
+MIVcard(ctrs,line 0)=1.5
+MIVcard(ctrs,POST)=1.5
+
+The number of instructions suspected: 5
+/***************************************************************/
+
+
+The pretreatment time (the time of CFG building):0.735
+The time of DFS exploration and of MCSes calculation:1.192
+Suspicious instructions:10,12,13,15
+The number of suspicious instructions:4
+The sum of execution times of CAMUS method:1.173
+
+Total elapsed time: 2.055 s.

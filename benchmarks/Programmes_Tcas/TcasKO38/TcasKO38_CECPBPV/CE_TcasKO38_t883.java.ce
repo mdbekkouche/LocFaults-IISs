@@ -1,0 +1,17 @@
+tcas_0_Alt_Layer_Value_0 3
+tcas_0_Climb_Inhibit_0 true
+tcas_0_Cur_Vertical_Sep_0 868
+tcas_0_Down_Separation_0 0
+tcas_0_High_Confidence_0 true
+tcas_0_Other_Capability_0 2
+tcas_0_Other_RAC_0 0
+tcas_0_Other_Tracked_Alt_0 740
+tcas_0_Own_Tracked_Alt_0 729
+tcas_0_Own_Tracked_Alt_Rate_0 501
+tcas_0_Result_0 0
+tcas_0_Two_of_Three_Reports_Valid_0 true
+tcas_0_Up_Separation_0 1017
+tcas_0_Positive_RA_Alt_Thresh_0[0] 0
+tcas_0_Positive_RA_Alt_Thresh_0[1] 0
+tcas_0_Positive_RA_Alt_Thresh_0[2] 0
+tcas_0_Positive_RA_Alt_Thresh_0[3] 0

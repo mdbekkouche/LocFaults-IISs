@@ -1,0 +1,41 @@
+Command exited with non-zero status 10
+0.22user 0.03system 0:00.28elapsed 88%CPU (0avgtext+0avgdata 5716maxresident)k
+8inputs+488outputs (0major+17307minor)pagefaults 0swaps
+336
+Generating GOTO Program
+Pointer Analysis
+Adding Pointer Checks
+Starting Bounded Model Checking
+size of program expression: 94 assignments
+Generated 17 claims, 17 remaining
+Passing problem to MiniSAT
+Passing to decision procedure
+Running MiniSAT
+Solving with MiniSAT
+3217 variables, 7577 clauses
+SAT checker: negated claim is SATISFIABLE, i.e., does not hold
+Building error trace
+
+Counterexample:
+
+Violated property:
+  file /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO14/TcasKO14_SpecsC/TcasKO14_t1336.c line 117
+  assertion
+  alt_sep == 2
+
+< 1 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO14/TcasKO14_SpecsC/TcasKO14_t1336.c:49
+
+< 2 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO14/TcasKO14_SpecsC/TcasKO14_t1336.c:61
+
+< 3 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO14/TcasKO14_SpecsC/TcasKO14_t1336.c:65
+
+< 4 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO14/TcasKO14_SpecsC/TcasKO14_t1336.c:77
+
+< 5 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO14/TcasKO14_SpecsC/TcasKO14_t1336.c:117
+
+BUG Assist: No More suspects:
+VERIFICATION FAILED
+
+Suspicious instructions:49,61,65,77,117
+The number of suspicious instructions:5
+User time:0.22

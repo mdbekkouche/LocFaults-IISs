@@ -1,0 +1,128 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/3_Conditions_Fausses/Maxmin6varKO.java
+Loops are unwound 10 times.
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most '3' conditional statements.
+Solver: CPLEX
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+maxmin_0_a_0 := 1 --> line -1
+maxmin_0_b_0 := -4 --> line -1
+maxmin_0_c_0 := -3 --> line -1
+maxmin_0_d_0 := -1 --> line -1
+maxmin_0_e_0 := 0 --> line -1
+maxmin_0_f_0 := -4 --> line -1
+maxmin_0_max_0 := 0 --> line 10
+maxmin_0_min_0 := 0 --> line 11
+maxmin_0_max_1 := maxmin_0_a_0 --> line 13
+maxmin_0_min_1 := maxmin_0_e_0 --> line 28
+( ( ( ( ( ( ( ( ( ( ( ( ( ( maxmin_0_max_1 >= maxmin_0_a_0 ) ) && ( ( maxmin_0_max_1 >= maxmin_0_b_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_c_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_d_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_e_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_f_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_a_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_b_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_c_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_d_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_e_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_f_0 ) ) ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 28.0}
+
+Runtime of the method that compute MCS: 0.01
+MIVcard(ctrs,line 28)=1.0
+
+The number of instructions suspected: 1
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.027
+2. The sum of computation time of MCS isolations only: 0.01
+
+Suspicious instructions:28
+The number of suspicious instructions:1
+
+/***************************************************************/
+By deviating '1' condition(s), we obtain:
+
+1. CSP_d:
+line 15(Else) : ( ( ( ( maxmin_0_b_0 < maxmin_0_c_0 ) && ( maxmin_0_b_0 < maxmin_0_d_0 ) ) && ( maxmin_0_b_0 < maxmin_0_e_0 ) ) && ( maxmin_0_b_0 < maxmin_0_f_0 ) )
+------------------------
+2. CSP_a:
+maxmin_0_a_0 := 1 --> line -1
+maxmin_0_b_0 := -4 --> line -1
+maxmin_0_c_0 := -3 --> line -1
+maxmin_0_d_0 := -1 --> line -1
+maxmin_0_e_0 := 0 --> line -1
+maxmin_0_f_0 := -4 --> line -1
+maxmin_0_max_0 := 0 --> line 10
+maxmin_0_min_0 := 0 --> line 11
+maxmin_0_max_1 := maxmin_0_a_0 --> line 13
+( ( ( ( maxmin_0_b_0 < maxmin_0_c_0 ) && ( maxmin_0_b_0 < maxmin_0_d_0 ) ) && ( maxmin_0_b_0 < maxmin_0_e_0 ) ) && ( maxmin_0_b_0 < maxmin_0_f_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+
+Runtime of the method that compute MCS: 0.003
+
+The number of instructions suspected: 0
+1. CSP_d:
+line 27(If) : ( maxmin_0_e_0 > maxmin_0_f_0 )
+------------------------
+2. CSP_a:
+maxmin_0_a_0 := 1 --> line -1
+maxmin_0_b_0 := -4 --> line -1
+maxmin_0_c_0 := -3 --> line -1
+maxmin_0_d_0 := -1 --> line -1
+maxmin_0_e_0 := 0 --> line -1
+maxmin_0_f_0 := -4 --> line -1
+maxmin_0_max_0 := 0 --> line 10
+maxmin_0_min_0 := 0 --> line 11
+maxmin_0_max_1 := maxmin_0_a_0 --> line 13
+!( ( maxmin_0_e_0 > maxmin_0_f_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+
+Runtime of the method that compute MCS: 0.002
+
+The number of instructions suspected: 0
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.012
+2. The sum of computation time of MCS isolations only: 0.005
+
+Suspicious instructions:28,15,27
+The number of suspicious instructions:3
+
+/***************************************************************/
+By deviating '2' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.002
+2. The sum of computation time of MCS isolations only: 0.0
+
+Suspicious instructions:28,15,27
+The number of suspicious instructions:3
+
+/***************************************************************/
+By deviating '3' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.004
+2. The sum of computation time of MCS isolations only: 0.0
+
+Suspicious instructions:28,15,27
+The number of suspicious instructions:3
+
+/***************************************************************/
+The final resulats:
+1. The pretreatment(CFG building) time: 0.788
+2. Elapsed time during DFS exploration and MCS calculation: 0.045
+Total elapsed time: 0.962 s.

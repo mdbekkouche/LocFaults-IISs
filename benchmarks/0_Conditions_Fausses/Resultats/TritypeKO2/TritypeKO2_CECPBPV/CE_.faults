@@ -1,0 +1,17 @@
+Program_name: TritypeKO2
+Type_parameters_method: caller(int,int,int)
+Number_parameters_method: 3
+Program_file_name: /home/bekkouche/Documents/Outil/eclipse-workspace/OakGP/src/org/oakgp/errorcorrection/programstotest/TritypeKO2.java
+Suspicious_instructions:
+Instruction: trityp=0
+Line_number: 25
+Instruction: trityp=trityp+1
+Line_number: 27
+Instruction: trityp=2
+Line_number: 54
+Instruction: return trityp
+Line_number: 68
+Instruction: if(i==j)
+Line_number: 26
+Instruction: if(trityp==1&&(i+k)>j)
+Line_number: 53

@@ -1,0 +1,7 @@
+package that contains classes to simplify a CFG according to its last node which
+the postcondition of the program.
+
+All nodes whose variables do not depend from the variables of the postcondition are removed.
+
+Usefull variables which have been collected are stored in the cfg. These useful variables can be used 
+to generate variables for the concrete solvers.

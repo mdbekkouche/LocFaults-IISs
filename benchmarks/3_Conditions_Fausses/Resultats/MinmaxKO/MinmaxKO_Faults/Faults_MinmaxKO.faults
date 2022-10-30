@@ -1,0 +1,114 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/3_Conditions_Fausses/MinmaxKO.java
+Loops are unwound 10 times.
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most '3' conditional statements.
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+MinmaxKO_0_in1_0 := 2 --> line -1
+MinmaxKO_0_in2_0 := 1 --> line -1
+MinmaxKO_0_in3_0 := 3 --> line -1
+MinmaxKO_0_least_0 := 0 --> line 8
+MinmaxKO_0_most_0 := 0 --> line 9
+MinmaxKO_0_least_1 := MinmaxKO_0_in1_0 --> line 10
+MinmaxKO_0_most_1 := MinmaxKO_0_in1_0 --> line 11
+MinmaxKO_0_most_2 := MinmaxKO_0_most_1 --> line 0
+MinmaxKO_0_most_3 := MinmaxKO_0_in3_0 --> line 16
+MinmaxKO_0_most_4 := MinmaxKO_0_in2_0 --> line 19
+MinmaxKO_0_least_2 := MinmaxKO_0_least_1 --> line 0
+( ( MinmaxKO_0_least_2 <= MinmaxKO_0_most_4 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{MinmaxKO_0_in1_0 := 2}
+{line 10}
+{line 0}
+{POST}
+{MinmaxKO_0_in2_0 := 1}
+{line 19}
+
+Runtime of the method that compute MCS: 0.198
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.208
+2. The sum of computation time of MCS isolations only: 0.198
+3. MCS found:
+Assignments
+{line 10}
+{line 19}
+Conditions
+
+/***************************************************************/
+By deviating '1' condition(s), we obtain:
+
+1. CSP_d:
+line 18(If) : ( MinmaxKO_0_least_1 > MinmaxKO_0_in2_0 )
+------------------------
+2. CSP_a:
+MinmaxKO_0_in1_0 := 2 --> line -1
+MinmaxKO_0_in2_0 := 1 --> line -1
+MinmaxKO_0_in3_0 := 3 --> line -1
+MinmaxKO_0_least_0 := 0 --> line 8
+MinmaxKO_0_most_0 := 0 --> line 9
+MinmaxKO_0_least_1 := MinmaxKO_0_in1_0 --> line 10
+MinmaxKO_0_most_1 := MinmaxKO_0_in1_0 --> line 11
+MinmaxKO_0_most_2 := MinmaxKO_0_most_1 --> line 0
+MinmaxKO_0_most_3 := MinmaxKO_0_in3_0 --> line 16
+!( ( MinmaxKO_0_least_1 > MinmaxKO_0_in2_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{MinmaxKO_0_in1_0 := 2}
+{line 10}
+{MinmaxKO_0_in2_0 := 1}
+{POST}
+
+Runtime of the method that compute MCS: 0.048
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.052
+2. The sum of computation time of MCS isolations only: 0.246
+3. MCS found:
+Assignments
+{line 10}
+Conditions
+{line 18}
+
+/***************************************************************/
+By deviating '2' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.003
+2. The sum of computation time of MCS isolations only: 0.246
+3. MCS found:
+Assignments
+Conditions
+
+/***************************************************************/
+By deviating '3' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.005
+2. The sum of computation time of MCS isolations only: 0.246
+3. MCS found:
+Assignments
+Conditions
+
+/***************************************************************/
+The final resulats:
+1. The pretreatment(CFG building) time: 0.485
+2. Elapsed time during DFS exploration and MCS calculation: 0.268
+Total elapsed time: 0.845 s.

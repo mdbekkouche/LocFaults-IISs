@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/css" href="method.css"?>
+<!DOCTYPE method SYSTEM "method.dtd">
+
+<!--  exemple simple avec if else imbrique et test sur variable intermediaire          -->
+                       
+<!-- \ensures                         -->
+<!--   (i<j) ==> \result == 1 &&      -->    
+<!--   !(i<j) ==> \result == 10000      --> 
+<!--                                    -->
+<!-- int simple(i,j) {                  --> 
+<!--    int result;                     -->
+<!--    int k=0;                          -->               
+<!--    if (i<=j) k=k+1;                  -->                    
+<!--    if (k==1 && i!=j) result = 1;                       -->
+<!--            else result = 10000;                        -->                    
+<!--    return result;                  -->
+<!-- }                                        -->
+
+<!-- entete -->
+<method>
+
+<methodComment>
+     exemple simple style tritype
+    </methodComment>
+    
+  <IDSMethod>
+    <IDSSignature returnType="int" name="simple">
+    <IDSParameter type="int">
+      <IDSExprIdent name="i"/>
+    </IDSParameter>
+    <IDSParameter type="int">
+      <IDSExprIdent name="j"/>
+    </IDSParameter>
+    </IDSSignature>
+
+    <!-- specification -->
+    <IDSMethodSpecification>
+      <IDSEnsuresClause> 
+         <IDSExprLogicalAnd>
+	  <IDSExprJMLImplies>
+		<IDSExprInf>
+		   	<IDSExprIdent name="i" />		
+                        <IDSExprIdent name="j" />
+                </IDSExprInf>
+	      <IDSExprEquality>
+		<IDSExprJMLResult/>
+		<IDSExprDecimalIntegerLiteral value="1" />
+	      </IDSExprEquality>
+	  </IDSExprJMLImplies>
+	  <IDSExprJMLImplies>
+		<IDSExprSupEqual>
+		   	<IDSExprIdent name="i" />		
+                        <IDSExprIdent name="j" />
+                </IDSExprSupEqual>
+	      <IDSExprEquality>
+		<IDSExprJMLResult/>
+		<IDSExprDecimalIntegerLiteral value="10" />
+	      </IDSExprEquality>
+	  </IDSExprJMLImplies>
+	  </IDSExprLogicalAnd>
+      </IDSEnsuresClause> 
+  </IDSMethodSpecification>
+
+  <!-- programme -->
+  <IDSJavaBloc> 
+  <IDSJavaDeclVarStatment name="result">
+  </IDSJavaDeclVarStatment>
+  <IDSJavaDeclVarStatment name="k">
+	<IDSExprDecimalIntegerLiteral value="0" />
+  </IDSJavaDeclVarStatment>
+
+  <IDSJavaIfStatment>
+    <cond>
+      <IDSExprInfEqual>
+	<IDSExprIdent name="i"/>
+	<IDSExprIdent name="j"/>
+      </IDSExprInfEqual>
+    </cond>
+    <if>
+	  <IDSJavaBloc> 
+	    <IDSJavaAssignmentStatment name="k">
+	      	<IDSExprPlus>
+		<IDSExprIdent name="k"/>
+		<IDSExprDecimalIntegerLiteral value="1"/>
+	      </IDSExprPlus>
+	    </IDSJavaAssignmentStatment>
+	    </IDSJavaBloc> 
+    </if>
+  </IDSJavaIfStatment>
+  <IDSJavaIfStatment>
+    <cond>
+      <IDSExprLogicalAnd>
+	<IDSExprEquality>
+	   <IDSExprIdent name="k"/>
+	   <IDSExprDecimalIntegerLiteral value="1"/>
+        </IDSExprEquality>
+      <IDSExprLogicalNot>
+         <IDSExprEquality>
+	    <IDSExprIdent name="i"/>
+	    <IDSExprIdent name="j"/>
+         </IDSExprEquality>
+      </IDSExprLogicalNot>
+      </IDSExprLogicalAnd>
+    </cond>
+    <if>
+       <IDSJavaBloc> 
+         <IDSJavaAssignmentStatment name="result">
+	      <IDSExprDecimalIntegerLiteral value="1"/>
+         </IDSJavaAssignmentStatment>
+       </IDSJavaBloc> 
+    </if>
+      <else>
+         <IDSJavaBloc>
+	    <IDSJavaAssignmentStatment name="result">
+	      <IDSExprDecimalIntegerLiteral value="10"/>
+         </IDSJavaAssignmentStatment>
+       </IDSJavaBloc> 
+    </else>
+  </IDSJavaIfStatment>
+  <IDSJavaReturnStatment>
+    <IDSExprIdent name="result"/>
+  </IDSJavaReturnStatment>
+  </IDSJavaBloc>
+  </IDSMethod>
+</method>

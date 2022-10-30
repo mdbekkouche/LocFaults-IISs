@@ -1,0 +1,147 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/3_Conditions_Fausses/TriPerimetreKOV2.java
+Loops are unwound 10 times.
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most '3' conditional statements.
+Solver: CPLEX
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 2 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_res_0 := 0 --> line 21
+caller_0_trityp_1 := 0 --> line 27
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_res_1 := caller_0_res_0 --> line 0
+caller_0_trityp_3 := ( caller_0_trityp_2 + 2 ) --> line 33
+caller_0_res_2 := ( 2 * caller_0_j_0 ) --> line 34
+caller_0_trityp_4 := caller_0_trityp_3 --> line 0
+caller_0_res_3 := caller_0_res_2 --> line 0
+caller_0_res_4 := ( caller_0_res_3 + caller_0_j_0 ) --> line 60
+caller_0_trityp_5 := caller_0_trityp_4 --> line 0
+caller_0_Result_0 := caller_0_res_4 --> line 74
+( ( caller_0_res_4 == 7 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 34.0}
+{line 60.0}
+{line 0.0}
+
+Runtime of the method that compute MCS: 0.04
+MIVcard(ctrs,line 34)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 60)=1.0
+
+The number of instructions suspected: 2
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.058
+2. The sum of computation time of MCS isolations only: 0.04
+
+Suspicious instructions:34,60
+The number of suspicious instructions:2
+
+/***************************************************************/
+By deviating '1' condition(s), we obtain:
+
+1. CSP_d:
+line 32(If) : ( caller_0_i_0 == caller_0_k_0 )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 2 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_res_0 := 0 --> line 21
+caller_0_trityp_1 := 0 --> line 27
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_res_1 := caller_0_res_0 --> line 0
+!( ( caller_0_i_0 == caller_0_k_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+
+Runtime of the method that compute MCS: 0.004
+
+The number of instructions suspected: 0
+1. CSP_d:
+line 40(Else) : ( caller_0_trityp_4 == 0 )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 2 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_res_0 := 0 --> line 21
+caller_0_trityp_1 := 0 --> line 27
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_res_1 := caller_0_res_0 --> line 0
+caller_0_trityp_3 := ( caller_0_trityp_2 + 2 ) --> line 33
+caller_0_res_2 := ( 2 * caller_0_j_0 ) --> line 34
+caller_0_trityp_4 := caller_0_trityp_3 --> line 0
+caller_0_res_3 := caller_0_res_2 --> line 0
+( caller_0_trityp_4 == 0 ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 33.0}
+{line 0.0}
+{line 27.0}
+{line 0.0}
+
+Runtime of the method that compute MCS: 0.083
+MIVcard(ctrs,line 27)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 33)=1.0
+MIVcard(ctrs,line 0)=1.0
+
+The number of instructions suspected: 2
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.101
+2. The sum of computation time of MCS isolations only: 0.08700000000000001
+
+Suspicious instructions:34,60,32,40,27,33
+The number of suspicious instructions:6
+
+/***************************************************************/
+By deviating '2' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.006
+2. The sum of computation time of MCS isolations only: 0.0
+
+Suspicious instructions:34,60,32,40,27,33
+The number of suspicious instructions:6
+
+/***************************************************************/
+By deviating '3' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.009
+2. The sum of computation time of MCS isolations only: 0.0
+
+Suspicious instructions:34,60,32,40,27,33
+The number of suspicious instructions:6
+
+/***************************************************************/
+The final resulats:
+1. The pretreatment(CFG building) time: 0.734
+2. Elapsed time during DFS exploration and MCS calculation: 0.174
+Total elapsed time: 1.034 s.

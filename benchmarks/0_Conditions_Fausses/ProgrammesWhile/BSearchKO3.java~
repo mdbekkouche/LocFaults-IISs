@@ -1,0 +1,27 @@
+class BSearch {
+
+    /*@ requires 
+      @ (x==2959 && tab[0]==-2147480651 && tab[1]==-2147472932 && tab[2]==2959 && tab[3]==2960 && tab[4]==2960 && tab[5]==2960 && tab[6]==2960 && tab[7]==2960 && tab[8]==2960 && tab[9]==2960 );
+      @ ensures
+      @     \result == 2;
+      @*/
+    int caller(int[] tab, int x) {
+	int result = -1;
+	int milieu = 0;
+	int gauche = 0;
+	int droite = tab.length - 1;         
+	while ((result == -1) && (droite <= gauche)) { /*error: the instruction should be while ((result == -1) && "(gauche <= droite)") */
+	    milieu = (gauche + droite) / 2;
+	    if (tab[milieu] == x) {
+		result = milieu; 
+	    }
+	    else if (tab[milieu] > x) {
+		droite = milieu - 1;
+	    }
+	    else {
+		gauche = milieu + 1;
+	    }
+	}
+	return result;
+    }
+}

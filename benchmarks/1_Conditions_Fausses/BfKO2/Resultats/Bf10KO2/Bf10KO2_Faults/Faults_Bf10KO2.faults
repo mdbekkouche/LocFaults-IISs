@@ -1,0 +1,707 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/1_Conditions_Fausses/BfKO2/Bf10KO2.java
+Loops are unwound 10 times.
+	CPLEX 12.3.0.0
+/***************************************************************/
+We will deviate 0 condition:
+
+bf_0_distance_0[0] := 0
+bf_0_distance_0[1] := 0
+bf_0_distance_0[2] := 0
+bf_0_distance_0[3] := 0
+bf_0_distance_0[4] := 0
+bf_0_distance_0[5] := 0
+bf_0_distance_0[6] := 0
+bf_0_distance_0[7] := 0
+bf_0_distance_0[8] := 0
+bf_0_distance_0[9] := 0
+bf_0_Source_0[0] := 0
+bf_0_Source_0[1] := 0
+bf_0_Source_0[2] := 1
+bf_0_Source_0[3] := 0
+bf_0_Source_0[4] := 3
+bf_0_Source_0[5] := 3
+bf_0_Source_0[6] := 0
+bf_0_Source_0[7] := 1
+bf_0_Source_0[8] := 1
+bf_0_Source_0[9] := 3
+bf_0_Dest_0[0] := 1
+bf_0_Dest_0[1] := 1
+bf_0_Dest_0[2] := 1
+bf_0_Dest_0[3] := 1
+bf_0_Dest_0[4] := 2
+bf_0_Dest_0[5] := 4
+bf_0_Dest_0[6] := 4
+bf_0_Dest_0[7] := 2
+bf_0_Dest_0[8] := 3
+bf_0_Dest_0[9] := 3
+bf_0_Weight_0[0] := 0
+bf_0_Weight_0[1] := 1
+bf_0_Weight_0[2] := 2
+bf_0_Weight_0[3] := 3
+bf_0_Weight_0[4] := 4
+bf_0_Weight_0[5] := 5
+bf_0_Weight_0[6] := 6
+bf_0_Weight_0[7] := 7
+bf_0_Weight_0[8] := 8
+bf_0_Weight_0[9] := 9
+bf_0_nodecount_0 := 5
+bf_0_INFINITY_0 := 899
+bf_0_edgecount_0 := 10
+bf_0_source_0 := 0
+bf_0_x_0 := 0
+bf_0_y_0 := 0
+bf_0_val_0 := 0
+bf_0_i_0 := 0
+bf_0_j_0 := 0
+bf_0_i_1 := 0
+bf_0_i_2 := ( bf_0_i_1 + 1 )
+bf_0_i_3 := ( bf_0_i_2 + 1 )
+bf_0_i_4 := ( bf_0_i_3 + 1 )
+bf_0_i_5 := ( bf_0_i_4 + 1 )
+bf_0_i_6 := ( bf_0_i_5 + 1 )
+bf_0_i_11 := bf_0_i_6
+bf_0_i_12 := 0
+bf_0_j_1 := 0
+bf_0_x_1 := bf_0_Dest_0[bf_0_j_1]
+bf_0_y_1 := bf_0_Source_0[bf_0_j_1]
+bf_0_val_1 := ( bf_0_distance_10[bf_0_y_1] - bf_0_Weight_0[bf_0_j_1] )
+bf_0_j_2 := ( bf_0_j_1 + 1 )
+bf_0_x_2 := bf_0_Dest_0[bf_0_j_2]
+bf_0_y_2 := bf_0_Source_0[bf_0_j_2]
+bf_0_val_2 := ( bf_0_distance_11[bf_0_y_2] - bf_0_Weight_0[bf_0_j_2] )
+bf_0_j_3 := ( bf_0_j_2 + 1 )
+bf_0_x_3 := bf_0_Dest_0[bf_0_j_3]
+bf_0_y_3 := bf_0_Source_0[bf_0_j_3]
+bf_0_val_3 := ( bf_0_distance_12[bf_0_y_3] - bf_0_Weight_0[bf_0_j_3] )
+bf_0_j_4 := ( bf_0_j_3 + 1 )
+bf_0_x_4 := bf_0_Dest_0[bf_0_j_4]
+bf_0_y_4 := bf_0_Source_0[bf_0_j_4]
+bf_0_val_4 := ( bf_0_distance_13[bf_0_y_4] - bf_0_Weight_0[bf_0_j_4] )
+bf_0_j_5 := ( bf_0_j_4 + 1 )
+bf_0_x_5 := bf_0_Dest_0[bf_0_j_5]
+bf_0_y_5 := bf_0_Source_0[bf_0_j_5]
+bf_0_val_5 := ( bf_0_distance_14[bf_0_y_5] - bf_0_Weight_0[bf_0_j_5] )
+bf_0_j_6 := ( bf_0_j_5 + 1 )
+bf_0_x_6 := bf_0_Dest_0[bf_0_j_6]
+bf_0_y_6 := bf_0_Source_0[bf_0_j_6]
+bf_0_val_6 := ( bf_0_distance_15[bf_0_y_6] - bf_0_Weight_0[bf_0_j_6] )
+bf_0_j_7 := ( bf_0_j_6 + 1 )
+bf_0_x_7 := bf_0_Dest_0[bf_0_j_7]
+bf_0_y_7 := bf_0_Source_0[bf_0_j_7]
+bf_0_val_7 := ( bf_0_distance_16[bf_0_y_7] - bf_0_Weight_0[bf_0_j_7] )
+bf_0_j_8 := ( bf_0_j_7 + 1 )
+bf_0_x_8 := bf_0_Dest_0[bf_0_j_8]
+bf_0_y_8 := bf_0_Source_0[bf_0_j_8]
+bf_0_val_8 := ( bf_0_distance_17[bf_0_y_8] - bf_0_Weight_0[bf_0_j_8] )
+bf_0_j_9 := ( bf_0_j_8 + 1 )
+bf_0_x_9 := bf_0_Dest_0[bf_0_j_9]
+bf_0_y_9 := bf_0_Source_0[bf_0_j_9]
+bf_0_val_9 := ( bf_0_distance_18[bf_0_y_9] - bf_0_Weight_0[bf_0_j_9] )
+bf_0_j_10 := ( bf_0_j_9 + 1 )
+bf_0_x_10 := bf_0_Dest_0[bf_0_j_10]
+bf_0_y_10 := bf_0_Source_0[bf_0_j_10]
+bf_0_val_10 := ( bf_0_distance_19[bf_0_y_10] - bf_0_Weight_0[bf_0_j_10] )
+bf_0_j_11 := ( bf_0_j_10 + 1 )
+bf_0_i_13 := ( bf_0_i_12 + 1 )
+bf_0_j_12 := 0
+bf_0_x_11 := bf_0_Dest_0[bf_0_j_12]
+bf_0_y_11 := bf_0_Source_0[bf_0_j_12]
+bf_0_val_11 := ( bf_0_distance_20[bf_0_y_11] - bf_0_Weight_0[bf_0_j_12] )
+bf_0_j_13 := ( bf_0_j_12 + 1 )
+bf_0_x_12 := bf_0_Dest_0[bf_0_j_13]
+bf_0_y_12 := bf_0_Source_0[bf_0_j_13]
+bf_0_val_12 := ( bf_0_distance_21[bf_0_y_12] - bf_0_Weight_0[bf_0_j_13] )
+bf_0_j_14 := ( bf_0_j_13 + 1 )
+bf_0_x_13 := bf_0_Dest_0[bf_0_j_14]
+bf_0_y_13 := bf_0_Source_0[bf_0_j_14]
+bf_0_val_13 := ( bf_0_distance_22[bf_0_y_13] - bf_0_Weight_0[bf_0_j_14] )
+bf_0_j_15 := ( bf_0_j_14 + 1 )
+bf_0_x_14 := bf_0_Dest_0[bf_0_j_15]
+bf_0_y_14 := bf_0_Source_0[bf_0_j_15]
+bf_0_val_14 := ( bf_0_distance_23[bf_0_y_14] - bf_0_Weight_0[bf_0_j_15] )
+bf_0_j_16 := ( bf_0_j_15 + 1 )
+bf_0_x_15 := bf_0_Dest_0[bf_0_j_16]
+bf_0_y_15 := bf_0_Source_0[bf_0_j_16]
+bf_0_val_15 := ( bf_0_distance_24[bf_0_y_15] - bf_0_Weight_0[bf_0_j_16] )
+bf_0_j_17 := ( bf_0_j_16 + 1 )
+bf_0_x_16 := bf_0_Dest_0[bf_0_j_17]
+bf_0_y_16 := bf_0_Source_0[bf_0_j_17]
+bf_0_val_16 := ( bf_0_distance_25[bf_0_y_16] - bf_0_Weight_0[bf_0_j_17] )
+bf_0_j_18 := ( bf_0_j_17 + 1 )
+bf_0_x_17 := bf_0_Dest_0[bf_0_j_18]
+bf_0_y_17 := bf_0_Source_0[bf_0_j_18]
+bf_0_val_17 := ( bf_0_distance_26[bf_0_y_17] - bf_0_Weight_0[bf_0_j_18] )
+bf_0_j_19 := ( bf_0_j_18 + 1 )
+bf_0_x_18 := bf_0_Dest_0[bf_0_j_19]
+bf_0_y_18 := bf_0_Source_0[bf_0_j_19]
+bf_0_val_18 := ( bf_0_distance_27[bf_0_y_18] - bf_0_Weight_0[bf_0_j_19] )
+bf_0_j_20 := ( bf_0_j_19 + 1 )
+bf_0_x_19 := bf_0_Dest_0[bf_0_j_20]
+bf_0_y_19 := bf_0_Source_0[bf_0_j_20]
+bf_0_val_19 := ( bf_0_distance_28[bf_0_y_19] - bf_0_Weight_0[bf_0_j_20] )
+bf_0_j_21 := ( bf_0_j_20 + 1 )
+bf_0_x_20 := bf_0_Dest_0[bf_0_j_21]
+bf_0_y_20 := bf_0_Source_0[bf_0_j_21]
+bf_0_val_20 := ( bf_0_distance_29[bf_0_y_20] - bf_0_Weight_0[bf_0_j_21] )
+bf_0_j_22 := ( bf_0_j_21 + 1 )
+bf_0_i_14 := ( bf_0_i_13 + 1 )
+bf_0_j_23 := 0
+bf_0_x_21 := bf_0_Dest_0[bf_0_j_23]
+bf_0_y_21 := bf_0_Source_0[bf_0_j_23]
+bf_0_val_21 := ( bf_0_distance_30[bf_0_y_21] - bf_0_Weight_0[bf_0_j_23] )
+bf_0_j_24 := ( bf_0_j_23 + 1 )
+bf_0_x_22 := bf_0_Dest_0[bf_0_j_24]
+bf_0_y_22 := bf_0_Source_0[bf_0_j_24]
+bf_0_val_22 := ( bf_0_distance_31[bf_0_y_22] - bf_0_Weight_0[bf_0_j_24] )
+bf_0_j_25 := ( bf_0_j_24 + 1 )
+bf_0_x_23 := bf_0_Dest_0[bf_0_j_25]
+bf_0_y_23 := bf_0_Source_0[bf_0_j_25]
+bf_0_val_23 := ( bf_0_distance_32[bf_0_y_23] - bf_0_Weight_0[bf_0_j_25] )
+bf_0_j_26 := ( bf_0_j_25 + 1 )
+bf_0_x_24 := bf_0_Dest_0[bf_0_j_26]
+bf_0_y_24 := bf_0_Source_0[bf_0_j_26]
+bf_0_val_24 := ( bf_0_distance_33[bf_0_y_24] - bf_0_Weight_0[bf_0_j_26] )
+bf_0_j_27 := ( bf_0_j_26 + 1 )
+bf_0_x_25 := bf_0_Dest_0[bf_0_j_27]
+bf_0_y_25 := bf_0_Source_0[bf_0_j_27]
+bf_0_val_25 := ( bf_0_distance_34[bf_0_y_25] - bf_0_Weight_0[bf_0_j_27] )
+bf_0_j_28 := ( bf_0_j_27 + 1 )
+bf_0_x_26 := bf_0_Dest_0[bf_0_j_28]
+bf_0_y_26 := bf_0_Source_0[bf_0_j_28]
+bf_0_val_26 := ( bf_0_distance_35[bf_0_y_26] - bf_0_Weight_0[bf_0_j_28] )
+bf_0_j_29 := ( bf_0_j_28 + 1 )
+bf_0_x_27 := bf_0_Dest_0[bf_0_j_29]
+bf_0_y_27 := bf_0_Source_0[bf_0_j_29]
+bf_0_val_27 := ( bf_0_distance_36[bf_0_y_27] - bf_0_Weight_0[bf_0_j_29] )
+bf_0_j_30 := ( bf_0_j_29 + 1 )
+bf_0_x_28 := bf_0_Dest_0[bf_0_j_30]
+bf_0_y_28 := bf_0_Source_0[bf_0_j_30]
+bf_0_val_28 := ( bf_0_distance_37[bf_0_y_28] - bf_0_Weight_0[bf_0_j_30] )
+bf_0_j_31 := ( bf_0_j_30 + 1 )
+bf_0_x_29 := bf_0_Dest_0[bf_0_j_31]
+bf_0_y_29 := bf_0_Source_0[bf_0_j_31]
+bf_0_val_29 := ( bf_0_distance_38[bf_0_y_29] - bf_0_Weight_0[bf_0_j_31] )
+bf_0_j_32 := ( bf_0_j_31 + 1 )
+bf_0_x_30 := bf_0_Dest_0[bf_0_j_32]
+bf_0_y_30 := bf_0_Source_0[bf_0_j_32]
+bf_0_val_30 := ( bf_0_distance_39[bf_0_y_30] - bf_0_Weight_0[bf_0_j_32] )
+bf_0_j_33 := ( bf_0_j_32 + 1 )
+bf_0_i_15 := ( bf_0_i_14 + 1 )
+bf_0_j_34 := 0
+bf_0_x_31 := bf_0_Dest_0[bf_0_j_34]
+bf_0_y_31 := bf_0_Source_0[bf_0_j_34]
+bf_0_val_31 := ( bf_0_distance_40[bf_0_y_31] - bf_0_Weight_0[bf_0_j_34] )
+bf_0_j_35 := ( bf_0_j_34 + 1 )
+bf_0_x_32 := bf_0_Dest_0[bf_0_j_35]
+bf_0_y_32 := bf_0_Source_0[bf_0_j_35]
+bf_0_val_32 := ( bf_0_distance_41[bf_0_y_32] - bf_0_Weight_0[bf_0_j_35] )
+bf_0_j_36 := ( bf_0_j_35 + 1 )
+bf_0_x_33 := bf_0_Dest_0[bf_0_j_36]
+bf_0_y_33 := bf_0_Source_0[bf_0_j_36]
+bf_0_val_33 := ( bf_0_distance_42[bf_0_y_33] - bf_0_Weight_0[bf_0_j_36] )
+bf_0_j_37 := ( bf_0_j_36 + 1 )
+bf_0_x_34 := bf_0_Dest_0[bf_0_j_37]
+bf_0_y_34 := bf_0_Source_0[bf_0_j_37]
+bf_0_val_34 := ( bf_0_distance_43[bf_0_y_34] - bf_0_Weight_0[bf_0_j_37] )
+bf_0_j_38 := ( bf_0_j_37 + 1 )
+bf_0_x_35 := bf_0_Dest_0[bf_0_j_38]
+bf_0_y_35 := bf_0_Source_0[bf_0_j_38]
+bf_0_val_35 := ( bf_0_distance_44[bf_0_y_35] - bf_0_Weight_0[bf_0_j_38] )
+bf_0_j_39 := ( bf_0_j_38 + 1 )
+bf_0_x_36 := bf_0_Dest_0[bf_0_j_39]
+bf_0_y_36 := bf_0_Source_0[bf_0_j_39]
+bf_0_val_36 := ( bf_0_distance_45[bf_0_y_36] - bf_0_Weight_0[bf_0_j_39] )
+bf_0_j_40 := ( bf_0_j_39 + 1 )
+bf_0_x_37 := bf_0_Dest_0[bf_0_j_40]
+bf_0_y_37 := bf_0_Source_0[bf_0_j_40]
+bf_0_val_37 := ( bf_0_distance_46[bf_0_y_37] - bf_0_Weight_0[bf_0_j_40] )
+bf_0_j_41 := ( bf_0_j_40 + 1 )
+bf_0_x_38 := bf_0_Dest_0[bf_0_j_41]
+bf_0_y_38 := bf_0_Source_0[bf_0_j_41]
+bf_0_val_38 := ( bf_0_distance_47[bf_0_y_38] - bf_0_Weight_0[bf_0_j_41] )
+bf_0_j_42 := ( bf_0_j_41 + 1 )
+bf_0_x_39 := bf_0_Dest_0[bf_0_j_42]
+bf_0_y_39 := bf_0_Source_0[bf_0_j_42]
+bf_0_val_39 := ( bf_0_distance_48[bf_0_y_39] - bf_0_Weight_0[bf_0_j_42] )
+bf_0_j_43 := ( bf_0_j_42 + 1 )
+bf_0_x_40 := bf_0_Dest_0[bf_0_j_43]
+bf_0_y_40 := bf_0_Source_0[bf_0_j_43]
+bf_0_val_40 := ( bf_0_distance_49[bf_0_y_40] - bf_0_Weight_0[bf_0_j_43] )
+bf_0_j_44 := ( bf_0_j_43 + 1 )
+bf_0_i_16 := ( bf_0_i_15 + 1 )
+bf_0_j_45 := 0
+bf_0_x_41 := bf_0_Dest_0[bf_0_j_45]
+bf_0_y_41 := bf_0_Source_0[bf_0_j_45]
+bf_0_val_41 := ( bf_0_distance_50[bf_0_y_41] - bf_0_Weight_0[bf_0_j_45] )
+bf_0_j_46 := ( bf_0_j_45 + 1 )
+bf_0_x_42 := bf_0_Dest_0[bf_0_j_46]
+bf_0_y_42 := bf_0_Source_0[bf_0_j_46]
+bf_0_val_42 := ( bf_0_distance_51[bf_0_y_42] - bf_0_Weight_0[bf_0_j_46] )
+bf_0_j_47 := ( bf_0_j_46 + 1 )
+bf_0_x_43 := bf_0_Dest_0[bf_0_j_47]
+bf_0_y_43 := bf_0_Source_0[bf_0_j_47]
+bf_0_val_43 := ( bf_0_distance_52[bf_0_y_43] - bf_0_Weight_0[bf_0_j_47] )
+bf_0_j_48 := ( bf_0_j_47 + 1 )
+bf_0_x_44 := bf_0_Dest_0[bf_0_j_48]
+bf_0_y_44 := bf_0_Source_0[bf_0_j_48]
+bf_0_val_44 := ( bf_0_distance_53[bf_0_y_44] - bf_0_Weight_0[bf_0_j_48] )
+bf_0_j_49 := ( bf_0_j_48 + 1 )
+bf_0_x_45 := bf_0_Dest_0[bf_0_j_49]
+bf_0_y_45 := bf_0_Source_0[bf_0_j_49]
+bf_0_val_45 := ( bf_0_distance_54[bf_0_y_45] - bf_0_Weight_0[bf_0_j_49] )
+bf_0_j_50 := ( bf_0_j_49 + 1 )
+bf_0_x_46 := bf_0_Dest_0[bf_0_j_50]
+bf_0_y_46 := bf_0_Source_0[bf_0_j_50]
+bf_0_val_46 := ( bf_0_distance_55[bf_0_y_46] - bf_0_Weight_0[bf_0_j_50] )
+bf_0_j_51 := ( bf_0_j_50 + 1 )
+bf_0_x_47 := bf_0_Dest_0[bf_0_j_51]
+bf_0_y_47 := bf_0_Source_0[bf_0_j_51]
+bf_0_val_47 := ( bf_0_distance_56[bf_0_y_47] - bf_0_Weight_0[bf_0_j_51] )
+bf_0_j_52 := ( bf_0_j_51 + 1 )
+bf_0_x_48 := bf_0_Dest_0[bf_0_j_52]
+bf_0_y_48 := bf_0_Source_0[bf_0_j_52]
+bf_0_val_48 := ( bf_0_distance_57[bf_0_y_48] - bf_0_Weight_0[bf_0_j_52] )
+bf_0_j_53 := ( bf_0_j_52 + 1 )
+bf_0_x_49 := bf_0_Dest_0[bf_0_j_53]
+bf_0_y_49 := bf_0_Source_0[bf_0_j_53]
+bf_0_val_49 := ( bf_0_distance_58[bf_0_y_49] - bf_0_Weight_0[bf_0_j_53] )
+bf_0_j_54 := ( bf_0_j_53 + 1 )
+bf_0_x_50 := bf_0_Dest_0[bf_0_j_54]
+bf_0_y_50 := bf_0_Source_0[bf_0_j_54]
+bf_0_val_50 := ( bf_0_distance_59[bf_0_y_50] - bf_0_Weight_0[bf_0_j_54] )
+bf_0_j_55 := ( bf_0_j_54 + 1 )
+bf_0_i_17 := ( bf_0_i_16 + 1 )
+bf_0_j_110 := bf_0_j_55
+bf_0_x_100 := bf_0_x_50
+bf_0_y_100 := bf_0_y_50
+bf_0_i_22 := bf_0_i_17
+bf_0_val_100 := bf_0_val_50
+bf_0_Result_0 := 0
+bf_0_distance_1[bf_0_i_1] := 0
+bf_0_distance_2[bf_0_i_2] := bf_0_INFINITY_0
+bf_0_distance_3[bf_0_i_3] := bf_0_INFINITY_0
+bf_0_distance_4[bf_0_i_4] := bf_0_INFINITY_0
+bf_0_distance_5[bf_0_i_5] := bf_0_INFINITY_0
+bf_0_distance_10 := bf_0_distance_5
+bf_0_distance_11[bf_0_x_1] := bf_0_val_1
+bf_0_distance_12[bf_0_x_2] := bf_0_val_2
+bf_0_distance_13[bf_0_x_3] := bf_0_val_3
+bf_0_distance_14 := bf_0_distance_13
+bf_0_distance_15[bf_0_x_5] := bf_0_val_5
+bf_0_distance_16[bf_0_x_6] := bf_0_val_6
+bf_0_distance_17[bf_0_x_7] := bf_0_val_7
+bf_0_distance_18[bf_0_x_8] := bf_0_val_8
+bf_0_distance_19[bf_0_x_9] := bf_0_val_9
+bf_0_distance_20[bf_0_x_10] := bf_0_val_10
+bf_0_distance_21 := bf_0_distance_20
+bf_0_distance_22 := bf_0_distance_21
+bf_0_distance_23[bf_0_x_13] := bf_0_val_13
+bf_0_distance_24 := bf_0_distance_23
+bf_0_distance_25[bf_0_x_15] := bf_0_val_15
+bf_0_distance_26[bf_0_x_16] := bf_0_val_16
+bf_0_distance_27 := bf_0_distance_26
+bf_0_distance_28 := bf_0_distance_27
+bf_0_distance_29 := bf_0_distance_28
+bf_0_distance_30[bf_0_x_20] := bf_0_val_20
+bf_0_distance_31 := bf_0_distance_30
+bf_0_distance_32 := bf_0_distance_31
+bf_0_distance_33[bf_0_x_23] := bf_0_val_23
+bf_0_distance_34 := bf_0_distance_33
+bf_0_distance_35[bf_0_x_25] := bf_0_val_25
+bf_0_distance_36[bf_0_x_26] := bf_0_val_26
+bf_0_distance_37 := bf_0_distance_36
+bf_0_distance_38 := bf_0_distance_37
+bf_0_distance_39 := bf_0_distance_38
+bf_0_distance_40[bf_0_x_30] := bf_0_val_30
+bf_0_distance_41 := bf_0_distance_40
+bf_0_distance_42 := bf_0_distance_41
+bf_0_distance_43[bf_0_x_33] := bf_0_val_33
+bf_0_distance_44 := bf_0_distance_43
+bf_0_distance_45[bf_0_x_35] := bf_0_val_35
+bf_0_distance_46[bf_0_x_36] := bf_0_val_36
+bf_0_distance_47 := bf_0_distance_46
+bf_0_distance_48 := bf_0_distance_47
+bf_0_distance_49 := bf_0_distance_48
+bf_0_distance_50[bf_0_x_40] := bf_0_val_40
+bf_0_distance_51 := bf_0_distance_50
+bf_0_distance_52 := bf_0_distance_51
+bf_0_distance_53[bf_0_x_43] := bf_0_val_43
+bf_0_distance_54 := bf_0_distance_53
+bf_0_distance_55[bf_0_x_45] := bf_0_val_45
+bf_0_distance_56[bf_0_x_46] := bf_0_val_46
+bf_0_distance_57 := bf_0_distance_56
+bf_0_distance_58 := bf_0_distance_57
+bf_0_distance_59 := bf_0_distance_58
+bf_0_distance_60[bf_0_x_50] := bf_0_val_50
+bf_0_distance_110 := bf_0_distance_60
+( ( ( ( ( ( bf_0_distance_110[0] >= 0 ) && ( bf_0_distance_110[1] >= 0 ) ) && ( bf_0_distance_110[2] >= 0 ) ) && ( bf_0_distance_110[3] >= 0 ) ) && ( bf_0_distance_110[4] >= 0 ) ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{line 41}
+{line 0}
+{line 41}
+{line 26}
+{line 26}
+{line 26}
+{line 26}
+{line 0}
+{line 41}
+{line 41}
+{line 41}
+{line 41}
+{line 41}
+{line 41}
+{line 41}
+{line 0}
+{line 0}
+{line 41}
+{line 0}
+{line 41}
+{line 41}
+{line 0}
+{line 0}
+{line 41}
+{line 0}
+{line 0}
+{line 41}
+{line 41}
+{line 41}
+{line 0}
+{line 0}
+{line 0}
+{line 41}
+{line 41}
+{line 41}
+{line 0}
+{line 0}
+{line 41}
+{line 0}
+{line 0}
+{line 0}
+{line 23}
+{line 0}
+{line 0}
+{line 0}
+{line 41}
+{line 0}
+{line 41}
+{line 0}
+{line 41}
+{line 0}
+{line 0}
+{line 0}
+{line 41}
+{line 0}
+{line 0}
+{line 38}
+{line 38}
+{bf_0_Weight_0[1] := 1}
+{bf_0_Weight_0[2] := 2}
+{POST}
+{line 41}
+{bf_0_Weight_0[9] := 9,line 38}
+{line 38,line 38}
+{bf_0_Weight_0[8] := 8,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{bf_0_Weight_0[8] := 8,line 38}
+{bf_0_Weight_0[8] := 8,line 38}
+{bf_0_Weight_0[8] := 8,line 38}
+{line 38,line 38}
+{bf_0_Weight_0[9] := 9,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{bf_0_Weight_0[9] := 9,line 38}
+{bf_0_Weight_0[9] := 9,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38}
+{line 38,line 38,line 38,line 38}
+{line 38,line 38,line 38,line 38}
+{line 38,line 38,line 38,line 38}
+{bf_0_Weight_0[4] := 4,line 38,line 38,line 38}
+{bf_0_Weight_0[5] := 5,line 38,line 38,line 38}
+{bf_0_Weight_0[5] := 5,line 38,line 38,line 38}
+{bf_0_Weight_0[4] := 4,line 38,line 38,line 38}
+{bf_0_Weight_0[5] := 5,line 38,line 38,line 38}
+{bf_0_Weight_0[4] := 4,bf_0_Weight_0[5] := 5,line 38,line 38}
+{line 38,line 38,line 38,line 38}
+{bf_0_Weight_0[4] := 4,line 38,line 38,line 38}
+{bf_0_Weight_0[5] := 5,line 38,line 38,line 38}
+{bf_0_Weight_0[4] := 4,bf_0_Weight_0[5] := 5,line 38,line 38}
+{bf_0_Weight_0[4] := 4,bf_0_Weight_0[5] := 5,line 38,line 38}
+{bf_0_Weight_0[4] := 4,line 38,line 38,line 38}
+{bf_0_Weight_0[4] := 4,bf_0_Weight_0[5] := 5,line 38,line 38}
+
+The execution time of the Method CAMUS:13.818
+
+MIVcard(ctrs,bf_0_Weight_0[1] := 1)=1.0
+MIVcard(ctrs,bf_0_Weight_0[2] := 2)=1.0
+MIVcard(ctrs,bf_0_Weight_0[4] := 4)=2.0
+MIVcard(ctrs,bf_0_Weight_0[5] := 5)=2.0
+MIVcard(ctrs,bf_0_Weight_0[8] := 8)=2.0
+MIVcard(ctrs,bf_0_Weight_0[9] := 9)=2.0
+MIVcard(ctrs,line 38)=1.0
+MIVcard(ctrs,line 38)=1.0
+MIVcard(ctrs,line 38)=2.0
+MIVcard(ctrs,line 38)=2.0
+MIVcard(ctrs,line 38)=4.5
+MIVcard(ctrs,line 38)=2.0
+MIVcard(ctrs,line 38)=4.5
+MIVcard(ctrs,line 38)=2.0
+MIVcard(ctrs,line 38)=4.5
+MIVcard(ctrs,line 38)=2.0
+MIVcard(ctrs,line 38)=4.5
+MIVcard(ctrs,line 38)=2.0
+MIVcard(ctrs,line 38)=2.0
+MIVcard(ctrs,line 38)=4.0
+MIVcard(ctrs,line 23)=1.0
+MIVcard(ctrs,line 26)=1.0
+MIVcard(ctrs,line 26)=1.0
+MIVcard(ctrs,line 26)=1.0
+MIVcard(ctrs,line 26)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 41)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 45
+/***************************************************************/
+
++++++++++++++++++++++++++++++++++++++++++++++++
+We will deviate 1 condition:
+line 31 : ( bf_0_i_12 < bf_0_nodecount_0 )
++++++++++++++++++++++++++++++++++++++++++++++++
+This condition is suspected
+
+bf_0_distance_0[0] := 0
+bf_0_distance_0[1] := 0
+bf_0_distance_0[2] := 0
+bf_0_distance_0[3] := 0
+bf_0_distance_0[4] := 0
+bf_0_distance_0[5] := 0
+bf_0_distance_0[6] := 0
+bf_0_distance_0[7] := 0
+bf_0_distance_0[8] := 0
+bf_0_distance_0[9] := 0
+bf_0_Source_0[0] := 0
+bf_0_Source_0[1] := 0
+bf_0_Source_0[2] := 1
+bf_0_Source_0[3] := 0
+bf_0_Source_0[4] := 3
+bf_0_Source_0[5] := 3
+bf_0_Source_0[6] := 0
+bf_0_Source_0[7] := 1
+bf_0_Source_0[8] := 1
+bf_0_Source_0[9] := 3
+bf_0_Dest_0[0] := 1
+bf_0_Dest_0[1] := 1
+bf_0_Dest_0[2] := 1
+bf_0_Dest_0[3] := 1
+bf_0_Dest_0[4] := 2
+bf_0_Dest_0[5] := 4
+bf_0_Dest_0[6] := 4
+bf_0_Dest_0[7] := 2
+bf_0_Dest_0[8] := 3
+bf_0_Dest_0[9] := 3
+bf_0_Weight_0[0] := 0
+bf_0_Weight_0[1] := 1
+bf_0_Weight_0[2] := 2
+bf_0_Weight_0[3] := 3
+bf_0_Weight_0[4] := 4
+bf_0_Weight_0[5] := 5
+bf_0_Weight_0[6] := 6
+bf_0_Weight_0[7] := 7
+bf_0_Weight_0[8] := 8
+bf_0_Weight_0[9] := 9
+bf_0_nodecount_0 := 5
+bf_0_INFINITY_0 := 899
+bf_0_edgecount_0 := 10
+bf_0_source_0 := 0
+bf_0_x_0 := 0
+bf_0_y_0 := 0
+bf_0_val_0 := 0
+bf_0_i_0 := 0
+bf_0_j_0 := 0
+bf_0_i_1 := 0
+bf_0_i_2 := ( bf_0_i_1 + 1 )
+bf_0_i_3 := ( bf_0_i_2 + 1 )
+bf_0_i_4 := ( bf_0_i_3 + 1 )
+bf_0_i_5 := ( bf_0_i_4 + 1 )
+bf_0_i_6 := ( bf_0_i_5 + 1 )
+bf_0_i_11 := bf_0_i_6
+bf_0_i_12 := 0
+!( ( bf_0_i_12 < bf_0_nodecount_0 ) )
+bf_0_distance_1[bf_0_i_1] := 0
+bf_0_distance_2[bf_0_i_2] := bf_0_INFINITY_0
+bf_0_distance_3[bf_0_i_3] := bf_0_INFINITY_0
+bf_0_distance_4[bf_0_i_4] := bf_0_INFINITY_0
+bf_0_distance_5[bf_0_i_5] := bf_0_INFINITY_0
+bf_0_distance_10 := bf_0_distance_5
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{bf_0_nodecount_0 := 5}
+{POST}
+{line 30}
+
+The execution time of the Method CAMUS:0.129
+
+MIVcard(ctrs,bf_0_nodecount_0 := 5)=1.0
+MIVcard(ctrs,line 30)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 2
+/***************************************************************/
+
++++++++++++++++++++++++++++++++++++++++++++++++
+We will deviate 1 condition:
+line 22 : ( bf_0_i_1 == bf_0_source_0 )
++++++++++++++++++++++++++++++++++++++++++++++++
+This condition is suspected
+
+bf_0_distance_0[0] := 0
+bf_0_distance_0[1] := 0
+bf_0_distance_0[2] := 0
+bf_0_distance_0[3] := 0
+bf_0_distance_0[4] := 0
+bf_0_distance_0[5] := 0
+bf_0_distance_0[6] := 0
+bf_0_distance_0[7] := 0
+bf_0_distance_0[8] := 0
+bf_0_distance_0[9] := 0
+bf_0_Source_0[0] := 0
+bf_0_Source_0[1] := 0
+bf_0_Source_0[2] := 1
+bf_0_Source_0[3] := 0
+bf_0_Source_0[4] := 3
+bf_0_Source_0[5] := 3
+bf_0_Source_0[6] := 0
+bf_0_Source_0[7] := 1
+bf_0_Source_0[8] := 1
+bf_0_Source_0[9] := 3
+bf_0_Dest_0[0] := 1
+bf_0_Dest_0[1] := 1
+bf_0_Dest_0[2] := 1
+bf_0_Dest_0[3] := 1
+bf_0_Dest_0[4] := 2
+bf_0_Dest_0[5] := 4
+bf_0_Dest_0[6] := 4
+bf_0_Dest_0[7] := 2
+bf_0_Dest_0[8] := 3
+bf_0_Dest_0[9] := 3
+bf_0_Weight_0[0] := 0
+bf_0_Weight_0[1] := 1
+bf_0_Weight_0[2] := 2
+bf_0_Weight_0[3] := 3
+bf_0_Weight_0[4] := 4
+bf_0_Weight_0[5] := 5
+bf_0_Weight_0[6] := 6
+bf_0_Weight_0[7] := 7
+bf_0_Weight_0[8] := 8
+bf_0_Weight_0[9] := 9
+bf_0_nodecount_0 := 5
+bf_0_INFINITY_0 := 899
+bf_0_edgecount_0 := 10
+bf_0_source_0 := 0
+bf_0_x_0 := 0
+bf_0_y_0 := 0
+bf_0_val_0 := 0
+bf_0_i_0 := 0
+bf_0_j_0 := 0
+bf_0_i_1 := 0
+!( ( bf_0_i_1 == bf_0_source_0 ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{POST}
+{line 16}
+{line 20}
+
+The execution time of the Method CAMUS:0.204
+
+MIVcard(ctrs,line 16)=1.0
+MIVcard(ctrs,line 20)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 3
+/***************************************************************/
+
+
+The pretreatment time (the time of CFG building):0.559
+The time of DFS exploration and of MCSes calculation:14.627
+Suspicious instructions:38,23,26,41,31,30,22,16,20
+The number of suspicious instructions:9
+The sum of execution times of CAMUS method:14.151
+
+Total elapsed time: 15.294 s.

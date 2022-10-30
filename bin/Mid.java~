@@ -1,0 +1,31 @@
+/*
+ * find the median of three variables.
+ */
+class mid{
+
+     /*@ requires 
+       @ ((a==2) && (b==1) && (c==3));
+       @ ensures 
+       @ (m==2);
+       @*/
+    static void mid (int a, int b, int c) {
+	int m;
+	m=c;
+	if (b<c){
+	    if (a<b){
+		m=b;
+	    }
+	    else if (a<c){
+		m=a;  
+	    }          
+	}
+	else{
+	    if (a>b){
+		m=b;
+	    }
+	    else if (a>c){
+		m=a;
+	    }
+	}	
+    }
+}

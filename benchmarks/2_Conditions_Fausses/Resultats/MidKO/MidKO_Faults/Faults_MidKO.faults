@@ -1,0 +1,43 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/2_Conditions_Fausses/MidKO.java
+Loops are unwound 10 times.
+	CPLEX 12.3.0.0
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most 'k' conditional statements.
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+mid_0_a_0 := 2 --> line -1
+mid_0_b_0 := 1 --> line -1
+mid_0_c_0 := 3 --> line -1
+mid_0_m_0 := 0 --> line 12
+mid_0_m_1 := mid_0_c_0 --> line 13
+mid_0_m_2 := mid_0_b_0 --> line 19
+( ( mid_0_m_2 == 2 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{POST}
+{mid_0_b_0 := 1}
+{line 19}
+
+Runtime of the method that compute MCS: 0.044
+
+The final resulats:
+1. The pretreatment(CFG building) time: 0.467
+2. Elapsed time during DFS exploration and MCS calculation: 0.052
+3. The sum of computation time of MCS isolations only: 0.044
+3. MCS found:
+Assignments
+{line 19}
+Conditions
+
+Total elapsed time: 0.614 s.

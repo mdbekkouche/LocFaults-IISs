@@ -1,0 +1,199 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/css" href="method.css"?>
+<!DOCTYPE method SYSTEM "method.dtd">
+
+<!--  exemple du tri a bulle -->
+
+<!-- entete -->
+<method>
+
+<methodComment>
+    buble sort 
+</methodComment>
+    
+  <IDSMethod>
+    <IDSSignature returnType="void" name="bubleSort">
+    <IDSParameter type="int">
+      <IDSArrayExprIdent name="t" length="16"/>
+    </IDSParameter>
+    </IDSSignature>
+
+    <!-- specification -->
+    <IDSMethodSpecification>
+
+    <!-- require -->
+    <IDSRequiresClause> 
+	<IDSJMLForAll>
+	  <IDSExprIdent name="i"/>
+	  <IDSExprLogicalAnd>
+		<IDSExprSupEqual>
+		  <IDSExprIdent name="i"/>
+		  <IDSExprDecimalIntegerLiteral value="0" />
+		</IDSExprSupEqual>
+		<IDSExprInf>
+		  <IDSExprIdent name="i"/>
+		         <LengthIdent name="t" length="16"/>
+		</IDSExprInf>
+           </IDSExprLogicalAnd>
+            <IDSExprEquality>
+		  <IDSArrayExprIndex name="t">
+		    <IDSExprIdent name="i"/>
+		  </IDSArrayExprIndex>
+         	      <IDSExprMinus>
+	       	      <IDSExprMinus>
+         	         <LengthIdent name="t" length="16"/>
+                          <IDSExprDecimalIntegerLiteral value="1" />
+        	      </IDSExprMinus>
+	         <IDSExprIdent name="i"/>
+                     </IDSExprMinus>
+	  </IDSExprEquality>
+	</IDSJMLForAll>
+      </IDSRequiresClause>
+
+    <!-- ensures -->
+      <IDSEnsuresClause> 
+	<IDSJMLForAll>
+	  <IDSExprIdent name="i"/>
+	  <IDSExprLogicalAnd>
+		<IDSExprSupEqual>
+		  <IDSExprIdent name="i"/>
+		  <IDSExprDecimalIntegerLiteral value="0" />
+		</IDSExprSupEqual>
+		<IDSExprInf>
+		  <IDSExprIdent name="i"/>
+         	      <IDSExprMinus>
+		         <LengthIdent name="t" length="16"/>
+		         <IDSExprDecimalIntegerLiteral value="1" />
+	              </IDSExprMinus>
+		</IDSExprInf>
+           </IDSExprLogicalAnd>
+           <IDSExprInfEqual>
+		  <IDSArrayExprIndex name="t">
+		    <IDSExprIdent name="i"/>
+		  </IDSArrayExprIndex>
+		  <IDSArrayExprIndex name="t">
+         	      <IDSExprPlus>
+		         <IDSExprIdent name="i"/>
+		         <IDSExprDecimalIntegerLiteral value="1" />
+        	      </IDSExprPlus>
+		  </IDSArrayExprIndex>
+	  </IDSExprInfEqual>
+	</IDSJMLForAll>
+      </IDSEnsuresClause> 
+   </IDSMethodSpecification>
+
+  <!-- programme -->
+  <IDSJavaBloc>
+     <IDSJavaDeclVarStatment name="i">
+	<IDSExprDecimalIntegerLiteral value="0" />
+   </IDSJavaDeclVarStatment>
+
+   <IDSJavaDeclVarStatment name="j">
+	<IDSExprDecimalIntegerLiteral value="0" />
+   </IDSJavaDeclVarStatment>
+          
+    <IDSJavaDeclVarStatment name="aux">
+          <IDSExprDecimalIntegerLiteral value="0" />
+    </IDSJavaDeclVarStatment>
+
+
+   <IDSJavaWhileStatment id="1">
+     <whileCond>
+        <IDSExprInf>
+            <IDSExprIdent name="j"/>
+            <LengthIdent name="t" length="16"/>
+	</IDSExprInf>
+     </whileCond>
+
+     <whileBloc>
+   
+         <IDSJavaBloc>
+           <IDSJavaAssignmentStatment name="i">
+                   <IDSExprDecimalIntegerLiteral value="0" />
+          </IDSJavaAssignmentStatment>
+
+         <IDSJavaWhileStatment id="2">
+             <whileCond>
+                 <IDSExprInf>
+                    <IDSExprIdent name="i"/>
+		  <IDSExprMinus>
+                    <LengthIdent name="t" length="16"/>
+                    <IDSExprDecimalIntegerLiteral value="1" />
+		  </IDSExprMinus>
+
+	     </IDSExprInf>
+             </whileCond>
+             <whileBloc>
+                <IDSJavaBloc> 
+                  <IDSJavaIfStatment>
+                    <cond>
+                       <IDSExprSup>
+        	         <IDSArrayExprIndex name="t">
+                            <IDSExprIdent name="i"/>
+        	         </IDSArrayExprIndex>
+        	         <IDSArrayExprIndex name="t">
+                            <IDSExprPlus>
+                               <IDSExprIdent name="i"/>
+                                <IDSExprDecimalIntegerLiteral value="1" />
+                             </IDSExprPlus>
+        	         </IDSArrayExprIndex>	                 
+                       </IDSExprSup>
+                    </cond>
+                    <if>
+                <IDSJavaBloc> 
+        <IDSJavaAssignmentStatment name="aux">
+             <IDSArrayExprIndex name="t">
+                 <IDSExprIdent name="i"/>
+             </IDSArrayExprIndex>
+	</IDSJavaAssignmentStatment>
+
+        <IDSJavaArrayAssignmentStatment name="t">
+ 	     <IDSExprIdent name="i"/>
+             <IDSArrayExprIndex name="t">
+                   <IDSExprPlus>
+                      <IDSExprIdent name="i"/>
+                      <IDSExprDecimalIntegerLiteral value="1" />
+              </IDSExprPlus>
+             </IDSArrayExprIndex>
+        </IDSJavaArrayAssignmentStatment>
+
+        <IDSJavaArrayAssignmentStatment name="t">
+                   <IDSExprPlus>
+                      <IDSExprIdent name="i"/>
+                      <IDSExprDecimalIntegerLiteral value="1" />
+              </IDSExprPlus>
+               <IDSExprIdent name="aux"/>
+         </IDSJavaArrayAssignmentStatment>
+
+                </IDSJavaBloc> 
+                    </if>
+                 </IDSJavaIfStatment>
+
+	  <IDSJavaAssignmentStatment name="i">
+              <IDSExprPlus>
+                  <IDSExprIdent name="i"/>
+                  <IDSExprDecimalIntegerLiteral value="1" />
+              </IDSExprPlus>
+	  </IDSJavaAssignmentStatment>
+
+              </IDSJavaBloc> 
+           </whileBloc>
+        </IDSJavaWhileStatment>
+
+
+
+	  <IDSJavaAssignmentStatment name="j">
+              <IDSExprPlus>
+                  <IDSExprIdent name="j"/>
+                  <IDSExprDecimalIntegerLiteral value="1" />
+              </IDSExprPlus>
+	  </IDSJavaAssignmentStatment>
+  
+     </IDSJavaBloc> 
+   </whileBloc>
+ </IDSJavaWhileStatment>
+  <IDSJavaReturnStatment>
+  </IDSJavaReturnStatment>
+  </IDSJavaBloc> 
+</IDSMethod>
+</method>

@@ -1,0 +1,8 @@
+Command exited with non-zero status 6
+0.01user 0.00system 0:00.02elapsed 76%CPU (0avgtext+0avgdata 3732maxresident)k
+8inputs+8outputs (0major+2350minor)pagefaults 0swaps
+_t930
+
+Suspicious instructions:
+The number of suspicious instructions:0
+User time:0.01

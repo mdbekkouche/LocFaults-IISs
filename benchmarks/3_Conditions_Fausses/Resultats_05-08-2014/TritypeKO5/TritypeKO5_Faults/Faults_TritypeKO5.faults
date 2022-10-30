@@ -1,0 +1,237 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/3_Conditions_Fausses/TritypeKO5.java
+Loops are unwound 10 times.
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most '3' conditional statements.
+Solver: CPLEX
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 3 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_trityp_3 := caller_0_trityp_2 --> line 0
+caller_0_trityp_4 := caller_0_trityp_3 --> line 0
+caller_0_trityp_5 := 1 --> line 40
+caller_0_Result_0 := caller_0_trityp_5 --> line 68
+( ( caller_0_trityp_5 == 2 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 40.0}
+
+Runtime of the method that compute MCS: 0.011
+MIVcard(ctrs,line 40)=1.0
+
+The number of instructions suspected: 1
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.024
+2. The sum of computation time of MCS isolations only: 0.011
+
+Suspicious instructions:40
+The number of suspicious instructions:1
+
+/***************************************************************/
+By deviating '1' condition(s), we obtain:
+
+1. CSP_d:
+line 26(Else) : ( caller_0_i_0 == caller_0_j_0 )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 3 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+( caller_0_i_0 == caller_0_j_0 ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+
+Runtime of the method that compute MCS: 0.002
+
+The number of instructions suspected: 0
+1. CSP_d:
+line 29(Else) : ( caller_0_i_0 == caller_0_k_0 )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 3 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+( caller_0_i_0 == caller_0_k_0 ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+
+Runtime of the method that compute MCS: 0.002
+
+The number of instructions suspected: 0
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.011
+2. The sum of computation time of MCS isolations only: 0.004
+
+Suspicious instructions:40,26,29
+The number of suspicious instructions:3
+
+/***************************************************************/
+By deviating '2' condition(s), we obtain:
+
+1. CSP_d:
+line 32(Else) : !( ( caller_0_j_0 == caller_0_k_0 ) )
+line 45(If) : ( caller_0_trityp_4 >= 3 )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 3 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_trityp_3 := caller_0_trityp_2 --> line 0
+caller_0_trityp_4 := ( caller_0_trityp_3 + 3 ) --> line 33
+!( ( caller_0_trityp_4 >= 3 ) ) --> line -2
+!( ( caller_0_j_0 == caller_0_k_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+
+Runtime of the method that compute MCS: 0.005
+
+The number of instructions suspected: 0
+1. CSP_d:
+line 35(If) : ( caller_0_trityp_4 == 0 )
+line 49(Else) : ( ( caller_0_trityp_4 == 1 ) && ( ( caller_0_i_0 + caller_0_j_0 ) > caller_0_k_0 ) )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 3 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_trityp_3 := caller_0_trityp_2 --> line 0
+caller_0_trityp_4 := caller_0_trityp_3 --> line 0
+!( ( caller_0_trityp_4 == 0 ) ) --> line -2
+( ( caller_0_trityp_4 == 1 ) && ( ( caller_0_i_0 + caller_0_j_0 ) > caller_0_k_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 0.0}
+{line 0.0}
+{line 0.0}
+{line 25.0}
+
+Runtime of the method that compute MCS: 0.031
+MIVcard(ctrs,line 25)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+
+The number of instructions suspected: 1
+1. CSP_d:
+line 35(If) : ( caller_0_trityp_4 == 0 )
+line 53(Else) : ( ( caller_0_trityp_4 == 2 ) && ( ( caller_0_i_0 + caller_0_k_0 ) > caller_0_j_0 ) )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 3 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_trityp_3 := caller_0_trityp_2 --> line 0
+caller_0_trityp_4 := caller_0_trityp_3 --> line 0
+!( ( caller_0_trityp_4 == 0 ) ) --> line -2
+( ( caller_0_trityp_4 == 2 ) && ( ( caller_0_i_0 + caller_0_k_0 ) > caller_0_j_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 0.0}
+{line 0.0}
+{line 0.0}
+{line 25.0}
+
+Runtime of the method that compute MCS: 0.018
+MIVcard(ctrs,line 25)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+
+The number of instructions suspected: 1
+1. CSP_d:
+line 35(If) : ( caller_0_trityp_4 == 0 )
+line 57(Else) : ( ( caller_0_trityp_4 == 3 ) && ( ( caller_0_j_0 + caller_0_k_0 ) > caller_0_i_0 ) )
+------------------------
+2. CSP_a:
+caller_0_i_0 := 2 --> line -1
+caller_0_j_0 := 3 --> line -1
+caller_0_k_0 := 3 --> line -1
+caller_0_trityp_0 := 0 --> line 20
+caller_0_trityp_1 := 0 --> line 25
+caller_0_trityp_2 := caller_0_trityp_1 --> line 0
+caller_0_trityp_3 := caller_0_trityp_2 --> line 0
+caller_0_trityp_4 := caller_0_trityp_3 --> line 0
+!( ( caller_0_trityp_4 == 0 ) ) --> line -2
+( ( caller_0_trityp_4 == 3 ) && ( ( caller_0_j_0 + caller_0_k_0 ) > caller_0_i_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 0.0}
+{line 0.0}
+{line 0.0}
+{line 25.0}
+
+Runtime of the method that compute MCS: 0.025
+MIVcard(ctrs,line 25)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+
+The number of instructions suspected: 1
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.103
+2. The sum of computation time of MCS isolations only: 0.07899999999999999
+
+Suspicious instructions:40,26,29,32,45,35,49,25,53,57
+The number of suspicious instructions:10
+
+/***************************************************************/
+By deviating '3' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.003
+2. The sum of computation time of MCS isolations only: 0.0
+
+Suspicious instructions:40,26,29,32,45,35,49,25,53,57
+The number of suspicious instructions:10
+
+/***************************************************************/
+The final resulats:
+1. The pretreatment(CFG building) time: 0.737
+2. Elapsed time during DFS exploration and MCS calculation: 0.141
+Total elapsed time: 1.006 s.

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/lib/CP/ILOG.CP.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/cplex/cplex.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/java2CFG/jml-release.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.core.contenttype_3.2.0.v20060603.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.core.jobs_3.2.0.v20060603.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.core.resources_3.2.1.R32x_v20060914.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.core.runtime_3.2.0.v20060603.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.equinox.common_3.2.0.v20060603.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.equinox.preferences_3.2.1.R32x_v20060717.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.jdt.core_3.2.1.v_677_R32x.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.osgi_3.2.1.R32x_v20060919.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/lib/JSolver/jsolver.jar!/" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/java/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$MODULE_DIR$/java/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/java/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library name="ILOG.CP.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/CP/ILOG.CP.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="cplex.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/cplex/cplex.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jml-release.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/java2CFG/jml-release.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.core.contenttype_3.2.0.v20060603.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.core.contenttype_3.2.0.v20060603.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.core.jobs_3.2.0.v20060603.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.core.jobs_3.2.0.v20060603.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.core.resources_3.2.1.R32x_v20060914.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.core.resources_3.2.1.R32x_v20060914.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.core.runtime_3.2.0.v20060603.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.core.runtime_3.2.0.v20060603.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.equinox.common_3.2.0.v20060603.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.equinox.common_3.2.0.v20060603.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.equinox.preferences_3.2.1.R32x_v20060717.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.equinox.preferences_3.2.1.R32x_v20060717.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.jdt.core_3.2.1.v_677_R32x.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.jdt.core_3.2.1.v_677_R32x.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="org.eclipse.osgi_3.2.1.R32x_v20060919.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/java2CFG/org.eclipse.osgi_3.2.1.R32x_v20060919.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jsolver.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/JSolver/jsolver.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="inheritedJdk" />
+  </component>
+</module>
+

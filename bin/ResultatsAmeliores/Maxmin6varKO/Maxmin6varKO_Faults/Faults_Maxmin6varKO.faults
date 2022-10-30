@@ -1,0 +1,110 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/1_Conditions_Fausses/Maxmin6varKO.java
+Loops are unwound 10 times.
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most '1' conditional statements.
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+maxmin_0_a_0 := 1 --> line -1
+maxmin_0_b_0 := -4 --> line -1
+maxmin_0_c_0 := -3 --> line -1
+maxmin_0_d_0 := -1 --> line -1
+maxmin_0_e_0 := 0 --> line -1
+maxmin_0_f_0 := -4 --> line -1
+maxmin_0_max_0 := 0 --> line 10
+maxmin_0_min_0 := 0 --> line 11
+maxmin_0_max_1 := maxmin_0_a_0 --> line 13
+maxmin_0_min_1 := maxmin_0_e_0 --> line 28
+( ( ( ( ( ( ( ( ( ( ( ( ( ( maxmin_0_max_1 >= maxmin_0_a_0 ) ) && ( ( maxmin_0_max_1 >= maxmin_0_b_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_c_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_d_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_e_0 ) ) ) && ( ( maxmin_0_max_1 >= maxmin_0_f_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_a_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_b_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_c_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_d_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_e_0 ) ) ) && ( ( maxmin_0_min_1 <= maxmin_0_f_0 ) ) ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 28}
+{POST}
+{maxmin_0_e_0 := 0}
+{maxmin_0_b_0 := -4,maxmin_0_c_0 := -3,maxmin_0_d_0 := -1,maxmin_0_f_0 := -4}
+
+Runtime of the method that compute MCS: 0.056
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.07
+2. The sum of computation time of MCS isolations only: 0.056
+3. MCS found:
+Assignments
+{line 28}
+Conditions
+
+/***************************************************************/
+By deviating '1' condition(s), we obtain:
+
+1. CSP_d:
+line 15(Else) : ( ( ( ( maxmin_0_b_0 < maxmin_0_c_0 ) && ( maxmin_0_b_0 < maxmin_0_d_0 ) ) && ( maxmin_0_b_0 < maxmin_0_e_0 ) ) && ( maxmin_0_b_0 < maxmin_0_f_0 ) )
+------------------------
+2. CSP_a:
+maxmin_0_a_0 := 1 --> line -1
+maxmin_0_b_0 := -4 --> line -1
+maxmin_0_c_0 := -3 --> line -1
+maxmin_0_d_0 := -1 --> line -1
+maxmin_0_e_0 := 0 --> line -1
+maxmin_0_f_0 := -4 --> line -1
+maxmin_0_max_0 := 0 --> line 10
+maxmin_0_min_0 := 0 --> line 11
+maxmin_0_max_1 := maxmin_0_a_0 --> line 13
+( ( ( ( maxmin_0_b_0 < maxmin_0_c_0 ) && ( maxmin_0_b_0 < maxmin_0_d_0 ) ) && ( maxmin_0_b_0 < maxmin_0_e_0 ) ) && ( maxmin_0_b_0 < maxmin_0_f_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{maxmin_0_b_0 := -4}
+{POST}
+{maxmin_0_f_0 := -4}
+
+Runtime of the method that compute MCS: 0.023
+1. CSP_d:
+line 27(If) : ( maxmin_0_e_0 > maxmin_0_f_0 )
+------------------------
+2. CSP_a:
+maxmin_0_a_0 := 1 --> line -1
+maxmin_0_b_0 := -4 --> line -1
+maxmin_0_c_0 := -3 --> line -1
+maxmin_0_d_0 := -1 --> line -1
+maxmin_0_e_0 := 0 --> line -1
+maxmin_0_f_0 := -4 --> line -1
+maxmin_0_max_0 := 0 --> line 10
+maxmin_0_min_0 := 0 --> line 11
+maxmin_0_max_1 := maxmin_0_a_0 --> line 13
+!( ( maxmin_0_e_0 > maxmin_0_f_0 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{maxmin_0_f_0 := -4}
+{POST}
+{maxmin_0_e_0 := 0}
+
+Runtime of the method that compute MCS: 0.036
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.065
+2. The sum of computation time of MCS isolations only: 0.059
+3. MCS found:
+Assignments
+Conditions
+{line 15}
+{line 27}
+
+/***************************************************************/
+The final resulats:
+1. The pretreatment(CFG building) time: 0.537
+2. Elapsed time during DFS exploration and MCS calculation: 0.135
+Total elapsed time: 0.759 s.

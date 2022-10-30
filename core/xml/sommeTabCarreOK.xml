@@ -1,0 +1,175 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet type="text/css" href="method.css"?>
+<!DOCTYPE method SYSTEM "method.dtd">
+
+<!--  SOMME DES carres des n premiers entiers qui sont dans tab    -->
+                       
+<!-- \ensures                          -->
+<!--   \result == n*(n+1)*(2*n+1)/6            -->    
+<!--                                   -->
+<!-- int somme(tab) {                  --> 
+<!--    int s = 0;                     -->
+<!--    int i = 0;                     -->
+<!--    while (i!=tab.length) {        -->     
+<!--        s=s+tab[i]*tab[i]          -->
+<!--        i+=i+1;                    -->
+<!--    }                              -->
+<!--    return s;                      -->
+<!-- }                                 -->
+
+<!-- entete -->
+<method>
+
+<methodComment>
+     somme des carres des n premiers entiers contenus dans tab
+</methodComment>
+    
+  <IDSMethod>
+
+    <!-- signature -->
+    <IDSSignature returnType="int" name="somme">
+    <IDSParameter type="int">
+      <IDSArrayExprIdent name="tab" length="5"/>
+    </IDSParameter>
+    <IDSParameter type="int">
+      <IDSExprIdent name="n"/>
+    </IDSParameter>
+    </IDSSignature>
+
+    <!-- specification -->
+
+    <IDSMethodSpecification>
+
+    <!-- requires -->
+    <IDSRequiresClause> 
+
+
+          <IDSJMLAllDiff>
+                  <IDSArrayExprIdent name="tab" length="5"/>
+           </IDSJMLAllDiff>
+
+
+      </IDSRequiresClause>
+
+    <!-- ensures  -->
+      <IDSEnsuresClause> 
+	 <IDSExprEquality>
+            <IDSExprJMLResult/>
+	    	<IDSExprDiv>
+    	    	<IDSExprTimes>
+		    <IDSExprIdent name="n"/>
+        	      	<IDSExprTimes>
+                             <IDSExprPlus>
+	                	<IDSExprIdent name="n"/>
+		                <IDSExprDecimalIntegerLiteral value="1"/>
+	                     </IDSExprPlus>
+                             <IDSExprPlus>
+        	         	<IDSExprTimes>
+	                	    <IDSExprIdent name="n"/>
+		                    <IDSExprDecimalIntegerLiteral value="2"/>
+                                </IDSExprTimes>
+		                <IDSExprDecimalIntegerLiteral value="1"/>
+	                     </IDSExprPlus>
+                       </IDSExprTimes>
+	        </IDSExprTimes>  
+                <IDSExprDecimalIntegerLiteral value="6"/>
+              </IDSExprDiv>
+	</IDSExprEquality>
+      </IDSEnsuresClause> 
+   </IDSMethodSpecification>
+
+  <!-- programme -->
+  <IDSJavaBloc> 
+      <IDSJavaDeclVarStatment name="i">
+	<IDSExprDecimalIntegerLiteral value="0" />
+      </IDSJavaDeclVarStatment>
+      <IDSJavaDeclVarStatment name="s">
+	<IDSExprDecimalIntegerLiteral value="0" />
+      </IDSJavaDeclVarStatment>
+
+     <IDSJMLAssert>
+       <IDSExprLogicalAnd>
+	 <IDSExprEquality>
+	    <IDSExprIdent name="n"/>
+              <IDSExprMinus>
+                <LengthIdent name="tab" length="5"/>
+		<IDSExprDecimalIntegerLiteral value="1"/>
+              </IDSExprMinus>
+
+	 </IDSExprEquality>
+
+	<IDSJMLForAll>
+	  <IDSExprIdent name="k"/>
+	  <IDSExprLogicalAnd>
+		<IDSExprSupEqual>
+		  <IDSExprIdent name="k"/>
+		  <IDSExprDecimalIntegerLiteral value="0" />
+		</IDSExprSupEqual>
+		<IDSExprInf>
+		  <IDSExprIdent name="k"/>
+ 		  <LengthIdent name="tab" length="5"/>
+	        </IDSExprInf>
+           </IDSExprLogicalAnd>
+	  <IDSExprLogicalAnd>
+           <IDSExprSupEqual>
+		  <IDSArrayExprIndex name="tab">
+		    <IDSExprIdent name="k"/>
+		  </IDSArrayExprIndex>
+		  <IDSExprDecimalIntegerLiteral value="0" />
+	  </IDSExprSupEqual>
+           <IDSExprInf>
+		  <IDSArrayExprIndex name="tab">
+		    <IDSExprIdent name="k"/>
+		  </IDSArrayExprIndex>
+ 		  <LengthIdent name="tab" length="5"/>
+	  </IDSExprInf>
+	  </IDSExprLogicalAnd>
+
+	</IDSJMLForAll>
+       </IDSExprLogicalAnd>
+
+     </IDSJMLAssert>
+
+
+      <IDSJavaWhileStatment id="1">
+         <whileCond>
+	    <IDSExprInf>
+                 <IDSExprIdent name="i"/>
+		  <LengthIdent name="tab" length="5"/>
+	    </IDSExprInf>
+         </whileCond>
+         <whileBloc>
+            <IDSJavaBloc> 
+              	<IDSJavaAssignmentStatment name="s">
+	            <IDSExprPlus>
+	        	<IDSExprIdent name="s"/>
+                        <IDSExprTimes>
+		           <IDSArrayExprIndex name="tab">
+		           <IDSExprIdent name="i"/>
+		        </IDSArrayExprIndex>
+		        <IDSArrayExprIndex name="tab">
+		           <IDSExprIdent name="i"/>
+		        </IDSArrayExprIndex>
+                        </IDSExprTimes>
+                    </IDSExprPlus>
+	        </IDSJavaAssignmentStatment>
+             	<IDSJavaAssignmentStatment name="i">
+	            <IDSExprPlus>
+	        	<IDSExprIdent name="i"/>
+                        <IDSExprDecimalIntegerLiteral value="1" />
+	           </IDSExprPlus>
+	        </IDSJavaAssignmentStatment>
+            </IDSJavaBloc> 
+         </whileBloc>
+      </IDSJavaWhileStatment>
+  <IDSJavaReturnStatment>
+    <IDSExprIdent name="s"/>
+  </IDSJavaReturnStatment>
+  </IDSJavaBloc> 
+</IDSMethod>
+</method>
+
+
+
+
+

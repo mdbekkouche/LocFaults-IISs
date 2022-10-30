@@ -1,0 +1,270 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/1_Conditions_Fausses/BfV2KO/Bf7V2KO.java
+Loops are unwound 7 times.
+	CPLEX 12.3.0.0
+/***************************************************************/
+We will deviate 0 condition:
+
+bf_0_distance_0[0] := 0
+bf_0_distance_0[1] := 0
+bf_0_distance_0[2] := 0
+bf_0_distance_0[3] := 0
+bf_0_distance_0[4] := 0
+bf_0_distance_0[5] := 0
+bf_0_distance_0[6] := 0
+bf_0_Source_0[0] := 0
+bf_0_Source_0[1] := 1
+bf_0_Source_0[2] := 3
+bf_0_Source_0[3] := 2
+bf_0_Source_0[4] := 4
+bf_0_Source_0[5] := 2
+bf_0_Source_0[6] := 0
+bf_0_Dest_0[0] := 1
+bf_0_Dest_0[1] := 1
+bf_0_Dest_0[2] := 4
+bf_0_Dest_0[3] := 1
+bf_0_Dest_0[4] := 3
+bf_0_Dest_0[5] := 4
+bf_0_Dest_0[6] := 1
+bf_0_Weight_0[0] := 0
+bf_0_Weight_0[1] := 1
+bf_0_Weight_0[2] := 2
+bf_0_Weight_0[3] := 3
+bf_0_Weight_0[4] := 4
+bf_0_Weight_0[5] := 5
+bf_0_Weight_0[6] := 6
+bf_0_INFINITY_0 := 899
+bf_0_edgecount_0 := 7
+bf_0_nodecount_0 := 5
+bf_0_source_0 := 0
+bf_0_x_0 := 0
+bf_0_y_0 := 0
+bf_0_val_0 := 0
+bf_0_i_0 := 0
+bf_0_j_0 := 0
+bf_0_i_1 := 0
+bf_0_i_2 := ( bf_0_i_1 + 1 )
+bf_0_i_3 := ( bf_0_i_2 + 1 )
+bf_0_i_4 := ( bf_0_i_3 + 1 )
+bf_0_i_5 := ( bf_0_i_4 + 1 )
+bf_0_i_6 := ( bf_0_i_5 + 1 )
+bf_0_i_8 := bf_0_i_6
+bf_0_j_1 := 0
+bf_0_x_1 := bf_0_Dest_0[bf_0_j_1]
+bf_0_y_1 := bf_0_Source_0[bf_0_j_1]
+bf_0_val_1 := ( bf_0_distance_7[bf_0_y_1] + bf_0_Weight_0[bf_0_j_1] )
+bf_0_j_2 := ( bf_0_j_1 + 1 )
+bf_0_x_2 := bf_0_Dest_0[bf_0_j_2]
+bf_0_y_2 := bf_0_Source_0[bf_0_j_2]
+bf_0_val_2 := ( bf_0_distance_8[bf_0_y_2] + bf_0_Weight_0[bf_0_j_2] )
+bf_0_j_3 := ( bf_0_j_2 + 1 )
+bf_0_x_3 := bf_0_Dest_0[bf_0_j_3]
+bf_0_y_3 := bf_0_Source_0[bf_0_j_3]
+bf_0_val_3 := ( bf_0_distance_9[bf_0_y_3] + bf_0_Weight_0[bf_0_j_3] )
+bf_0_j_4 := ( bf_0_j_3 + 1 )
+bf_0_x_4 := bf_0_Dest_0[bf_0_j_4]
+bf_0_y_4 := bf_0_Source_0[bf_0_j_4]
+bf_0_val_4 := ( bf_0_distance_10[bf_0_y_4] + bf_0_Weight_0[bf_0_j_4] )
+bf_0_j_5 := ( bf_0_j_4 + 1 )
+bf_0_x_5 := bf_0_Dest_0[bf_0_j_5]
+bf_0_y_5 := bf_0_Source_0[bf_0_j_5]
+bf_0_val_5 := ( bf_0_distance_11[bf_0_y_5] + bf_0_Weight_0[bf_0_j_5] )
+bf_0_j_6 := ( bf_0_j_5 + 1 )
+bf_0_x_6 := bf_0_Dest_0[bf_0_j_6]
+bf_0_y_6 := bf_0_Source_0[bf_0_j_6]
+bf_0_val_6 := ( bf_0_distance_12[bf_0_y_6] + bf_0_Weight_0[bf_0_j_6] )
+bf_0_j_7 := ( bf_0_j_6 + 1 )
+bf_0_x_7 := bf_0_Dest_0[bf_0_j_7]
+bf_0_y_7 := bf_0_Source_0[bf_0_j_7]
+bf_0_val_7 := ( bf_0_distance_13[bf_0_y_7] + bf_0_Weight_0[bf_0_j_7] )
+bf_0_j_8 := ( bf_0_j_7 + 1 )
+bf_0_distance_1[bf_0_i_1] := -1
+bf_0_distance_2[bf_0_i_2] := bf_0_INFINITY_0
+bf_0_distance_3[bf_0_i_3] := bf_0_INFINITY_0
+bf_0_distance_4[bf_0_i_4] := bf_0_INFINITY_0
+bf_0_distance_5[bf_0_i_5] := bf_0_INFINITY_0
+bf_0_distance_7 := bf_0_distance_5
+bf_0_distance_8[bf_0_x_1] := bf_0_val_1
+bf_0_distance_9 := bf_0_distance_8
+bf_0_distance_10 := bf_0_distance_9
+bf_0_distance_11 := bf_0_distance_10
+bf_0_distance_12 := bf_0_distance_11
+bf_0_distance_13 := bf_0_distance_12
+bf_0_distance_14 := bf_0_distance_13
+( ( ( ( ( ( bf_0_distance_14[0] >= 0 ) && ( bf_0_distance_14[1] >= 0 ) ) && ( bf_0_distance_14[2] >= 0 ) ) && ( bf_0_distance_14[3] >= 0 ) ) && ( bf_0_distance_14[4] >= 0 ) ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{line 24}
+{line 27}
+{line 27}
+{line 27}
+{line 27}
+{line 0}
+{line 39}
+{line 0}
+{line 0}
+{line 0}
+{line 0}
+{line 0}
+{POST}
+{line 0}
+
+The execution time of the Method CAMUS:0.586
+
+MIVcard(ctrs,line 24)=1.0
+MIVcard(ctrs,line 27)=1.0
+MIVcard(ctrs,line 27)=1.0
+MIVcard(ctrs,line 27)=1.0
+MIVcard(ctrs,line 27)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 39)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,line 0)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 7
+/***************************************************************/
+
++++++++++++++++++++++++++++++++++++++++++++++++
+We will deviate 1 condition:
+line 23 : ( bf_0_i_1 == bf_0_source_0 )
++++++++++++++++++++++++++++++++++++++++++++++++
+This condition is suspected
+
+bf_0_distance_0[0] := 0
+bf_0_distance_0[1] := 0
+bf_0_distance_0[2] := 0
+bf_0_distance_0[3] := 0
+bf_0_distance_0[4] := 0
+bf_0_distance_0[5] := 0
+bf_0_distance_0[6] := 0
+bf_0_Source_0[0] := 0
+bf_0_Source_0[1] := 1
+bf_0_Source_0[2] := 3
+bf_0_Source_0[3] := 2
+bf_0_Source_0[4] := 4
+bf_0_Source_0[5] := 2
+bf_0_Source_0[6] := 0
+bf_0_Dest_0[0] := 1
+bf_0_Dest_0[1] := 1
+bf_0_Dest_0[2] := 4
+bf_0_Dest_0[3] := 1
+bf_0_Dest_0[4] := 3
+bf_0_Dest_0[5] := 4
+bf_0_Dest_0[6] := 1
+bf_0_Weight_0[0] := 0
+bf_0_Weight_0[1] := 1
+bf_0_Weight_0[2] := 2
+bf_0_Weight_0[3] := 3
+bf_0_Weight_0[4] := 4
+bf_0_Weight_0[5] := 5
+bf_0_Weight_0[6] := 6
+bf_0_INFINITY_0 := 899
+bf_0_edgecount_0 := 7
+bf_0_nodecount_0 := 5
+bf_0_source_0 := 0
+bf_0_x_0 := 0
+bf_0_y_0 := 0
+bf_0_val_0 := 0
+bf_0_i_0 := 0
+bf_0_j_0 := 0
+bf_0_i_1 := 0
+!( ( bf_0_i_1 == bf_0_source_0 ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{POST}
+{line 17}
+{line 21}
+
+The execution time of the Method CAMUS:0.185
+
+MIVcard(ctrs,line 17)=1.0
+MIVcard(ctrs,line 21)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 3
+/***************************************************************/
+
++++++++++++++++++++++++++++++++++++++++++++++++
+We will deviate 1 condition:
+line 22 : ( bf_0_i_1 < bf_0_nodecount_0 )
++++++++++++++++++++++++++++++++++++++++++++++++
+This condition is suspected
+
+bf_0_distance_0[0] := 0
+bf_0_distance_0[1] := 0
+bf_0_distance_0[2] := 0
+bf_0_distance_0[3] := 0
+bf_0_distance_0[4] := 0
+bf_0_distance_0[5] := 0
+bf_0_distance_0[6] := 0
+bf_0_Source_0[0] := 0
+bf_0_Source_0[1] := 1
+bf_0_Source_0[2] := 3
+bf_0_Source_0[3] := 2
+bf_0_Source_0[4] := 4
+bf_0_Source_0[5] := 2
+bf_0_Source_0[6] := 0
+bf_0_Dest_0[0] := 1
+bf_0_Dest_0[1] := 1
+bf_0_Dest_0[2] := 4
+bf_0_Dest_0[3] := 1
+bf_0_Dest_0[4] := 3
+bf_0_Dest_0[5] := 4
+bf_0_Dest_0[6] := 1
+bf_0_Weight_0[0] := 0
+bf_0_Weight_0[1] := 1
+bf_0_Weight_0[2] := 2
+bf_0_Weight_0[3] := 3
+bf_0_Weight_0[4] := 4
+bf_0_Weight_0[5] := 5
+bf_0_Weight_0[6] := 6
+bf_0_INFINITY_0 := 899
+bf_0_edgecount_0 := 7
+bf_0_nodecount_0 := 5
+bf_0_source_0 := 0
+bf_0_x_0 := 0
+bf_0_y_0 := 0
+bf_0_val_0 := 0
+bf_0_i_0 := 0
+bf_0_j_0 := 0
+bf_0_i_1 := 0
+!( ( bf_0_i_1 < bf_0_nodecount_0 ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{line 16}
+{POST}
+{line 21}
+
+The execution time of the Method CAMUS:0.095
+
+MIVcard(ctrs,line 16)=1.0
+MIVcard(ctrs,line 21)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 3
+/***************************************************************/
+
+
+The pretreatment time (the time of CFG building):0.758
+The time of DFS exploration and of MCSes calculation:0.971
+Suspicious instructions:24,27,39,23,17,21,22,16
+The number of suspicious instructions:8
+The sum of execution times of CAMUS method:0.8659999999999999
+
+Total elapsed time: 1.861 s.

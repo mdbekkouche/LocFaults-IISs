@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+ <?xml-stylesheet type="text/css" href="method.css"?> 
+ <!DOCTYPE method SYSTEM "method.dtd">
+<method>
+  <IDSMethod>
+    <IDSSignature returnType="int" name="binarySearch">
+    <IDSParameter type="int">
+      <IDSArrayExprIdent name="tab" length="64" />
+    </IDSParameter>
+    <IDSParameter type="int">
+      <IDSExprIdent name="x"/>
+    </IDSParameter>
+  </IDSSignature>
+  
+<IDSMethodSpecification>
+      <IDSRequiresClause>
+	<IDSJMLForAll>
+	  <IDSExprIdent name="i" />
+<IDSExprLogicalAnd>
+<IDSExprSupEqual>
+<IDSExprIdent name="i"/>
+<IDSExprDecimalIntegerLiteral value="0"/>
+</IDSExprSupEqual>
+<IDSExprInf>
+<IDSExprIdent name="i"/>
+<IDSExprMinus>
+<LengthIdent name="tab" length="64" />
+<IDSExprDecimalIntegerLiteral value="1"/>
+</IDSExprMinus>
+</IDSExprInf>
+</IDSExprLogicalAnd>
+<IDSExprInfEqual>
+<IDSArrayExprIndex name="tab">
+<IDSExprIdent name="i"/>
+</IDSArrayExprIndex>
+<IDSArrayExprIndex name="tab">
+<IDSExprPlus>
+<IDSExprIdent name="i"/>
+<IDSExprDecimalIntegerLiteral value="1"/>
+</IDSExprPlus>
+</IDSArrayExprIndex>
+</IDSExprInfEqual>
+</IDSJMLForAll>
+</IDSRequiresClause>
+<IDSEnsuresClause>
+<IDSExprLogicalAnd>
+<IDSExprJMLImplies>
+<IDSExprEquality>
+<IDSExprJMLResult />
+<IDSExprDecimalIntegerLiteral value="-1"/>
+</IDSExprEquality>
+<IDSJMLForAll>
+<IDSExprIdent name="i" />
+<IDSExprLogicalAnd>
+<IDSExprSupEqual>
+<IDSExprIdent name="i"/>
+<IDSExprDecimalIntegerLiteral value="0"/>
+</IDSExprSupEqual>
+<IDSExprInf>
+<IDSExprIdent name="i"/>
+<LengthIdent name="tab" length="64" />
+</IDSExprInf>
+</IDSExprLogicalAnd>
+<IDSExprLogicalNot>
+<IDSExprEquality>
+<IDSArrayExprIndex name="tab">
+<IDSExprIdent name="i"/>
+</IDSArrayExprIndex>
+<IDSExprIdent name="x"/>
+</IDSExprEquality>
+</IDSExprLogicalNot>
+</IDSJMLForAll>
+</IDSExprJMLImplies>
+<IDSExprJMLImplies>
+<IDSExprLogicalNot>
+<IDSExprEquality>
+<IDSExprJMLResult />
+<IDSExprDecimalIntegerLiteral value="-1"/>
+</IDSExprEquality>
+</IDSExprLogicalNot>
+<IDSExprEquality>
+<IDSArrayExprIndex name="tab">
+<IDSExprJMLResult />
+</IDSArrayExprIndex>
+<IDSExprIdent name="x"/>
+</IDSExprEquality>
+</IDSExprJMLImplies>
+</IDSExprLogicalAnd>
+</IDSEnsuresClause>
+</IDSMethodSpecification>
+  <!-- le code de la methode -->
+    <IDSJavaBloc>
+      <IDSJavaDeclVarStatment name="result" id="1">
+      <IDSExprDecimalIntegerLiteral value="-1"/>
+    </IDSJavaDeclVarStatment>
+      <IDSJavaDeclVarStatment name="milieu" id="2">
+      <IDSExprDecimalIntegerLiteral value="0"/>
+    </IDSJavaDeclVarStatment>
+      <IDSJavaDeclVarStatment name="gauche" id="3">
+      <IDSExprDecimalIntegerLiteral value="0"/>
+    </IDSJavaDeclVarStatment>
+      <IDSJavaDeclVarStatment name="droite" id="4">
+        <IDSExprMinus>
+          <LengthIdent name="tab" length="64" />
+          <IDSExprDecimalIntegerLiteral value="1"/>
+          </IDSExprMinus>
+        </IDSJavaDeclVarStatment>
+          <IDSJavaWhileStatment id="5">
+            <whileCond>
+              <IDSExprLogicalAnd>
+                <IDSExprEquality>
+                <IDSExprIdent name="result"/>
+                <IDSExprDecimalIntegerLiteral value="-1"/>
+                </IDSExprEquality>
+                  <IDSExprInfEqual>
+                  <IDSExprIdent name="gauche"/>
+                  <IDSExprIdent name="droite"/>
+                  </IDSExprInfEqual>
+                  </IDSExprLogicalAnd>
+                </whileCond>
+                  <whileBloc>
+                    <IDSJavaBloc>
+                      <IDSJavaAssignmentStatment name="milieu" id="6">
+                        <IDSExprDiv>
+                          <IDSExprPlus>
+                          <IDSExprIdent name="gauche"/>
+                          <IDSExprIdent name="droite"/>
+                          </IDSExprPlus>
+                          <IDSExprDecimalIntegerLiteral value="2"/>
+                          </IDSExprDiv>
+                        </IDSJavaAssignmentStatment>
+                          <IDSJavaIfStatment id="7">
+                            <cond>
+                              <IDSExprEquality>
+                              <IDSArrayExprIndex name="tab">
+                              <IDSExprIdent name="milieu"/>
+                              </IDSArrayExprIndex>
+                              <IDSExprIdent name="x"/>
+                              </IDSExprEquality>
+                            </cond>
+                            <if>
+                              <IDSJavaBloc>
+                                <IDSJavaAssignmentStatment name="result" id="8">
+                                <IDSExprIdent name="milieu"/>
+                              </IDSJavaAssignmentStatment>
+                            </IDSJavaBloc>
+                            </if>
+                            <else>
+                              <IDSJavaBloc>
+                                <IDSJavaIfStatment id="9">
+                                  <cond>
+                                    <IDSExprSup>
+                                    <IDSArrayExprIndex name="tab">
+                                    <IDSExprIdent name="milieu"/>
+                                    </IDSArrayExprIndex>
+                                    <IDSExprIdent name="x"/>
+                                    </IDSExprSup>
+                                  </cond>
+                                  <if>
+                                    <IDSJavaBloc>
+                                      <IDSJavaAssignmentStatment name="droite" id="16">
+                                        <IDSExprMinus>
+                                        <IDSExprIdent name="milieu"/>
+                                        <IDSExprDecimalIntegerLiteral value="1"/>
+                                        </IDSExprMinus>
+                                      </IDSJavaAssignmentStatment>
+                                    </IDSJavaBloc>
+                                    </if>
+                                    <else>
+                                      <IDSJavaBloc>
+                                        <IDSJavaAssignmentStatment name="gauche" id="11">
+                                          <IDSExprPlus>
+                                          <IDSExprIdent name="milieu"/>
+                                          <IDSExprDecimalIntegerLiteral value="1"/>
+                                          </IDSExprPlus>
+                                        </IDSJavaAssignmentStatment>
+                                      </IDSJavaBloc>
+                                      </else>
+                                    </IDSJavaIfStatment>
+                                  </IDSJavaBloc>
+                                  </else>
+                                </IDSJavaIfStatment>
+                              </IDSJavaBloc>
+                            </whileBloc>
+                          </IDSJavaWhileStatment>
+                            <IDSJavaReturnStatment id="12">
+                            <IDSExprIdent name="result"/>
+                          </IDSJavaReturnStatment>
+                            <IDSJavaReturnStatment id="13">
+                            <IDSExprDecimalIntegerLiteral value="1"/>
+                          </IDSJavaReturnStatment>
+                        </IDSJavaBloc>
+                      </IDSMethod>
+                      </method>

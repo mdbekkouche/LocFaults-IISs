@@ -1,0 +1,4 @@
+Changing how the isolation of infeasibility using the black box of CPLEX: We do not play on the preferences of constraints, in other words, we are looking to locat
+--Cette ligne, et les suivantes ci-dessous, seront ignorées--
+
+M    CplexLocalization.java

@@ -1,0 +1,8 @@
+package that contains classes to build a CFG from a java file.
+Java file is parsed using JDT which requires .jar in lib/java2CFG,
+JML specification is parsed using jml-release.jar in lib/java2CFG,
+
+java files are in CPBPV/javaFiles directory.
+
+The first node of the CFG is the requires node, the last node is the ensure node 
+(possibly empty, with condition true).

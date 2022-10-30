@@ -1,0 +1,516 @@
+<?xml version="1.0" ?>
+ <?xml-stylesheet type="text/css" href="method.css"?> 
+ <!DOCTYPE method SYSTEM "method.dtd">
+<method>
+  <IDSMethod>
+    <IDSSignature returnType="int" name="tritype">
+    <IDSParameter type="int">
+      <IDSExprIdent name="i"/>
+    </IDSParameter>
+    <IDSParameter type="int">
+      <IDSExprIdent name="j"/>
+    </IDSParameter>
+    <IDSParameter type="int">
+      <IDSExprIdent name="k"/>
+    </IDSParameter>
+  </IDSSignature>
+  
+<IDSMethodSpecification>
+<IDSRequiresClause>
+<IDSExprLogicalAnd>
+<IDSExprLogicalAnd>
+<IDSExprSupEqual>
+<IDSExprIdent name="i"/>
+<IDSExprDecimalIntegerLiteral value="0"/>
+</IDSExprSupEqual>
+<IDSExprSupEqual>
+<IDSExprIdent name="j"/>
+<IDSExprDecimalIntegerLiteral value="0"/>
+</IDSExprSupEqual>
+</IDSExprLogicalAnd>
+<IDSExprSupEqual>
+<IDSExprIdent name="k"/>
+<IDSExprDecimalIntegerLiteral value="0"/>
+</IDSExprSupEqual>
+</IDSExprLogicalAnd>
+</IDSRequiresClause>
+<IDSEnsuresClause>
+<IDSExprLogicalAnd>
+<IDSExprLogicalAnd>
+<IDSExprLogicalAnd>
+<IDSExprJMLImplies>
+<IDSExprLogicalOr>
+<IDSExprLogicalOr>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="j"/>
+</IDSExprPlus>
+<IDSExprIdent name="k"/>
+</IDSExprInfEqual>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="j"/>
+<IDSExprIdent name="k"/>
+</IDSExprPlus>
+<IDSExprIdent name="i"/>
+</IDSExprInfEqual>
+</IDSExprLogicalOr>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="k"/>
+</IDSExprPlus>
+<IDSExprIdent name="j"/>
+</IDSExprInfEqual>
+</IDSExprLogicalOr>
+<IDSExprEquality>
+<IDSExprJMLResult />
+<IDSExprDecimalIntegerLiteral value="4"/>
+</IDSExprEquality>
+</IDSExprJMLImplies>
+<IDSExprJMLImplies>
+<IDSExprLogicalAnd>
+<IDSExprLogicalNot>
+<IDSExprLogicalOr>
+<IDSExprLogicalOr>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="j"/>
+</IDSExprPlus>
+<IDSExprIdent name="k"/>
+</IDSExprInfEqual>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="j"/>
+<IDSExprIdent name="k"/>
+</IDSExprPlus>
+<IDSExprIdent name="i"/>
+</IDSExprInfEqual>
+</IDSExprLogicalOr>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="k"/>
+</IDSExprPlus>
+<IDSExprIdent name="j"/>
+</IDSExprInfEqual>
+</IDSExprLogicalOr>
+</IDSExprLogicalNot>
+<IDSExprLogicalAnd>
+<IDSExprEquality>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="j"/>
+</IDSExprEquality>
+<IDSExprEquality>
+<IDSExprIdent name="j"/>
+<IDSExprIdent name="k"/>
+</IDSExprEquality>
+</IDSExprLogicalAnd>
+</IDSExprLogicalAnd>
+<IDSExprEquality>
+<IDSExprJMLResult />
+<IDSExprDecimalIntegerLiteral value="3"/>
+</IDSExprEquality>
+</IDSExprJMLImplies>
+</IDSExprLogicalAnd>
+<IDSExprJMLImplies>
+<IDSExprLogicalAnd>
+<IDSExprLogicalAnd>
+<IDSExprLogicalNot>
+<IDSExprLogicalOr>
+<IDSExprLogicalOr>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="j"/>
+</IDSExprPlus>
+<IDSExprIdent name="k"/>
+</IDSExprInfEqual>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="j"/>
+<IDSExprIdent name="k"/>
+</IDSExprPlus>
+<IDSExprIdent name="i"/>
+</IDSExprInfEqual>
+</IDSExprLogicalOr>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="k"/>
+</IDSExprPlus>
+<IDSExprIdent name="j"/>
+</IDSExprInfEqual>
+</IDSExprLogicalOr>
+</IDSExprLogicalNot>
+<IDSExprLogicalNot>
+<IDSExprLogicalAnd>
+<IDSExprEquality>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="j"/>
+</IDSExprEquality>
+<IDSExprEquality>
+<IDSExprIdent name="j"/>
+<IDSExprIdent name="k"/>
+</IDSExprEquality>
+</IDSExprLogicalAnd>
+</IDSExprLogicalNot>
+</IDSExprLogicalAnd>
+<IDSExprLogicalOr>
+<IDSExprLogicalOr>
+<IDSExprEquality>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="j"/>
+</IDSExprEquality>
+<IDSExprEquality>
+<IDSExprIdent name="j"/>
+<IDSExprIdent name="k"/>
+</IDSExprEquality>
+</IDSExprLogicalOr>
+<IDSExprEquality>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="k"/>
+</IDSExprEquality>
+</IDSExprLogicalOr>
+</IDSExprLogicalAnd>
+<IDSExprEquality>
+<IDSExprJMLResult />
+<IDSExprDecimalIntegerLiteral value="2"/>
+</IDSExprEquality>
+</IDSExprJMLImplies>
+</IDSExprLogicalAnd>
+<IDSExprJMLImplies>
+<IDSExprLogicalAnd>
+<IDSExprLogicalAnd>
+<IDSExprLogicalNot>
+<IDSExprLogicalOr>
+<IDSExprLogicalOr>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="j"/>
+</IDSExprPlus>
+<IDSExprIdent name="k"/>
+</IDSExprInfEqual>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="j"/>
+<IDSExprIdent name="k"/>
+</IDSExprPlus>
+<IDSExprIdent name="i"/>
+</IDSExprInfEqual>
+</IDSExprLogicalOr>
+<IDSExprInfEqual>
+<IDSExprPlus>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="k"/>
+</IDSExprPlus>
+<IDSExprIdent name="j"/>
+</IDSExprInfEqual>
+</IDSExprLogicalOr>
+</IDSExprLogicalNot>
+<IDSExprLogicalNot>
+<IDSExprLogicalAnd>
+<IDSExprEquality>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="j"/>
+</IDSExprEquality>
+<IDSExprEquality>
+<IDSExprIdent name="j"/>
+<IDSExprIdent name="k"/>
+</IDSExprEquality>
+</IDSExprLogicalAnd>
+</IDSExprLogicalNot>
+</IDSExprLogicalAnd>
+<IDSExprLogicalNot>
+<IDSExprLogicalOr>
+<IDSExprLogicalOr>
+<IDSExprEquality>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="j"/>
+</IDSExprEquality>
+<IDSExprEquality>
+<IDSExprIdent name="j"/>
+<IDSExprIdent name="k"/>
+</IDSExprEquality>
+</IDSExprLogicalOr>
+<IDSExprEquality>
+<IDSExprIdent name="i"/>
+<IDSExprIdent name="k"/>
+</IDSExprEquality>
+</IDSExprLogicalOr>
+</IDSExprLogicalNot>
+</IDSExprLogicalAnd>
+<IDSExprEquality>
+<IDSExprJMLResult />
+<IDSExprDecimalIntegerLiteral value="1"/>
+</IDSExprEquality>
+</IDSExprJMLImplies>
+</IDSExprLogicalAnd>
+</IDSEnsuresClause>
+</IDSMethodSpecification>
+  <!-- le code de la methode -->
+    <IDSJavaBloc>
+      <IDSJavaDeclVarStatment name="trityp" id="1">
+    </IDSJavaDeclVarStatment>
+      <IDSJavaIfStatment id="2">
+        <cond>
+          <IDSExprLogicalOr>
+            <IDSExprLogicalOr>
+              <IDSExprEquality>
+              <IDSExprIdent name="i"/>
+              <IDSExprDecimalIntegerLiteral value="0"/>
+              </IDSExprEquality>
+                <IDSExprEquality>
+                <IDSExprIdent name="j"/>
+                <IDSExprDecimalIntegerLiteral value="0"/>
+                </IDSExprEquality>
+                </IDSExprLogicalOr>
+                  <IDSExprEquality>
+                  <IDSExprIdent name="k"/>
+                  <IDSExprDecimalIntegerLiteral value="0"/>
+                  </IDSExprEquality>
+                  </IDSExprLogicalOr>
+                </cond>
+                <if>
+                  <IDSJavaBloc>
+                    <IDSJavaAssignmentStatment name="trityp" id="3">
+                    <IDSExprDecimalIntegerLiteral value="4"/>
+                  </IDSJavaAssignmentStatment>
+                </IDSJavaBloc>
+                </if>
+                <else>
+                  <IDSJavaBloc>
+                    <IDSJavaAssignmentStatment name="trityp" id="4">
+                    <IDSExprDecimalIntegerLiteral value="0"/>
+                  </IDSJavaAssignmentStatment>
+                    <IDSJavaIfStatment id="5">
+                      <cond>
+                        <IDSExprEquality>
+                        <IDSExprIdent name="i"/>
+                        <IDSExprIdent name="j"/>
+                        </IDSExprEquality>
+                      </cond>
+                      <if>
+                        <IDSJavaBloc>
+                          <IDSJavaAssignmentStatment name="trityp" id="6">
+                            <IDSExprPlus>
+                            <IDSExprIdent name="trityp"/>
+                            <IDSExprDecimalIntegerLiteral value="1"/>
+                            </IDSExprPlus>
+                          </IDSJavaAssignmentStatment>
+                        </IDSJavaBloc>
+                        </if>
+                      </IDSJavaIfStatment>
+                        <IDSJavaIfStatment id="7">
+                          <cond>
+                            <IDSExprEquality>
+                            <IDSExprIdent name="i"/>
+                            <IDSExprIdent name="k"/>
+                            </IDSExprEquality>
+                          </cond>
+                          <if>
+                            <IDSJavaBloc>
+                              <IDSJavaAssignmentStatment name="trityp" id="8">
+                                <IDSExprPlus>
+                                <IDSExprIdent name="trityp"/>
+                                <IDSExprDecimalIntegerLiteral value="2"/>
+                                </IDSExprPlus>
+                              </IDSJavaAssignmentStatment>
+                            </IDSJavaBloc>
+                            </if>
+                          </IDSJavaIfStatment>
+                            <IDSJavaIfStatment id="9">
+                              <cond>
+                                <IDSExprEquality>
+                                <IDSExprIdent name="j"/>
+                                <IDSExprIdent name="k"/>
+                                </IDSExprEquality>
+                              </cond>
+                              <if>
+                                <IDSJavaBloc>
+                                  <IDSJavaAssignmentStatment name="trityp" id="10">
+                                    <IDSExprPlus>
+                                    <IDSExprIdent name="trityp"/>
+                                    <IDSExprDecimalIntegerLiteral value="3"/>
+                                    </IDSExprPlus>
+                                  </IDSJavaAssignmentStatment>
+                                </IDSJavaBloc>
+                                </if>
+                              </IDSJavaIfStatment>
+                                <IDSJavaIfStatment id="11">
+                                  <cond>
+                                    <IDSExprEquality>
+                                    <IDSExprIdent name="trityp"/>
+                                    <IDSExprDecimalIntegerLiteral value="0"/>
+                                    </IDSExprEquality>
+                                  </cond>
+                                  <if>
+                                    <IDSJavaBloc>
+                                      <IDSJavaIfStatment id="12">
+                                        <cond>
+                                          <IDSExprLogicalOr>
+                                            <IDSExprLogicalOr>
+                                              <IDSExprInfEqual>
+                                                <IDSExprPlus>
+                                                <IDSExprIdent name="i"/>
+                                                <IDSExprIdent name="j"/>
+                                                </IDSExprPlus>
+                                                <IDSExprIdent name="k"/>
+                                                </IDSExprInfEqual>
+                                                  <IDSExprInfEqual>
+                                                    <IDSExprPlus>
+                                                    <IDSExprIdent name="j"/>
+                                                    <IDSExprIdent name="k"/>
+                                                    </IDSExprPlus>
+                                                    <IDSExprIdent name="i"/>
+                                                    </IDSExprInfEqual>
+                                                    </IDSExprLogicalOr>
+                                                      <IDSExprInfEqual>
+                                                        <IDSExprPlus>
+                                                        <IDSExprIdent name="i"/>
+                                                        <IDSExprIdent name="k"/>
+                                                        </IDSExprPlus>
+                                                        <IDSExprIdent name="j"/>
+                                                        </IDSExprInfEqual>
+                                                        </IDSExprLogicalOr>
+                                                      </cond>
+                                                      <if>
+                                                        <IDSJavaBloc>
+                                                          <IDSJavaAssignmentStatment name="trityp" id="13">
+                                                          <IDSExprDecimalIntegerLiteral value="4"/>
+                                                        </IDSJavaAssignmentStatment>
+                                                      </IDSJavaBloc>
+                                                      </if>
+                                                      <else>
+                                                        <IDSJavaBloc>
+                                                          <IDSJavaAssignmentStatment name="trityp" id="14">
+                                                          <IDSExprDecimalIntegerLiteral value="1"/>
+                                                        </IDSJavaAssignmentStatment>
+                                                      </IDSJavaBloc>
+                                                      </else>
+                                                    </IDSJavaIfStatment>
+                                                  </IDSJavaBloc>
+                                                  </if>
+                                                  <else>
+                                                    <IDSJavaBloc>
+                                                      <IDSJavaIfStatment id="15">
+                                                        <cond>
+                                                          <IDSExprSup>
+                                                          <IDSExprIdent name="trityp"/>
+                                                          <IDSExprDecimalIntegerLiteral value="3"/>
+                                                          </IDSExprSup>
+                                                        </cond>
+                                                        <if>
+                                                          <IDSJavaBloc>
+                                                            <IDSJavaAssignmentStatment name="trityp" id="16">
+                                                            <IDSExprDecimalIntegerLiteral value="3"/>
+                                                          </IDSJavaAssignmentStatment>
+                                                        </IDSJavaBloc>
+                                                        </if>
+                                                        <else>
+                                                          <IDSJavaBloc>
+                                                            <IDSJavaIfStatment id="17">
+                                                              <cond>
+                                                                <IDSExprLogicalAnd>
+                                                                  <IDSExprEquality>
+                                                                  <IDSExprIdent name="trityp"/>
+                                                                  <IDSExprDecimalIntegerLiteral value="1"/>
+                                                                  </IDSExprEquality>
+                                                                    <IDSExprSup>
+                                                                      <IDSExprPlus>
+                                                                      <IDSExprIdent name="i"/>
+                                                                      <IDSExprIdent name="j"/>
+                                                                      </IDSExprPlus>
+                                                                      <IDSExprIdent name="k"/>
+                                                                      </IDSExprSup>
+                                                                      </IDSExprLogicalAnd>
+                                                                    </cond>
+                                                                    <if>
+                                                                      <IDSJavaBloc>
+                                                                        <IDSJavaAssignmentStatment name="trityp" id="18">
+                                                                        <IDSExprDecimalIntegerLiteral value="2"/>
+                                                                      </IDSJavaAssignmentStatment>
+                                                                    </IDSJavaBloc>
+                                                                    </if>
+                                                                    <else>
+                                                                      <IDSJavaBloc>
+                                                                        <IDSJavaIfStatment id="19">
+                                                                          <cond>
+                                                                            <IDSExprLogicalAnd>
+                                                                              <IDSExprEquality>
+                                                                              <IDSExprIdent name="trityp"/>
+                                                                              <IDSExprDecimalIntegerLiteral value="1"/>
+                                                                              </IDSExprEquality>
+                                                                                <IDSExprSup>
+                                                                                  <IDSExprPlus>
+                                                                                  <IDSExprIdent name="i"/>
+                                                                                  <IDSExprIdent name="k"/>
+                                                                                  </IDSExprPlus>
+                                                                                  <IDSExprIdent name="j"/>
+                                                                                  </IDSExprSup>
+                                                                                  </IDSExprLogicalAnd>
+                                                                                </cond>
+                                                                                <if>
+                                                                                  <IDSJavaBloc>
+                                                                                    <IDSJavaAssignmentStatment name="trityp" id="20">
+                                                                                    <IDSExprDecimalIntegerLiteral value="2"/>
+                                                                                  </IDSJavaAssignmentStatment>
+                                                                                </IDSJavaBloc>
+                                                                                </if>
+                                                                                <else>
+                                                                                  <IDSJavaBloc>
+                                                                                    <IDSJavaIfStatment id="21">
+                                                                                      <cond>
+                                                                                        <IDSExprLogicalAnd>
+                                                                                          <IDSExprEquality>
+                                                                                          <IDSExprIdent name="trityp"/>
+                                                                                          <IDSExprDecimalIntegerLiteral value="3"/>
+                                                                                          </IDSExprEquality>
+                                                                                            <IDSExprSup>
+                                                                                              <IDSExprPlus>
+                                                                                              <IDSExprIdent name="j"/>
+                                                                                              <IDSExprIdent name="k"/>
+                                                                                              </IDSExprPlus>
+                                                                                              <IDSExprIdent name="i"/>
+                                                                                              </IDSExprSup>
+                                                                                              </IDSExprLogicalAnd>
+                                                                                            </cond>
+                                                                                            <if>
+                                                                                              <IDSJavaBloc>
+                                                                                                <IDSJavaAssignmentStatment name="trityp" id="22">
+                                                                                                <IDSExprDecimalIntegerLiteral value="2"/>
+                                                                                              </IDSJavaAssignmentStatment>
+                                                                                            </IDSJavaBloc>
+                                                                                            </if>
+                                                                                            <else>
+                                                                                              <IDSJavaBloc>
+                                                                                                <IDSJavaAssignmentStatment name="trityp" id="23">
+                                                                                                <IDSExprDecimalIntegerLiteral value="4"/>
+                                                                                              </IDSJavaAssignmentStatment>
+                                                                                            </IDSJavaBloc>
+                                                                                            </else>
+                                                                                          </IDSJavaIfStatment>
+                                                                                        </IDSJavaBloc>
+                                                                                        </else>
+                                                                                      </IDSJavaIfStatment>
+                                                                                    </IDSJavaBloc>
+                                                                                    </else>
+                                                                                  </IDSJavaIfStatment>
+                                                                                </IDSJavaBloc>
+                                                                                </else>
+                                                                              </IDSJavaIfStatment>
+                                                                            </IDSJavaBloc>
+                                                                            </else>
+                                                                          </IDSJavaIfStatment>
+                                                                        </IDSJavaBloc>
+                                                                        </else>
+                                                                      </IDSJavaIfStatment>
+                                                                        <IDSJavaReturnStatment id="24">
+                                                                        <IDSExprIdent name="trityp"/>
+                                                                      </IDSJavaReturnStatment>
+                                                                    </IDSJavaBloc>
+                                                                  </IDSMethod>
+                                                                  </method>

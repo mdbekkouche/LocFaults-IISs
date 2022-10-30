@@ -1,0 +1,108 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/3_Conditions_Fausses/MidKO.java
+Loops are unwound 10 times.
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most '3' conditional statements.
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+mid_0_a_0 := 2 --> line -1
+mid_0_b_0 := 1 --> line -1
+mid_0_c_0 := 3 --> line -1
+mid_0_m_0 := 0 --> line 12
+mid_0_m_1 := mid_0_c_0 --> line 13
+mid_0_m_2 := mid_0_b_0 --> line 19
+( ( mid_0_m_2 == 2 ) ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{POST}
+{mid_0_b_0 := 1}
+{line 19}
+
+Runtime of the method that compute MCS: 0.051
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.059
+2. The sum of computation time of MCS isolations only: 0.051
+3. MCS found:
+Assignments
+{line 19}
+Conditions
+
+/***************************************************************/
+By deviating '1' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.0
+2. The sum of computation time of MCS isolations only: 0.051
+3. MCS found:
+Assignments
+Conditions
+
+/***************************************************************/
+By deviating '2' condition(s), we obtain:
+
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.001
+2. The sum of computation time of MCS isolations only: 0.051
+3. MCS found:
+Assignments
+Conditions
+
+/***************************************************************/
+By deviating '3' condition(s), we obtain:
+
+1. CSP_d:
+line 14(If) : ( mid_0_b_0 < mid_0_c_0 )
+line 23(If) : ( mid_0_a_0 > mid_0_b_0 )
+line 26(Else) : ( mid_0_a_0 > mid_0_c_0 )
+------------------------
+2. CSP_a:
+mid_0_a_0 := 2 --> line -1
+mid_0_b_0 := 1 --> line -1
+mid_0_c_0 := 3 --> line -1
+mid_0_m_0 := 0 --> line 12
+mid_0_m_1 := mid_0_c_0 --> line 13
+!( ( mid_0_b_0 < mid_0_c_0 ) ) --> line -2
+!( ( mid_0_a_0 > mid_0_b_0 ) ) --> line -2
+( mid_0_a_0 > mid_0_c_0 ) --> line -2
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{mid_0_a_0 := 2,mid_0_c_0 := 3}
+{mid_0_c_0 := 3,POST}
+{mid_0_b_0 := 1,mid_0_c_0 := 3}
+{mid_0_b_0 := 1,POST}
+{mid_0_a_0 := 2,mid_0_b_0 := 1}
+{mid_0_a_0 := 2,POST,POST}
+{POST,POST,POST}
+{mid_0_a_0 := 2,POST,POST}
+
+Runtime of the method that compute MCS: 0.243
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.249
+2. The sum of computation time of MCS isolations only: 0.294
+3. MCS found:
+Assignments
+Conditions
+{line 14,line 23,line 26}
+
+/***************************************************************/
+The final resulats:
+1. The pretreatment(CFG building) time: 0.467
+2. Elapsed time during DFS exploration and MCS calculation: 0.309
+Total elapsed time: 0.865 s.

@@ -1,0 +1,17 @@
+Program_name: TritypeKO
+Type_parameters_method: caller(int,int,int)
+Number_parameters_method: 3
+Program_file_name: /home/bekkouche/Documents/Outil/Plug-in-Eclipse-Aide-a-la-localisation-de-bugs-dans-un-programme-JAVA-master/LocFaults/benchmarks/0_Conditions_Fausses/TritypeKO.java
+Suspicious_instructions:
+Instruction: trityp=0
+Line_number: 25
+Instruction: trityp=trityp+2
+Line_number: 30
+Instruction: trityp=1
+Line_number: 54
+Instruction: return trityp
+Line_number: 68
+Instruction: if(i==k)
+Line_number: 29
+Instruction: if(trityp==2&&(i+k)>j)
+Line_number: 53

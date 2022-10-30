@@ -1,0 +1,45 @@
+Command exited with non-zero status 10
+0.21user 0.04system 0:00.30elapsed 85%CPU (0avgtext+0avgdata 5412maxresident)k
+16inputs+408outputs (0major+22484minor)pagefaults 0swaps
+
+Generating GOTO Program
+Pointer Analysis
+Adding Pointer Checks
+Starting Bounded Model Checking
+size of program expression: 94 assignments
+Generated 17 claims, 17 remaining
+Passing problem to MiniSAT
+Passing to decision procedure
+Running MiniSAT
+Solving with MiniSAT
+2716 variables, 5917 clauses
+SAT checker: negated claim is SATISFIABLE, i.e., does not hold
+Building error trace
+
+Counterexample:
+
+Violated property:
+  file /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO37/TcasKO37_SpecsC/TcasKO37_t164.c line 117
+  assertion
+  alt_sep == 1
+
+< 1 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO37/TcasKO37_SpecsC/TcasKO37_t164.c:102
+
+< 2 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO37/TcasKO37_SpecsC/TcasKO37_t164.c:77
+
+< 3 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO37/TcasKO37_SpecsC/TcasKO37_t164.c:81
+
+< 4 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO37/TcasKO37_SpecsC/TcasKO37_t164.c:84
+
+< 5 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO37/TcasKO37_SpecsC/TcasKO37_t164.c:108
+
+< 6 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO37/TcasKO37_SpecsC/TcasKO37_t164.c:117
+
+< 8 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO37/TcasKO37_SpecsC/TcasKO37_t164.c:75
+
+BUG Assist: No More suspects:
+VERIFICATION FAILED
+
+Suspicious instructions:102,77,81,84,108,117,75
+The number of suspicious instructions:7
+User time:0.21

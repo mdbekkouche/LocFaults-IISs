@@ -1,0 +1,16 @@
+To test the correct functionality of the implementation.
+
+C = {x0>=x1,x1>=5,x0+x1>=10,x0<=4} is infeasible.
+
+The faulty constraints obtained for the four methods : The faulty constraints obtained for the four methods
+
+1) Conflict Refiner
+The number of feasibility tests : ?
+Runtime : 0.001
+
+2) Deletion Filter
+
+
+--Cette ligne, et les suivantes ci-dessous, seront ignorées--
+
+M    Test.java

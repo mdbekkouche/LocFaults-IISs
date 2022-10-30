@@ -1,0 +1,54 @@
+Command exited with non-zero status 10
+0.62user 0.09system 0:00.80elapsed 89%CPU (0avgtext+0avgdata 5708maxresident)k
+8inputs+560outputs (0major+36815minor)pagefaults 0swaps
+Generating GOTO Program
+Pointer Analysis
+Adding Pointer Checks
+Starting Bounded Model Checking
+size of program expression: 94 assignments
+Generated 17 claims, 17 remaining
+Passing problem to MiniSAT
+Passing to decision procedure
+Running MiniSAT
+Solving with MiniSAT
+3196 variables, 7851 clauses
+SAT checker: negated claim is SATISFIABLE, i.e., does not hold
+Building error trace
+
+Counterexample:
+
+Violated property:
+  file /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c line 117
+  assertion
+  alt_sep == 2
+
+< 1 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:68
+
+< 2 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:77
+
+< 3 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:111
+
+< 4 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:102
+
+< 5 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:101
+
+< 6 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:98
+
+< 7 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:94
+
+< 8 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:117
+
+< 11 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:92
+
+< 12 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:89
+
+< 13 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:67
+
+< 14 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO9/TcasKO9_SpecsC/TcasKO9_t1225.c:85
+
+BUG Assist: No More suspects:
+VERIFICATION FAILED
+
+Suspicious instructions:68,77,111,102,101,98,94,117,92,89,67,85
+The number of suspicious instructions:12
+User time:0.62

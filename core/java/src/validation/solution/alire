@@ -1,0 +1,3 @@
+package contenant la représentation des solutions et des informations
+sur l'état des "solve()" qui ont été faits par les différents solveurs
+du système de validation

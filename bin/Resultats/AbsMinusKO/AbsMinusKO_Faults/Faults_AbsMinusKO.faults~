@@ -1,0 +1,47 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/1_Conditions_Fausses/AbsMinusKO.java
+Loops are unwound 10 times.
+	CPLEX 12.3.0.0
+/***************************************************************/
+We will deviate 0 condition:
+
+AbsMinusKO_0_i_0 := 0
+AbsMinusKO_0_j_0 := 1
+AbsMinusKO_0_result_0 := 0
+{}AbsMinusKO_0_k_0 := 0
+AbsMinusKO_0_k_1 := ( AbsMinusKO_0_k_0 + 1 )
+AbsMinusKO_0_result_1 := ( AbsMinusKO_0_i_0 - AbsMinusKO_0_j_0 )
+AbsMinusKO_0_Result_0 := AbsMinusKO_0_result_1
+( ( AbsMinusKO_0_result_1 == 1 ) )
+
+The system is infeasible
+------------------------
+The MCSes we obtain by running CAMUS method on this system:
+{AbsMinusKO_0_j_0 := 1}
+{AbsMinusKO_0_i_0 := 0}
+{line 17}
+{POST}
+
+The execution time of the Method CAMUS:0.054
+
+MIVcard(ctrs,AbsMinusKO_0_i_0 := 0)=1.0
+MIVcard(ctrs,AbsMinusKO_0_j_0 := 1)=1.0
+MIVcard(ctrs,line 17)=1.0
+MIVcard(ctrs,POST)=1.0
+
+The number of instructions suspected: 2
+/***************************************************************/
+
+
+The pretreatment time (the time of CFG building):0.701
+The time of DFS exploration and of MCSes calculation:0.07
+Suspicious instructions:17
+The number of suspicious instructions:1
+The sum of execution times of CAMUS method:0.054
+
+Total elapsed time: 0.896 s.

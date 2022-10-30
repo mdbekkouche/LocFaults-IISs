@@ -1,0 +1,83 @@
+<?xml version="1.0" ?>
+ <?xml-stylesheet type="text/css" href="method.css"?> 
+ <!DOCTYPE method SYSTEM "method.dtd">
+<method>
+  <IDSMethod>
+    <IDSSignature returnType="int" name="somme">
+    <IDSParameter type="int">
+      <IDSExprIdent name="n"/>
+    </IDSParameter>
+  </IDSSignature>
+  
+<IDSMethodSpecification>
+<IDSRequiresClause>
+<IDSExprSupEqual>
+<IDSExprIdent name="n"/>
+<IDSExprDecimalIntegerLiteral value="0"/>
+</IDSExprSupEqual>
+</IDSRequiresClause>
+<IDSEnsuresClause>
+<IDSExprEquality>
+<IDSExprJMLResult />
+<IDSExprDiv>
+<IDSExprTimes>
+<IDSExprTimes>
+<IDSExprIdent name="n"/>
+<IDSExprPlus>
+<IDSExprIdent name="n"/>
+<IDSExprDecimalIntegerLiteral value="1"/>
+</IDSExprPlus>
+</IDSExprTimes>
+<IDSExprPlus>
+<IDSExprTimes>
+<IDSExprIdent name="n"/>
+<IDSExprDecimalIntegerLiteral value="2"/>
+</IDSExprTimes>
+<IDSExprDecimalIntegerLiteral value="1"/>
+</IDSExprPlus>
+</IDSExprTimes>
+<IDSExprDecimalIntegerLiteral value="6"/>
+</IDSExprDiv>
+</IDSExprEquality>
+</IDSEnsuresClause>
+</IDSMethodSpecification>
+  <!-- le code de la methode -->
+    <IDSJavaBloc>
+      <IDSJavaDeclVarStatment name="i" id="1">
+    </IDSJavaDeclVarStatment>
+      <IDSJavaDeclVarStatment name="s" id="2">
+      <IDSExprDecimalIntegerLiteral value="0"/>
+    </IDSJavaDeclVarStatment>
+      <IDSJavaWhileStatment id="3">
+        <whileCond>
+          <IDSExprInfEqual>
+          <IDSExprIdent name="i"/>
+          <IDSExprIdent name="n"/>
+          </IDSExprInfEqual>
+        </whileCond>
+          <whileBloc>
+            <IDSJavaBloc>
+              <IDSJavaAssignmentStatment name="s" id="4">
+                <IDSExprPlus>
+                <IDSExprIdent name="s"/>
+                  <IDSExprTimes>
+                  <IDSExprIdent name="i"/>
+                  <IDSExprIdent name="i"/>
+                  </IDSExprTimes>
+                  </IDSExprPlus>
+                </IDSJavaAssignmentStatment>
+                  <IDSJavaAssignmentStatment name="i" id="5">
+                    <IDSExprPlus>
+                    <IDSExprIdent name="i"/>
+                    <IDSExprDecimalIntegerLiteral value="1"/>
+                    </IDSExprPlus>
+                  </IDSJavaAssignmentStatment>
+                </IDSJavaBloc>
+              </whileBloc>
+            </IDSJavaWhileStatment>
+              <IDSJavaReturnStatment id="6">
+              <IDSExprIdent name="s"/>
+            </IDSJavaReturnStatment>
+          </IDSJavaBloc>
+        </IDSMethod>
+        </method>

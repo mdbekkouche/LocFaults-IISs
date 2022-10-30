@@ -1,0 +1,255 @@
+DOING LOCALIZATION...
+NLS missing message: initializer_error in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_fileNotFound in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_IOError in: org.eclipse.core.internal.runtime.messages
+NLS missing message: fileInitializer_missingFileName in: org.eclipse.core.internal.runtime.messages
+
+Starting conversion of file: /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO29/TcasKO29_Specs/TcasKO29_t576.java
+Loops are unwound 10 times.
+
+From the counterexample, LocFaults calculates MCS by exploring the graph in DFS from top to bottom and by deviating at most '1' conditional statements.
+Solver: CPLEX
+/***************************************************************/
+By deviating '0' condition(s), we obtain:
+
+1. CSP_d: empty set
+------------------------
+2. CSP_a:
+tcas_0_Cur_Vertical_Sep_0 := 1118 --> line -1
+tcas_0_Own_Tracked_Alt_0 := 712 --> line -1
+tcas_0_Own_Tracked_Alt_Rate_0 := 261 --> line -1
+tcas_0_Other_Tracked_Alt_0 := 735 --> line -1
+tcas_0_Alt_Layer_Value_0 := 1 --> line -1
+tcas_0_Up_Separation_0 := 423 --> line -1
+tcas_0_Down_Separation_0 := 450 --> line -1
+tcas_0_Other_RAC_0 := 0 --> line -1
+tcas_0_Other_Capability_0 := 1 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[0] := 0 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[1] := 0 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[2] := 0 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[3] := 0 --> line -1
+tcas_0_OLEV_0 := 0 --> line 28
+tcas_0_MAXALTDIFF_0 := 0 --> line 29
+tcas_0_MINSEP_0 := 0 --> line 30
+tcas_0_NOZCROSS_0 := 0 --> line 31
+tcas_0_NO_INTENT_0 := 0 --> line 32
+tcas_0_TCAS_TA_0 := 0 --> line 33
+tcas_0_UNRESOLVED_0 := 0 --> line 34
+tcas_0_UPWARD_RA_0 := 0 --> line 35
+tcas_0_DOWNWARD_RA_0 := 0 --> line 36
+tcas_0_alt_sep_0 := 0 --> line 42
+tcas_0_upward_crossing_situation_0 := 0 --> line 44
+tcas_0_Inhibit_Biased_Climb_0 := 0 --> line 46
+tcas_0_upward_crossing_situation_0 := 0 --> line 47
+tcas_0_OLEV_1 := 600 --> line 48
+tcas_0_MAXALTDIFF_1 := 600 --> line 49
+tcas_0_MINSEP_1 := 300 --> line 50
+tcas_0_NOZCROSS_1 := 100 --> line 51
+tcas_0_NO_INTENT_1 := 0 --> line 52
+tcas_0_TCAS_TA_1 := 1 --> line 53
+tcas_0_UNRESOLVED_1 := 0 --> line 54
+tcas_0_UPWARD_RA_1 := 1 --> line 55
+tcas_0_DOWNWARD_RA_1 := 2 --> line 56
+tcas_0_alt_sep_1 := tcas_0_UNRESOLVED_1 --> line 64
+tcas_0_Inhibit_Biased_Climb_1 := tcas_0_Up_Separation_0 --> line 68
+tcas_0_Inhibit_Biased_Climb_2 := tcas_0_Up_Separation_0 --> line 86
+tcas_0_alt_sep_2 := tcas_0_UNRESOLVED_1 --> line 114
+tcas_0_Result_0 := tcas_0_alt_sep_2 --> line 117
+( ( tcas_0_alt_sep_2 == 1 ) ) --> line -2
+tcas_0_High_Confidence_0 := true --> line -1
+tcas_0_Two_of_Three_Reports_Valid_0 := true --> line -1
+tcas_0_Climb_Inhibit_0 := true --> line -1
+tcas_0_enabled_0 := false --> line 37
+tcas_0_tcas_equipped_0 := false --> line 38
+tcas_0_intent_not_known_0 := false --> line 39
+tcas_0_need_upward_RA_0 := false --> line 40
+tcas_0_need_downward_RA_0 := false --> line 41
+tcas_0_upward_preferred_0 := false --> line 43
+tcas_0_resultat_0 := false --> line 45
+tcas_0_Positive_RA_Alt_Thresh_1[0] := 400 --> line 57
+tcas_0_Positive_RA_Alt_Thresh_2[1] := 500 --> line 58
+tcas_0_Positive_RA_Alt_Thresh_3[2] := 640 --> line 59
+tcas_0_Positive_RA_Alt_Thresh_4[3] := 740 --> line 60
+tcas_0_enabled_1 := ( ( tcas_0_High_Confidence_0 && ( tcas_0_Own_Tracked_Alt_Rate_0 <= tcas_0_OLEV_1 ) ) && ( tcas_0_Cur_Vertical_Sep_0 > tcas_0_MAXALTDIFF_1 ) ) --> line 61
+tcas_0_tcas_equipped_1 := ( tcas_0_Other_Capability_0 == tcas_0_TCAS_TA_1 ) --> line 62
+tcas_0_intent_not_known_1 := ( tcas_0_Two_of_Three_Reports_Valid_0 && ( tcas_0_Other_RAC_0 == tcas_0_NO_INTENT_1 ) ) --> line 63
+tcas_0_resultat_1 := ( ( ( tcas_0_Other_Tracked_Alt_0 < tcas_0_Own_Tracked_Alt_0 ) && ( tcas_0_Cur_Vertical_Sep_0 >= tcas_0_MINSEP_1 ) ) && ( tcas_0_Up_Separation_0 >= tcas_0_Positive_RA_Alt_Thresh_4[tcas_0_Alt_Layer_Value_0] ) ) --> line 81
+tcas_0_need_upward_RA_1 := ( tcas_0_resultat_1 && ( tcas_0_Own_Tracked_Alt_0 < tcas_0_Other_Tracked_Alt_0 ) ) --> line 84
+tcas_0_resultat_2 := ( !( ( tcas_0_Other_Tracked_Alt_0 < tcas_0_Own_Tracked_Alt_0 ) ) || ( ( tcas_0_Other_Tracked_Alt_0 < tcas_0_Own_Tracked_Alt_0 ) && ( tcas_0_Up_Separation_0 >= tcas_0_Positive_RA_Alt_Thresh_4[tcas_0_Alt_Layer_Value_0] ) ) ) --> line 98
+tcas_0_need_downward_RA_1 := ( tcas_0_resultat_2 && ( tcas_0_Other_Tracked_Alt_0 < tcas_0_Own_Tracked_Alt_0 ) ) --> line 101
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 54.0}
+{line 114.0}
+
+Runtime of the method that compute MCS: 0.137
+MIVcard(ctrs,line 54)=1.0
+MIVcard(ctrs,line 114)=1.0
+
+The number of instructions suspected: 2
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.216
+2. The sum of computation time of MCS isolations only: 0.137
+/***************************************************************/
+By deviating '1' condition(s), we obtain:
+
+1. CSP_d:
+line 75(Else) : ( tcas_0_Inhibit_Biased_Climb_1 > tcas_0_Down_Separation_0 )
+------------------------
+2. CSP_a:
+tcas_0_Cur_Vertical_Sep_0 := 1118 --> line -1
+tcas_0_Own_Tracked_Alt_0 := 712 --> line -1
+tcas_0_Own_Tracked_Alt_Rate_0 := 261 --> line -1
+tcas_0_Other_Tracked_Alt_0 := 735 --> line -1
+tcas_0_Alt_Layer_Value_0 := 1 --> line -1
+tcas_0_Up_Separation_0 := 423 --> line -1
+tcas_0_Down_Separation_0 := 450 --> line -1
+tcas_0_Other_RAC_0 := 0 --> line -1
+tcas_0_Other_Capability_0 := 1 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[0] := 0 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[1] := 0 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[2] := 0 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[3] := 0 --> line -1
+tcas_0_OLEV_0 := 0 --> line 28
+tcas_0_MAXALTDIFF_0 := 0 --> line 29
+tcas_0_MINSEP_0 := 0 --> line 30
+tcas_0_NOZCROSS_0 := 0 --> line 31
+tcas_0_NO_INTENT_0 := 0 --> line 32
+tcas_0_TCAS_TA_0 := 0 --> line 33
+tcas_0_UNRESOLVED_0 := 0 --> line 34
+tcas_0_UPWARD_RA_0 := 0 --> line 35
+tcas_0_DOWNWARD_RA_0 := 0 --> line 36
+tcas_0_alt_sep_0 := 0 --> line 42
+tcas_0_upward_crossing_situation_0 := 0 --> line 44
+tcas_0_Inhibit_Biased_Climb_0 := 0 --> line 46
+tcas_0_upward_crossing_situation_0 := 0 --> line 47
+tcas_0_OLEV_1 := 600 --> line 48
+tcas_0_MAXALTDIFF_1 := 600 --> line 49
+tcas_0_MINSEP_1 := 300 --> line 50
+tcas_0_NOZCROSS_1 := 100 --> line 51
+tcas_0_NO_INTENT_1 := 0 --> line 52
+tcas_0_TCAS_TA_1 := 1 --> line 53
+tcas_0_UNRESOLVED_1 := 0 --> line 54
+tcas_0_UPWARD_RA_1 := 1 --> line 55
+tcas_0_DOWNWARD_RA_1 := 2 --> line 56
+tcas_0_alt_sep_1 := tcas_0_UNRESOLVED_1 --> line 64
+tcas_0_Inhibit_Biased_Climb_1 := tcas_0_Up_Separation_0 --> line 68
+( tcas_0_Inhibit_Biased_Climb_1 > tcas_0_Down_Separation_0 ) --> line -2
+tcas_0_High_Confidence_0 := true --> line -1
+tcas_0_Two_of_Three_Reports_Valid_0 := true --> line -1
+tcas_0_Climb_Inhibit_0 := true --> line -1
+tcas_0_enabled_0 := false --> line 37
+tcas_0_tcas_equipped_0 := false --> line 38
+tcas_0_intent_not_known_0 := false --> line 39
+tcas_0_need_upward_RA_0 := false --> line 40
+tcas_0_need_downward_RA_0 := false --> line 41
+tcas_0_upward_preferred_0 := false --> line 43
+tcas_0_resultat_0 := false --> line 45
+tcas_0_Positive_RA_Alt_Thresh_1[0] := 400 --> line 57
+tcas_0_Positive_RA_Alt_Thresh_2[1] := 500 --> line 58
+tcas_0_Positive_RA_Alt_Thresh_3[2] := 640 --> line 59
+tcas_0_Positive_RA_Alt_Thresh_4[3] := 740 --> line 60
+tcas_0_enabled_1 := ( ( tcas_0_High_Confidence_0 && ( tcas_0_Own_Tracked_Alt_Rate_0 <= tcas_0_OLEV_1 ) ) && ( tcas_0_Cur_Vertical_Sep_0 > tcas_0_MAXALTDIFF_1 ) ) --> line 61
+tcas_0_tcas_equipped_1 := ( tcas_0_Other_Capability_0 == tcas_0_TCAS_TA_1 ) --> line 62
+tcas_0_intent_not_known_1 := ( tcas_0_Two_of_Three_Reports_Valid_0 && ( tcas_0_Other_RAC_0 == tcas_0_NO_INTENT_1 ) ) --> line 63
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 68.0}
+
+Runtime of the method that compute MCS: 0.06
+MIVcard(ctrs,line 68)=1.0
+
+The number of instructions suspected: 1
+1. CSP_d:
+line 108(Else) : tcas_0_need_upward_RA_1
+------------------------
+2. CSP_a:
+tcas_0_Cur_Vertical_Sep_0 := 1118 --> line -1
+tcas_0_Own_Tracked_Alt_0 := 712 --> line -1
+tcas_0_Own_Tracked_Alt_Rate_0 := 261 --> line -1
+tcas_0_Other_Tracked_Alt_0 := 735 --> line -1
+tcas_0_Alt_Layer_Value_0 := 1 --> line -1
+tcas_0_Up_Separation_0 := 423 --> line -1
+tcas_0_Down_Separation_0 := 450 --> line -1
+tcas_0_Other_RAC_0 := 0 --> line -1
+tcas_0_Other_Capability_0 := 1 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[0] := 0 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[1] := 0 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[2] := 0 --> line -1
+tcas_0_Positive_RA_Alt_Thresh_0[3] := 0 --> line -1
+tcas_0_OLEV_0 := 0 --> line 28
+tcas_0_MAXALTDIFF_0 := 0 --> line 29
+tcas_0_MINSEP_0 := 0 --> line 30
+tcas_0_NOZCROSS_0 := 0 --> line 31
+tcas_0_NO_INTENT_0 := 0 --> line 32
+tcas_0_TCAS_TA_0 := 0 --> line 33
+tcas_0_UNRESOLVED_0 := 0 --> line 34
+tcas_0_UPWARD_RA_0 := 0 --> line 35
+tcas_0_DOWNWARD_RA_0 := 0 --> line 36
+tcas_0_alt_sep_0 := 0 --> line 42
+tcas_0_upward_crossing_situation_0 := 0 --> line 44
+tcas_0_Inhibit_Biased_Climb_0 := 0 --> line 46
+tcas_0_upward_crossing_situation_0 := 0 --> line 47
+tcas_0_OLEV_1 := 600 --> line 48
+tcas_0_MAXALTDIFF_1 := 600 --> line 49
+tcas_0_MINSEP_1 := 300 --> line 50
+tcas_0_NOZCROSS_1 := 100 --> line 51
+tcas_0_NO_INTENT_1 := 0 --> line 52
+tcas_0_TCAS_TA_1 := 1 --> line 53
+tcas_0_UNRESOLVED_1 := 0 --> line 54
+tcas_0_UPWARD_RA_1 := 1 --> line 55
+tcas_0_DOWNWARD_RA_1 := 2 --> line 56
+tcas_0_alt_sep_1 := tcas_0_UNRESOLVED_1 --> line 64
+tcas_0_Inhibit_Biased_Climb_1 := tcas_0_Up_Separation_0 --> line 68
+tcas_0_Inhibit_Biased_Climb_2 := tcas_0_Up_Separation_0 --> line 86
+tcas_0_need_upward_RA_1 --> line -2
+tcas_0_High_Confidence_0 := true --> line -1
+tcas_0_Two_of_Three_Reports_Valid_0 := true --> line -1
+tcas_0_Climb_Inhibit_0 := true --> line -1
+tcas_0_enabled_0 := false --> line 37
+tcas_0_tcas_equipped_0 := false --> line 38
+tcas_0_intent_not_known_0 := false --> line 39
+tcas_0_need_upward_RA_0 := false --> line 40
+tcas_0_need_downward_RA_0 := false --> line 41
+tcas_0_upward_preferred_0 := false --> line 43
+tcas_0_resultat_0 := false --> line 45
+tcas_0_Positive_RA_Alt_Thresh_1[0] := 400 --> line 57
+tcas_0_Positive_RA_Alt_Thresh_2[1] := 500 --> line 58
+tcas_0_Positive_RA_Alt_Thresh_3[2] := 640 --> line 59
+tcas_0_Positive_RA_Alt_Thresh_4[3] := 740 --> line 60
+tcas_0_enabled_1 := ( ( tcas_0_High_Confidence_0 && ( tcas_0_Own_Tracked_Alt_Rate_0 <= tcas_0_OLEV_1 ) ) && ( tcas_0_Cur_Vertical_Sep_0 > tcas_0_MAXALTDIFF_1 ) ) --> line 61
+tcas_0_tcas_equipped_1 := ( tcas_0_Other_Capability_0 == tcas_0_TCAS_TA_1 ) --> line 62
+tcas_0_intent_not_known_1 := ( tcas_0_Two_of_Three_Reports_Valid_0 && ( tcas_0_Other_RAC_0 == tcas_0_NO_INTENT_1 ) ) --> line 63
+tcas_0_resultat_1 := ( ( ( tcas_0_Other_Tracked_Alt_0 < tcas_0_Own_Tracked_Alt_0 ) && ( tcas_0_Cur_Vertical_Sep_0 >= tcas_0_MINSEP_1 ) ) && ( tcas_0_Up_Separation_0 >= tcas_0_Positive_RA_Alt_Thresh_4[tcas_0_Alt_Layer_Value_0] ) ) --> line 81
+tcas_0_need_upward_RA_1 := ( tcas_0_resultat_1 && ( tcas_0_Own_Tracked_Alt_0 < tcas_0_Other_Tracked_Alt_0 ) ) --> line 84
+tcas_0_resultat_2 := ( !( ( tcas_0_Other_Tracked_Alt_0 < tcas_0_Own_Tracked_Alt_0 ) ) || ( ( tcas_0_Other_Tracked_Alt_0 < tcas_0_Own_Tracked_Alt_0 ) && ( tcas_0_Up_Separation_0 >= tcas_0_Positive_RA_Alt_Thresh_4[tcas_0_Alt_Layer_Value_0] ) ) ) --> line 98
+tcas_0_need_downward_RA_1 := ( tcas_0_resultat_2 && ( tcas_0_Other_Tracked_Alt_0 < tcas_0_Own_Tracked_Alt_0 ) ) --> line 101
+
+The system is infeasible
+------------------------
+3. MCS in CSP_a:
+{line 81.0}
+{line 84.0}
+
+Runtime of the method that compute MCS: 0.126
+MIVcard(ctrs,line 81)=1.0
+MIVcard(ctrs,line 84)=1.0
+
+The number of instructions suspected: 2
+
+The resulats:
+1. Elapsed time during DFS exploration and MCS calculation: 0.261
+2. The sum of computation time of MCS isolations only: 0.186
+/***************************************************************/
+The final resulats:
+1. The pretreatment(CFG building) time: 1.534
+2. Total elapsed time during DFS exploration and MCS calculation: 0.477
+3. Suspicious instructions:54,114,75,68,108,81,84
+4. The number of suspicious instructions:7
+
+Total elapsed time: 2.255 s.

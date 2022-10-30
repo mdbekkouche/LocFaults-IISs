@@ -1,0 +1,176 @@
+<!-- IDS d'une methode -->
+<!-- ***************** -->
+
+<!-- Tous les elements qui commencent par IDS sont dans l'IDS du projet java
+     les modifications par rapport au projet java sont indiquees en commentaire -->
+
+
+<!-- la syntaxe des expressions -->
+
+<!-- les expressions entieres -->
+<!-- j'ai enleve expr a la fin : IDSExprPlusEpr devient IDSExprPlus -->
+<!ENTITY % ExprInt "(IDSExprIdent|IDSArrayExprIndex|LengthIdent|IDSExprPlus|IDSExprMinus|IDSExprTimes|IDSExprDecimalIntegerLiteral|IDSExprParenthesis|IDSExprJMLResult)">
+
+<!ELEMENT IDSExprPlus (%ExprInt;,(%ExprInt;)+)>
+<!ELEMENT IDSExprMinus (%ExprInt;,(%ExprInt;)+)>
+<!ELEMENT IDSExprTimes (%ExprInt;,(%ExprInt;)+)>
+<!ELEMENT IDSExprDiv (%ExprInt;,(%ExprInt;)+)>
+<!ELEMENT IDSExprDecimalIntegerLiteral EMPTY>
+<!ATTLIST IDSExprDecimalIntegerLiteral value CDATA #IMPLIED>
+<!-- ******** -->
+
+<!-- les expressions logiques -->
+<!-- j'ai rajoute ExprLogical en racine de toutes les expressions logiques -->
+<!-- j'ai enleve expr a la fin : IDSExprLogicalOrEpr devient IDSExprLogicalOr -->
+<!ENTITY % ExprLogical "(IDSExprLogicalOr|IDSExprLogicalAnd|IDSExprLogicalNot|IDSExprParenthesis|IDSExprEquality|IDSExprSup|IDSExprInf|IDSExprJMLimplies|IDSJMLForAll|IDSJMLExist|IDSJMLAssert|IDSJMLAlldiff)">
+
+<!ELEMENT IDSExprLogicalOr (%ExprLogical;,(%ExprLogical;)+)>
+<!ELEMENT IDSExprLogicalAnd (%ExprLogical;,(%ExprLogical;)+)>
+<!ELEMENT IDSExprLogicalNot (%ExprLogical;)>
+<!ELEMENT IDSExprJMLimplies (%ExprLogical;,%ExprLogical;)>
+
+<!-- couple d'expressions entieres pour les operations de comparaison -->
+<!ENTITY % Compare "(%ExprInt;,%ExprInt;)">
+
+<!-- operateurs de comparaison -->
+<!ELEMENT IDSExprEquality (%Compare;)>
+<!ELEMENT IDSExprSup (%Compare;)>
+<!ELEMENT IDSExprInf (%Compare;)>
+<!ELEMENT IDSExprSupEqual (%Compare;)>
+<!ELEMENT IDSExprInfEqual (%Compare;)>
+
+<!-- ******** -->
+
+<!-- les parentheses -->
+<!ELEMENT IDSExprParenthesis (%ExprLogical;|%ExprInt;)*>
+
+<!-- **************************************************** -->
+<!-- element racine : la methode -->
+
+<!-- fichier a analyser -->
+<!ELEMENT method (methodComment+,IDSMethod)>
+
+<!ELEMENT methodComment (#PCDATA)>
+
+<!-- signature, specification, program -->
+<!ELEMENT IDSMethod (IDSSignature,IDSMethodSpecification,IDSJavaBloc)>
+
+<!-- signature = parametres -->
+<!ELEMENT IDSSignature (IDSParameter)>
+<!ATTLIST IDSSignature returnType CDATA #IMPLIED
+                    name CDATA #IMPLIED>
+
+
+<!-- les parametres -->
+<!ELEMENT IDSParameter (IDSExprIdent|IDSArrayExprIdent)>
+<!ATTLIST IDSParameter type CDATA #IMPLIED>
+
+
+<!-- la specification = requires optionnel et ensure obligatoire -->
+<!ELEMENT IDSMethodSpecification (IDSRequiresClause+,IDSEnsuresClause)>
+
+<!-- requires et ensures -->
+<!ELEMENT IDSRequiresClause (%ExprLogical;)>
+<!ELEMENT IDSEnsuresClause (%ExprLogical;)>
+
+<!-- ASSERT -->
+<!ELEMENT IDSJMLAssert (%ExprLogical;)>
+
+<!-- ALLDIFF -->
+<!ELEMENT IDSJMLAlldiff (IDSArrayExprIdent)>
+
+
+<!-- le \result de la specification -->
+<!-- dans jmlTT, IDSExprB_Result avec attribut name="" -->
+<!ELEMENT IDSExprJMLResult EMPTY>
+
+
+<!-- **************************************************** -->
+
+<!-- un bloc java : declaration de variables, affectation, if, while -->
+<!ENTITY % javaBloc "(IDSJavaDeclVarStatment*,(IDSJavaAssignmentStatment*|IDSJavaIfStatment*|IDSJavaWhileStatment*))">
+
+<!-- le programme = un bloc java suivi eventuellement de return -->
+<!ELEMENT IDSJavaBloc (%javaBloc;,IDSJavaReturnStatment?)>
+
+<!-- variables simples -->
+
+<!-- declaration -->
+<!ELEMENT IDSJavaDeclVarStatment (%ExprInt;)>
+<!ATTLIST IDSJavaDeclVarStatment name CDATA #IMPLIED>
+
+<!-- les identificateurs -->
+<!-- A CHANGER : name = nom dans projet SI2 -->
+<!ELEMENT IDSExprIdent EMPTY>
+<!ATTLIST IDSExprIdent name CDATA #IMPLIED> 
+
+<!-- affectation -->
+<!ELEMENT IDSJavaAssignmentStatment (%ExprInt;)+>
+<!ATTLIST IDSJavaAssignmentStatment name CDATA #IMPLIED>
+
+<!-- les tableaux -->
+
+
+<!-- variable pour représenter la longueur du tableau -->
+<!--  name  est le nom du tableau associé, -->
+<!--  la longueur se trouve dans la var tableau elle-même  -->
+<!ELEMENT LengthIdent EMPTY>
+<!ATTLIST  LengthIdent
+           name CDATA #IMPLIED>
+
+<!-- declaration -->
+<!ELEMENT IDSJavaDeclArrayStatment EMPTY>
+<!ATTLIST IDSJavaDeclArrayStatment 
+          length CDATA #IMPLIED
+          name CDATA #IMPLIED>
+
+<!-- les identificateurs -->
+<!ELEMENT IDSArrayExprIdent EMPTY>
+<!ATTLIST IDSArrayExprIdent 
+           length CDATA #IMPLIED
+           name CDATA #IMPLIED>
+
+<!-- les valeurs  -->
+<!ELEMENT IDSArrayExprIndex (%ExprInt;)+>
+<!ATTLIST IDSArrayExprIndex 
+           name CDATA #IMPLIED>
+
+<!-- affectation -->
+<!-- indice et valeur -->
+<!ELEMENT IDSJavaArrayAssignmentStatment (%ExprInt;,%ExprInt;)+>
+<!ATTLIST IDSJavaArrayAssignmentStatment 
+           name CDATA #IMPLIED>
+
+<!-- JML sur les tableaux -->
+
+<!-- for all -->
+<!-- la variable entière d'index, la condition à vérifier pour la variable d'index, -->
+<!-- la condition à vérifier -->
+<!ELEMENT IDSJMLForAll (IDSExprIdent,%ExprLogical;,%ExprLogical;)+>
+
+
+<!-- exist -->
+<!-- la variable entière d'index,  la condition à vérifier par la variable d'index, -->
+<!-- la condition à vérifier -->
+<!ELEMENT IDSJMLExist (IDSExprIdent,%ExprLogical;,%ExprLogical;)+>
+
+
+
+<!-- if -->
+<!ELEMENT IDSJavaIfStatment (cond,if,else?)>
+<!ELEMENT cond (%ExprLogical;)>
+<!ELEMENT if (%javaBloc;)>
+<!ELEMENT else (%javaBloc;)>
+
+
+<!-- while -->
+<!ELEMENT IDSJavaWhileStatment (whileCond,whileBloc)>
+<!ATTLIST IDSJavaWhileStatment ident CDATA #IMPLIED>
+
+<!ELEMENT whileCond (%ExprLogical;)>
+<!ELEMENT whileBloc (%javaBloc;)>
+
+<!-- return -->
+<!ELEMENT IDSJavaReturnStatment (%ExprInt;)>
+
+

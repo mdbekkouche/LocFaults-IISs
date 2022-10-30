@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+ <?xml-stylesheet type="text/css" href="method.css"?> 
+ <!DOCTYPE method SYSTEM "method.dtd">
+<method>
+  <IDSMethod>
+    <IDSSignature returnType="int" name="somme">
+    <IDSParameter type="int">
+      <IDSExprIdent name="n"/>
+    </IDSParameter>
+     <IDSParameter type="int">
+      <IDSExprIdent name="p"/>
+    </IDSParameter>
+ </IDSSignature>
+  
+<IDSMethodSpecification>
+<IDSRequiresClause>
+<IDSExprLogicalAnd>
+
+<IDSExprLogicalAnd>
+
+<IDSExprSupEqual>
+<IDSExprIdent name="n"/>
+<IDSExprDecimalIntegerLiteral value="0"/>
+</IDSExprSupEqual>
+
+<IDSExprSupEqual>
+<IDSExprIdent name="p"/>
+<IDSExprDecimalIntegerLiteral value="0"/>
+</IDSExprSupEqual>
+</IDSExprLogicalAnd>
+
+<IDSExprInfEqual>
+<IDSExprIdent name="p"/>
+<IDSExprIdent name="n"/>
+</IDSExprInfEqual>
+
+
+</IDSExprLogicalAnd>
+
+
+</IDSRequiresClause>
+<IDSEnsuresClause>
+<IDSExprEquality>
+<IDSExprJMLResult />
+
+<IDSExprMinus>
+
+<IDSExprDiv>
+<IDSExprTimes>
+<IDSExprTimes>
+<IDSExprIdent name="n"/>
+<IDSExprPlus>
+<IDSExprIdent name="n"/>
+<IDSExprDecimalIntegerLiteral value="1"/>
+</IDSExprPlus>
+</IDSExprTimes>
+<IDSExprPlus>
+<IDSExprTimes>
+<IDSExprIdent name="n"/>
+<IDSExprDecimalIntegerLiteral value="2"/>
+</IDSExprTimes>
+<IDSExprDecimalIntegerLiteral value="1"/>
+</IDSExprPlus>
+</IDSExprTimes>
+<IDSExprDecimalIntegerLiteral value="6"/>
+</IDSExprDiv>
+
+<IDSExprDiv>
+<IDSExprTimes>
+<IDSExprTimes>
+<IDSExprMinus>
+  <IDSExprIdent name="p"/>
+  <IDSExprDecimalIntegerLiteral value="1"/>
+</IDSExprMinus>
+
+
+<IDSExprIdent name="p"/>
+
+</IDSExprTimes>
+<IDSExprPlus>
+<IDSExprTimes>
+<IDSExprMinus>
+  <IDSExprIdent name="p"/>
+  <IDSExprDecimalIntegerLiteral value="1"/>
+</IDSExprMinus>
+
+<IDSExprDecimalIntegerLiteral value="2"/>
+</IDSExprTimes>
+<IDSExprDecimalIntegerLiteral value="1"/>
+</IDSExprPlus>
+</IDSExprTimes>
+<IDSExprDecimalIntegerLiteral value="6"/>
+</IDSExprDiv>
+</IDSExprMinus>
+
+</IDSExprEquality>
+</IDSEnsuresClause>
+</IDSMethodSpecification>
+  <!-- le code de la methode -->
+    <IDSJavaBloc>
+      <IDSJavaDeclVarStatment name="i" id="1">
+    </IDSJavaDeclVarStatment>
+      <IDSJavaDeclVarStatment name="s" id="2">
+      <IDSExprDecimalIntegerLiteral value="0"/>
+    </IDSJavaDeclVarStatment>
+      <IDSJavaAssignmentStatment name="i" id="4">
+         <IDSExprIdent name="p"/>
+      </IDSJavaAssignmentStatment>
+
+      <IDSJavaWhileStatment id="3">
+        <whileCond>
+          <IDSExprInfEqual>
+          <IDSExprIdent name="i"/>
+          <IDSExprIdent name="n"/>
+          </IDSExprInfEqual>
+        </whileCond>
+          <whileBloc>
+            <IDSJavaBloc>
+              <IDSJavaAssignmentStatment name="s" id="4">
+                <IDSExprPlus>
+                <IDSExprIdent name="s"/>
+                  <IDSExprTimes>
+                  <IDSExprIdent name="i"/>
+                  <IDSExprIdent name="i"/>
+                  </IDSExprTimes>
+                  </IDSExprPlus>
+                </IDSJavaAssignmentStatment>
+                  <IDSJavaAssignmentStatment name="i" id="5">
+                    <IDSExprPlus>
+                    <IDSExprIdent name="i"/>
+                    <IDSExprDecimalIntegerLiteral value="1"/>
+                    </IDSExprPlus>
+                  </IDSJavaAssignmentStatment>
+                </IDSJavaBloc>
+              </whileBloc>
+            </IDSJavaWhileStatment>
+              <IDSJavaReturnStatment id="6">
+              <IDSExprIdent name="s"/>
+            </IDSJavaReturnStatment>
+          </IDSJavaBloc>
+        </IDSMethod>
+        </method>

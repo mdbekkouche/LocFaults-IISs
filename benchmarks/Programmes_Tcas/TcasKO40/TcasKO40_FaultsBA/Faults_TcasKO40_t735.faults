@@ -1,0 +1,51 @@
+Command exited with non-zero status 10
+0.44user 0.05system 0:00.80elapsed 61%CPU (0avgtext+0avgdata 5636maxresident)k
+8inputs+512outputs (0major+27935minor)pagefaults 0swaps
+5
+Generating GOTO Program
+Pointer Analysis
+Adding Pointer Checks
+Starting Bounded Model Checking
+size of program expression: 94 assignments
+Generated 17 claims, 17 remaining
+Passing problem to MiniSAT
+Passing to decision procedure
+Running MiniSAT
+Solving with MiniSAT
+3128 variables, 7555 clauses
+SAT checker: negated claim is SATISFIABLE, i.e., does not hold
+Building error trace
+
+Counterexample:
+
+Violated property:
+  file /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c line 117
+  assertion
+  alt_sep == 2
+
+< 1 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c:71
+
+< 2 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c:75
+
+< 3 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c:77
+
+< 4 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c:117
+
+< 6 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c:81
+
+< 8 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c:102
+
+< 9 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c:67
+
+< 10 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c:68
+
+< 11 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c:108
+
+< 13 > Potential BUG @ :/home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t735.c:98
+
+BUG Assist: No More suspects:
+VERIFICATION FAILED
+
+Suspicious instructions:71,75,77,117,81,102,67,68,108,98
+The number of suspicious instructions:10
+User time:0.44

@@ -1,0 +1,5 @@
+ChildIterator : pour avancer plus facilement dans les noeuds
+XML
+
+Strategy : pour que le calcul de la négation de la spécification
+soit géré à part

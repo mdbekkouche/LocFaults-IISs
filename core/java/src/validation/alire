@@ -1,0 +1,10 @@
+package contenant les classes de base  pour la validation :
+
+solution : structures de données pour stocker les infos
+sur les résolutions
+
+visitor : pour parser le xml
+
+util : utilitaires
+
+ValidationLauncher est la classe de lancement d'une validation

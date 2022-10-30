@@ -1,0 +1,28 @@
+Command exited with non-zero status 10
+0.09user 0.03system 0:00.14elapsed 89%CPU (0avgtext+0avgdata 5640maxresident)k
+0inputs+424outputs (0major+6556minor)pagefaults 0swaps
+1461
+Generating GOTO Program
+Pointer Analysis
+Adding Pointer Checks
+Starting Bounded Model Checking
+size of program expression: 94 assignments
+Generated 17 claims, 17 remaining
+Passing problem to MiniSAT
+Passing to decision procedure
+Running MiniSAT
+Solving with MiniSAT
+3129 variables, 7588 clauses
+SAT checker: negated claim is SATISFIABLE, i.e., does not hold
+Building error trace
+
+Counterexample:
+
+Violated property:
+  file /home/mdbekkouche/These/Benchmarks_MCS-IIS/Programs_Benchmarks_MCS-IIS/Programmes_Tcas/TcasKO40/TcasKO40_SpecsC/TcasKO40_t1461.c line 81
+  array `Positive_RA_Alt_Thresh' upper bound
+  Other_Tracked_Alt < Own_Tracked_Alt && Cur_Vertical_Sep >= MINSEP => Alt_Layer_Value < 4
+
+BUG Assist: No More suspects:
+VERIFICATION FAILED
+Suspicious instructions:

@@ -1,0 +1,136 @@
+Janvier 2011
+
+Option -piecewise
+
+L'option fonctionne en conjonction des options -shaving et -2B.  Elle
+permet de réduire les domaines des variables flottantes d'un programme
+en collaboration avec Fluctuat. Elle ajoute à l'option -shaving
+l'analyse des programmes "par morceau" et la communication avec Fluctuat.
+
+L'analyse "par morceau" consiste à éviter de parcourir tous les
+chemins d'exécution définis par les instructions conditionnelles en
+fusionnant l'information de plusieurs branches en des points
+spécifiques du programme où ces branches se rejoignent. En
+l'occurence, les points de jonctions où l'information est fusionnée se
+situent entre chaque instructions conditionnelles (par ex. entre deux
+if successifs). Si le nombre d'instructions conditionnelles est n (une
+fois les boucles dépliées), on explore ainsi au maximum 2n chemins au
+lieu de 2^n. De plus, on bénéficie des approximations calculées par
+Fluctuat pour les boucles ce qui peut éviter le dépliage ou le
+complémenter.
+
+A chaque jonction, Fluctuat est utilisé pour calculer une première
+approximation des domaines des variables. Cette approximation sert de
+domaine initial pour le shaving.
+
+Pour synchroniser les analyses de CPBPV et de Fluctuat, le numéro de
+ligne des instruction est utilisé ; il est nécessaire que les mêmes
+instructions soient aux mêmes lignes dans le fichier Java pour CPBPV
+et dans le fichier C pour Fluctuat.  Il est supposé que la définition
+des domaines des paramètres de la méthode est faite dans le programme
+C pour Fluctuat (par l'utilisation des macros I/F/DBETWEEN).
+Le nom de la fonction C doit être "main".
+
+L'utilisation de cette option nécessite plusieurs fichiers de même nom (mais 
+d'extension différente) et tous dans le même répertoire :
+  - file.xml : la version XML du programme Java à analyser
+  - file.c : la version C du programme Java. Requise par Fluctuat.
+             Il faut bien faire attention à ce que toutes les instructions de 
+             la fonction analysée soient aux mêmes lignes dans ce fichier C et
+             dans le fichier Java à partir duquel a été généré le fichier XML.
+             Cela vaut pour toutes les instructions qui suivent les déclarations
+             dans la méthode Java et toutes les instructions qui suivent la
+             définition des domaines des paramètres (e.g. macro DBETWEEN) dans 
+             la fonction C. A noter que pour une raison non élucidé, on ne peut
+             simplement inclure le fichier daed_builtins.h. Pour pallier ce 
+             problème, il faut inclure directement dans le .c les macros utiles,
+             e.g. :
+             double __BUILTIN_DAED_DBETWEEN(double left, double right);
+             #define DBETWEEN __BUILTIN_DAED_DBETWEEN
+  - file.i : la version préprocessé de file.c. Exemple de ligne de commande :
+             gcc -I$FLUCTUATHOME/ABSINT/two_include -E -D_TWO_TOOL file.c 
+             -o file.i
+  - file.rc : le fichier de ressources de Fluctuat. Il peut s'obtenir en 
+              exécutant Fluctuat (via la GUI) et en créant un projet. On règle
+              tous les paramètres de l'analyse comme souhaités et on récupère le
+              .rc dans le répertoire du projet créé.
+
+Enfin, pour l'option -2B, on fournit normalement un fichier
+.dom. Cependant, le nom des variables dont le domaine doit être rogné
+est donné sans l'extension SSA (e.g. Var x au lieu de Var x_2) alors
+que les déclarations de domaines sont avec l'extension SSA
+(e.g. Domain a_0). Toutefois, les domaines ainsi définis ne sont
+valides que jusqu'à la première jonction et sont surtout utiles pour
+définir les domaines initiaux des paramètres de la fonction analysée.
+
+
+Exemple d'appel :
+export $FLUCTUATHOME=/path/to/fluctuat (là où est installé Fluctuat et pas 
+                                        seulement la bibliothèque)
+./cpbpv_32 -solvers REAL_PAVER -shaving -2B ../Tests/Flottants/Fluctuat/Quadratic1_piecewise.dom ../Tests/Flottants/Fluctuat/Quadratic_nospec.xml -piecewise -V
+
+Juin 2010
+
+Plusieurs combinaisons plateformes / solveurs sont possibles :
+
+  * sur architecture 32 bits :
+    - Compilation : modifier le chemin vers le jdk dans le makefile, puis 
+      'make clean ; make'.
+    - Exécution : utiliser le script 'cpbpv'. 
+    - Ibex et z3 sont disponibles.
+    - CPLEX et CP devraient fonctionner si disponibles sur la machine. Modifier
+      dans le script 'cpbpv' les variables CP et DLIB pointant vers les 
+      bibliothèques Java de ILOG.
+
+  * sur architecture 64 bits :
+    - mode 64 bits :
+      . Compilation : modifier le chemin vers le jdk dans le makefile, puis 
+        'make clean ; make x86_64'.
+      . Exécution : modifier dans le script 'cpbpv' l'appel à 'java' pour 
+        s'assurer qu'il s'agisse bien d'une JVM 64 bits. Eventuellement ajouter
+        l'option -d64.
+      . Ibex est disponible, pas z3.
+      . CPLEX et CP devraient fonctionner si disponibles sur la machine en 
+        version 64 bits. Modifier dans le script 'cpbpv' les variables CP et 
+        DLIB pointant vers les bibliothèques Java de ILOG.
+
+    - mode 32 bits :
+      . Compilation : modifier le chemin vers le jdk dans le makefile, puis 
+        'make clean ; make'.
+      . Exécution : modifier dans le script 'cpbpv' l'appel à 'java' pour 
+        s'assurer qu'il s'agisse bien d'une JVM 32 bits. Eventuellement ajouter
+        l'option -d32.
+      . Ibex et z3 sont disponibles.
+      . CPLEX et CP devraient fonctionner si disponibles sur la machine en 
+        version 32 bits. Modifier dans le script 'cpbpv' les variables CP et 
+        DLIB pointant vers les bibliothèques Java de ILOG.
+      
+
+Recompiler sur chaque architecture différente et chaque fois que le projet est 
+déplacé d'un répertoire vers un autre (certains liens vers les bibliothèques 
+sont définis de manière absolue au moment de la compilation).
+
+
+Novembre 2007
+
+Génération et résolution du système de contraintes à la volée à partir d'une 
+spécification en forme intermédiaire XML (visite Pascal Van Hentenryck)
+
+
+java : les fichiers java ( source et exécutables)
+
+lib : les utilitaires pour JSolver et Cplex
+
+resultFiles : les fichiers .res contenant les traces d'exécution
+
+generatedFiles/cplex : écrit les traces d'exécution de cplex
+
+xml : les benchs écrits dans le format xml
+
+
+javaBench: utilisé pour les benchs
+           pb avec bublesort mantovani
+javaOptim: optimisé, sans appel récursif (while dans validate block)
+           tableaux gérés par des variables dans cplex
+           quand on ajoute une precond ou on affecte les tableaux, on traite ça
+           comme une affectation
