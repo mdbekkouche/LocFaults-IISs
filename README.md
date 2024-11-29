@@ -4,7 +4,7 @@
 
 - Clone github repository:
 ```
-git clone https://github.com/mdbekkouche/LocFaultsTool.git
+git clone https://github.com/mdbekkouche/LocFaults-IISs.git
 ```
 
 - Run the following commands to locate errors in the TritypeKO program:
