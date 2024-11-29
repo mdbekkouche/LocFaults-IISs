@@ -14,8 +14,12 @@ class TritypeKO {
 	/*@ requires 
           @ ((i ==2) && (j == 3) && (k ==2));
 	  @ ensures
-	  @ (trityp == 2);
+	  @ (((i+j) <= k || (j+k) <= i || (i+k) <= j) ==> (\result == 4))
+	  @ && ((!((i+j) <= k || (j+k) <= i || (i+k) <= j) && (i==j && j==k)) ==> (\result == 3))
+	  @ && ((!((i+j) <= k || (j+k) <= i || (i+k) <= j) && !(i==j && j==k) && (i==j || j==k || i==k)) ==> (\result == 2))
+	  @ && ((!((i+j) <= k || (j+k) <= i || (i+k) <= j) && !(i==j && j==k) && !(i==j || j==k || i==k)) ==> (\result == 1));
 	  @*/
+		  
 	static int caller (int i, int j, int k) {
 		int trityp;
 		if (i == 0 || j == 0 || k == 0) {

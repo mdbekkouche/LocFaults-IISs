@@ -8,7 +8,7 @@
 
 PWD:=`pwd`
 
-JDK_DIR:=/usr/lib/jvm/java-8-openjdk-amd64/
+JDK_DIR:=/usr/lib/jvm/java-19-openjdk-amd64
 JDK_INC_DIRS:=$(JDK_DIR)/include $(JDK_DIR)/include/linux 
 JAVAC:=$(JDK_DIR)/bin/javac
 JAVAH:=$(JDK_DIR)/bin/javah

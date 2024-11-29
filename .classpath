@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-10">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="core/java/src"/>
+	<classpathentry kind="lib" path="core/lib/CP/ILOG.CP.jar"/>
+	<classpathentry kind="lib" path="core/lib/cplex/cplex.jar"/>
+	<classpathentry kind="lib" path="core/lib/java2CFG/jml-release.jar"/>
+	<classpathentry kind="lib" path="core/lib/java2CFG/org.eclipse.core.contenttype_3.2.0.v20060603.jar"/>
+	<classpathentry kind="lib" path="core/lib/java2CFG/org.eclipse.core.jobs_3.2.0.v20060603.jar"/>
+	<classpathentry kind="lib" path="core/lib/java2CFG/org.eclipse.core.resources_3.2.1.R32x_v20060914.jar"/>
+	<classpathentry kind="lib" path="core/lib/java2CFG/org.eclipse.core.runtime-3.1.0.jar"/>
+	<classpathentry kind="lib" path="core/lib/java2CFG/org.eclipse.equinox.common_3.2.0.v20060603.jar"/>
+	<classpathentry kind="lib" path="core/lib/java2CFG/org.eclipse.equinox.preferences_3.2.1.R32x_v20060717.jar"/>
+	<classpathentry kind="lib" path="core/lib/java2CFG/org.eclipse.jdt.core-3.8.0.v_c18.jar"/>
+	<classpathentry kind="lib" path="core/lib/java2CFG/org.eclipse.osgi_3.2.1.R32x_v20060919.jar"/>
+	<classpathentry kind="lib" path="core/lib/JSolver/jsolver.jar"/>
+	<classpathentry kind="output" path="core/java/classes"/>
+</classpath>

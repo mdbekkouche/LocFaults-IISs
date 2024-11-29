@@ -22,9 +22,12 @@ import expression.variables.Variable;
  * This validation system combines ILOG CPLEX and DPVS heuristic to validate a method defined in the analyzed program.
  * 
  * @author Olivier Ponsini
+ * @author Mohammed Bekkouche
  *
  */
 public class IloCPCfgDPVSValidation extends CfgSingleCspValidation {
+	
+	private Solution counterexample;
 	
 	// the verifier
 	private DPVSVerifier verif;
@@ -68,6 +71,12 @@ public class IloCPCfgDPVSValidation extends CfgSingleCspValidation {
 				System.out.println("\n###########################");
 			}
 			System.out.println("Program is NOT conform with some specification case!");
+			
+			if (Validation.counterExampleFileName != null) {
+				//this.counterexample = csp.solution();
+				//this.counterexample.setTime(csp.getElapsedTime());
+				this.counterexample.writeToFile(Validation.counterExampleFileName);
+			}
 		}
 		if (VerboseLevel.TERSE.mayPrint()) {
 			System.out.println(this.printStatus());
@@ -216,18 +225,17 @@ public class IloCPCfgDPVSValidation extends CfgSingleCspValidation {
 
 		if (VerboseLevel.TERSE.mayPrint()) {
 			System.out.println("\n###########################");
-			System.out.println("End of path "+ pathNumber++);
+			System.out.println("End of path "+ pathNumber++);  
 			if (VerboseLevel.DEBUG.mayPrint()) {
 				System.out.println(csp.toString());
 			}
 		}
-		
 		//csp.startSearch();
 		foundSolution = true;
-		try {
-			if (((IloCPSolver)csp.solver).solver().propagate())
+		try { 
+			if (((IloCPSolver)csp.solver).solver().propagate()) {
 				foundSolution = ((IloCPSolver)csp.solver).solver().solve();
-			else
+			}else
 				foundSolution = false;
 		} catch (IloException e) {
 			// TODO Auto-generated catch block
@@ -235,6 +243,8 @@ public class IloCPCfgDPVSValidation extends CfgSingleCspValidation {
 		}//csp.next();
 		if (foundSolution) {
 			if (VerboseLevel.TERSE.mayPrint()) {
+				this.counterexample = csp.solution();
+				this.counterexample.setTime(csp.getElapsedTime());
 				System.out.println("An counterexample has been found (" + csp.getElapsedTime() + " ms)");
 				Solution sol = csp.solution();
 				sol.setTime(csp.getElapsedTime());		

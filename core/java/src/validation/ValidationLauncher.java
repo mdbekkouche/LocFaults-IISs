@@ -10,6 +10,7 @@ import validation.Validation.VerboseLevel;
  *
  * @author Olivier Ponsini
  * @author Hélène Collavizza
+ * @author Mohammed Bekkouche
  */
 
 public class ValidationLauncher {

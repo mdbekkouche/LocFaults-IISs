@@ -142,7 +142,7 @@ public class CplexExpressionVisitor implements ExpressionVisitor {
        	Variable var = assignment.lhs();
 		IloIntExpr cvar = intVar.getCplexVar(var);
 		IloIntExpr val = (IloIntExpr)assignment.rhs().structAccept(this);
-
+		
 		//val may be an array element and thus be null with fail set to true
 		if(fail)
 			return null;

@@ -14,10 +14,10 @@ CP=$CWD/lib/CP/ILOG.CP.jar:$CWD/lib/cplex/cplex.jar:$CWD/lib/java2CFG/*
 CPBPV_CLASSES=$CWD/java/classes
 
 #Path to non Java external libraries
-DLIB=$CPBPV_CLASSES/JNI:/home/bekkouche/Documents/Logiciels/ibmCplex/cpoptimizer/bin/x86-64_linux:/home/bekkouche/Documents/Logiciels/ibmCplex/cplex/bin/x86-64_linux
+DLIB=$CPBPV_CLASSES/JNI:/home/bekkouche/Documents/Logiciels/ibmCplex/cpoptimizer/bin/x86-64_linux:/home/bekkouche/Documents/Research/Tools/LocFaultsTool/x86-64_linux
 
 export FLUCTUATHOME=/home/ponsini/Outils/Fluctuat/fluctuat_v3_873_32bits/
-export LD_LIBRARY_PATH=/home/bekkouche/Documents/Logiciels/ibmCplex/opl/bin/x86-64_linux
+export LD_LIBRARY_PATH=/home/bekkouche/Documents/Research/Tools/ILOG_CPLEX/opl/bin/x86-64_linux
 
 java -Xss256m -cp $CP:$CPBPV_CLASSES -Djava.library.path=$DLIB -DCPBPV.dir=$CWD validation.ValidationLauncher $*
 

@@ -273,5 +273,26 @@ public class CFG {
 		String etoile = "\n**********************************************\n";
 		return etoile + "Method " + name + etoile  + toStringRec(this.firstNode(), marked);
 	}
+
+	public int getNbrInstructions() {
+		boolean[] marked = new boolean[nodeNumber];
+		return nbrInstructionsRec(this.firstNode(), marked);
+	}
+
+	private int nbrInstructionsRec(CFGNode node, boolean[] marked) {
+		int inbInsts = 0;
+		if (node != null && !marked[node.nodeIdent]) {  
+			if (node instanceof BlockNode)
+				inbInsts += ((BlockNode) node).getBlock().size();
+			else if (node instanceof ConditionalNode) 
+				inbInsts += 1;	
+			marked[node.nodeIdent] = true;
+			if (node != this.last) {
+				inbInsts += nbrInstructionsRec(node.left, marked);
+				inbInsts += nbrInstructionsRec(node.right, marked);
+			}
+		}
+		return inbInsts;
+	}
 	
 }

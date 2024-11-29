@@ -107,7 +107,11 @@ public class Solver {
     	/**
     	 * This uses exclusively ILOG CP Optimizer solver.
     	 */   	   	
-    	CP_OPTIMIZER     	
+    	CP_OPTIMIZER,    
+    	/**
+    	 * This uses exclusively ILOG CPLEX and ILOG CP Optimizer solvers
+    	 */
+    	CPLEXCP_OPTIMIZER
   }
 	
 	//Factory

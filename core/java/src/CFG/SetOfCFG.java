@@ -132,6 +132,18 @@ public class SetOfCFG {
 	}
 	
 	/**
+	 * Calculate the number of instructions in the CFG
+	 */
+	public int getNbrInstructions() {
+		int nbrInsts = 0;
+		for (CFG c : methods()){
+			nbrInsts += c.getNbrInstructions();
+		}
+		return nbrInsts;
+	}
+	
+	
+	/**
 	 * Display this SetOfCFG as source code.
 	 * @throws IloException 
 	 */

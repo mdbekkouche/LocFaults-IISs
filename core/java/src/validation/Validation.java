@@ -15,6 +15,7 @@ import solver.z3.cfg.Z3CfgDPVSValidation;
 import solver.z3.cfg.Z3CfgDfsPathCover;
 import solver.z3.cfg.Z3CfgDfsValidation;
 import validation.strategies.cfg.localization.CPOPTIMIZERLocalization;
+import validation.strategies.cfg.localization.CplexCPOPTIMIZERLocalization;
 import validation.strategies.cfg.localization.CplexLocalization;
 import validation.strategies.cfg.localization.Localization;
 import validation.strategies.cfg.localization.Z3Localization;
@@ -33,6 +34,7 @@ import expression.variables.VariableDomain;
  * 
  * @author Olivier Ponsini
  * @author Hélène Collavizza
+ * @author Mohammed Bekkouche
  */
 public class Validation {
 	
@@ -287,6 +289,9 @@ public class Validation {
 				case CP_OPTIMIZER:
 					CPOPTIMIZERLocalization loc2 = new CPOPTIMIZERLocalization(NumberFaultyCond);
 					break;	
+				case CPLEXCP_OPTIMIZER:
+					CplexCPOPTIMIZERLocalization loc3 = new CplexCPOPTIMIZERLocalization(NumberFaultyCond);
+					break;
 				default: 
 					System.err.println("The combination of solvers " + Validation.solverCombination 
 							           + " is not available!\nGoing on with Java interpreter.");

@@ -39,24 +39,29 @@ import CFG.RequiresNode;
 import CFG.RootNode;
 import CFG.WhileNode;
 
+import solver.Solver;
+import solver.ilocp.cfg.IloCPCfgCsp;
+
 public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisitor {
 
 	/**
 	 * Values coming from the counterexample (the values ​​of the propagation of the counterexample).
 	 */
-	private HashMap<String, String> ceValues;
+	protected HashMap<String, String> ceValues;
 	
 	/**
 	 * To store the informations about constraints.
 	 */
-	private HashMap<String, CtrInfo> ctrInfos;
+	protected HashMap<String, CtrInfo> ctrInfos;
 	
 	public int nbAssignments;
 	
 	/**
 	 * To store the constraints which correspond to instructions of the program.
 	 */
-	private CfgCsp csp;
+	protected CfgCsp csp;
+	
+	//private CfgCsp cspcp;
 	
 	public ArrayList<LogicalExpression> arrListInsts = new ArrayList<LogicalExpression>(); 
 	
@@ -64,7 +69,7 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 	 * A number used as a unique identifier to name the constraint in 
 	 * the concrete solver.
 	 */
-	private int ctrId;
+	protected int ctrId;
 	
 	public ArrayList<String> arrListInstsIden = new ArrayList<String>();
 	
@@ -92,34 +97,114 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 	
 	public int nbNodes;
 	
-	private int k;
+	protected int k;
 	
-	private int kc;
+	protected int kc;
 	
-	private int nbFaultyCond;
+	protected int nbFaultyCond;
 	
-	private String solverName;
+	protected String solverName;
 	
 	ArrayList<String> suspInsts = new ArrayList<String>(); 
+	
+	protected ArrayList<Integer> suspInstsDF = new ArrayList<Integer>();
+	protected ArrayList<Integer> suspInstsQE = new ArrayList<Integer>();
+	protected ArrayList<Integer> suspInstsCR = new ArrayList<Integer>();
 	
 	ArrayList<ArrayList<ArrayList<String>>>  allMCSProgramAss;
 	
 	ArrayList<ArrayList<Integer>>  allMCSProgramCond;
 	
+	protected int nbIISCal;
+	
+	public int getNbIISCal() {
+		return this.nbIISCal;
+	}
+
+	public void setnbIISCal(int nbIISCal) {
+		this.nbIISCal = nbIISCal;
+	}
+
+	public ArrayList<Integer> getSuspInstsDF() {
+		return suspInstsDF;
+	}
+
+	public void setSuspInstsDF(ArrayList<Integer> suspInstsDF) {
+		this.suspInstsDF = suspInstsDF;
+	}
+
+	public ArrayList<Integer> getSuspInstsQE() {
+		return suspInstsQE;
+	}
+
+	public void setSuspInstsQE(ArrayList<Integer> suspInstsQE) {
+		this.suspInstsQE = suspInstsQE;
+	}
+
+	public ArrayList<Integer> getSuspInstsCR() {
+		return suspInstsCR;
+	}
+
+	public void setSuspInstsCR(ArrayList<Integer> suspInstsCR) {
+		this.suspInstsCR = suspInstsCR;
+	}
+	
 	public class TypeCondDeviated{
 		public ConditionalNode cond;
 		public String branch;
 	}
-	private ArrayList<TypeCondDeviated> condDeviated;
+	protected ArrayList<TypeCondDeviated> condDeviated;
 	
-	private ArrayList<LogicalExpression> condDeviatedExp;
+	protected ArrayList<LogicalExpression> condDeviatedExp;
 	
-	private boolean corrige;
+	protected boolean corrige;
 
 	public CFG method;
 	
-	public double timeMCS;
+	protected double timeMCS;
+	protected double timeIISDF;
+	protected double timeIISQE;
+	protected double timeIISCR;
 	
+	protected double globalTimeIIS_DF;
+	protected double globalTimeIIS_QE;
+	protected double globalTimeIIS_CR;
+	
+	protected double globalTimeMCS;
+	
+	private boolean currentCspIsLinear=true;
+	
+	public double getGlobalTimeIIS_DF() {
+		return globalTimeIIS_DF;
+	}
+	
+	public double getGlobalTimeIIS_QE() {
+		return globalTimeIIS_QE;
+	}
+	
+	public double getGlobalTimeMCS() {
+		return globalTimeMCS;
+	}
+	
+	public double getGlobalTimeIIS_CR() {
+		return globalTimeIIS_CR;
+	}
+	
+	public double getTimeMCS() {
+		return timeMCS;
+	}
+	
+	public double getTimeIISDF() {
+		return timeIISDF;
+	}
+	
+	public double getTimeIISQE() {
+		return timeIISQE;
+	}
+	
+	public double getTimeIISCR() {
+		return timeIISCR;
+	}
 
 	public DFSdevieVisitor() {
 		this.csp = null;
@@ -155,6 +240,9 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 		ctrInfos = new HashMap<String, CtrInfo>();
 		ctrId= 1;
 		timeMCS=0;
+		timeIISDF=0;
+		timeIISQE=0;
+		timeIISCR=0;
 		k=numberFaultyCond;
 		kc=numberFaultyCondc;
 		nbFaultyCond=numberFaultyCond;
@@ -221,7 +309,7 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 			 */
 			csp.addConstraint(ctr, ctrName);
 			ctrInfos.put(ctrName, new CtrInfo(startLine, ctr));
-		
+			
 	}
 	
 	/**
@@ -267,7 +355,7 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 			addCtrAndPref(n.getCondition(), -2);
 			
 			PrintAddMCSCondition();
-		
+			
 			// we calculate MCS in the full path of counterexample
 			if (solverName=="CPLEX"){
 				
@@ -281,11 +369,23 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 					String elts = allmcslowerk.SuspInsts1.get(i);
 					suspInsts.add(elts);
 				}
-		    
+				suspInstsDF.addAll(allmcslowerk.getSuspInstsDF());
+				suspInstsQE.addAll(allmcslowerk.getSuspInstsQE());
+				suspInstsCR.addAll(allmcslowerk.getSuspInstsCR());
+				
 				// For summing the MCS computation time during exploration
-				timeMCS=timeMCS+allmcslowerk.timeMCS;
+				timeMCS=timeMCS+allmcslowerk.getTimeMCS();
+				timeIISDF=timeIISDF+allmcslowerk.getTimeIIS_DF();
+				timeIISQE=timeIISQE+allmcslowerk.getTimeIIS_QE();
+				timeIISCR=timeIISCR+allmcslowerk.getTimeIIS_CR();
+				globalTimeIIS_DF = globalTimeIIS_DF + allmcslowerk.getTimeIIS_DF();
+				globalTimeIIS_QE = globalTimeIIS_QE + allmcslowerk.getTimeIIS_QE();
+				globalTimeIIS_CR = globalTimeIIS_CR + allmcslowerk.getTimeIIS_CR();
+				globalTimeMCS = globalTimeMCS + allmcslowerk.getTimeMCS();
+				nbIISCal = nbIISCal + allmcslowerk.getNbIISCal();
+				
 			}
-			else if (solverName=="CP Optimizer"){
+			else if (solverName=="CP OPTIMIZER"){
 				CPOPTIMIZERAllMCSlowerK allmcslowerk = new CPOPTIMIZERAllMCSlowerK(csp,ctrInfos,k,suspInsts);
 				// We add MCS computed
 				allMCSProgramAss.add(allmcslowerk.arrListMCSes);
@@ -295,9 +395,21 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 				for (int i=0;i<lengthSuspInsts1;i++){
 					String elts = allmcslowerk.SuspInsts1.get(i);
 					suspInsts.add(elts);
-				}		    
+				}
+				suspInstsDF.addAll(allmcslowerk.getSuspInstsDF());
+				suspInstsQE.addAll(allmcslowerk.getSuspInstsQE());
+				suspInstsCR.addAll(allmcslowerk.getSuspInstsCR());
 				// For summing the MCS computation time during exploration
-				timeMCS=timeMCS+allmcslowerk.timeMCS;
+				timeMCS=timeMCS+allmcslowerk.getTimeMCS();
+				timeIISDF=timeIISDF+allmcslowerk.getTimeIIS_DF();
+				timeIISQE=timeIISQE+allmcslowerk.getTimeIIS_QE();
+				timeIISCR=timeIISCR+allmcslowerk.getTimeIIS_CR();
+				globalTimeIIS_DF = globalTimeIIS_DF + allmcslowerk.getTimeIIS_DF();
+				globalTimeIIS_QE = globalTimeIIS_QE + allmcslowerk.getTimeIIS_QE();
+				globalTimeIIS_CR = globalTimeIIS_CR + allmcslowerk.getTimeIIS_CR();
+				globalTimeMCS = globalTimeMCS + allmcslowerk.getTimeMCS();
+				
+				nbIISCal = nbIISCal + allmcslowerk.getNbIISCal();
 			}
 		}
 	}
@@ -369,10 +481,20 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 				         String elts = allmcslowerk.SuspInsts1.get(i);
 				     	 suspInsts.add(elts);
 			    	    }
-				    
+				        suspInstsDF.addAll(allmcslowerk.getSuspInstsDF());
+						suspInstsQE.addAll(allmcslowerk.getSuspInstsQE());
+						suspInstsCR.addAll(allmcslowerk.getSuspInstsCR()); 
 						// For summing the MCS computation time during exploration
-						timeMCS=timeMCS+allmcslowerk.timeMCS;
-					}else if (solverName=="CP Optimizer"){
+						timeMCS=timeMCS+allmcslowerk.getTimeMCS();
+						timeIISDF=timeIISDF+allmcslowerk.getTimeIIS_DF();
+						timeIISQE=timeIISQE+allmcslowerk.getTimeIIS_QE();
+						timeIISCR=timeIISCR+allmcslowerk.getTimeIIS_CR();
+						globalTimeIIS_DF = globalTimeIIS_DF + allmcslowerk.getTimeIIS_DF();
+						globalTimeIIS_QE = globalTimeIIS_QE + allmcslowerk.getTimeIIS_QE();
+						globalTimeIIS_CR = globalTimeIIS_CR + allmcslowerk.getTimeIIS_CR();
+						globalTimeMCS = globalTimeMCS + allmcslowerk.getTimeMCS();
+						nbIISCal = nbIISCal + allmcslowerk.getNbIISCal();
+					}else if (solverName=="CP OPTIMIZER"){
 						CPOPTIMIZERAllMCSlowerK allmcslowerk = new CPOPTIMIZERAllMCSlowerK(csp,ctrInfos,k,suspInsts);
 						this.condDeviated.remove(cd);
 						this.condDeviatedExp.remove(Exp);
@@ -384,9 +506,20 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 				         String elts = allmcslowerk.SuspInsts1.get(i);
 				     	 suspInsts.add(elts);
 			    	    }
-				    
+				        suspInstsDF.addAll(allmcslowerk.getSuspInstsDF());
+						suspInstsQE.addAll(allmcslowerk.getSuspInstsQE());
+						suspInstsCR.addAll(allmcslowerk.getSuspInstsCR());
 						// For summing the MCS computation time during exploration
-						timeMCS=timeMCS+allmcslowerk.timeMCS;
+				        timeMCS=timeMCS+allmcslowerk.getTimeMCS();
+						timeIISDF=timeIISDF+allmcslowerk.getTimeIIS_DF();
+						timeIISQE=timeIISQE+allmcslowerk.getTimeIIS_QE();
+						timeIISCR=timeIISCR+allmcslowerk.getTimeIIS_CR();
+						globalTimeIIS_DF = globalTimeIIS_DF + allmcslowerk.getTimeIIS_DF();
+						globalTimeIIS_QE = globalTimeIIS_QE + allmcslowerk.getTimeIIS_QE();
+						globalTimeIIS_CR = globalTimeIIS_CR + allmcslowerk.getTimeIIS_CR();
+						globalTimeMCS = globalTimeMCS + allmcslowerk.getTimeMCS();
+						
+						nbIISCal = nbIISCal + allmcslowerk.getNbIISCal();
 					}
 					
 				}
@@ -425,7 +558,7 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 					AddNegationsConditions(); 
 					if (solverName=="CPLEX"){					
 						CplexAllMCSlowerK allmcslowerk = new CplexAllMCSlowerK(csp,ctrInfos,k,suspInsts);
-					
+						
 						this.condDeviated.remove(cd);
 						this.condDeviatedExp.remove(branchingNode.getCondition());
 					
@@ -436,10 +569,21 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 				       	  String elts = allmcslowerk.SuspInsts1.get(i);
 				    	  suspInsts.add(elts);
 			    	    }
-				    
+				        suspInstsDF.addAll(allmcslowerk.getSuspInstsDF());
+						suspInstsQE.addAll(allmcslowerk.getSuspInstsQE());
+						suspInstsCR.addAll(allmcslowerk.getSuspInstsCR());
 						// For summing the MCS computation time during exploration
-						timeMCS=timeMCS+allmcslowerk.timeMCS;
-					}else if (solverName=="CP Optimizer"){
+						timeMCS=timeMCS+allmcslowerk.getTimeMCS();
+						timeIISDF=timeIISDF+allmcslowerk.getTimeIIS_DF();
+						timeIISQE=timeIISQE+allmcslowerk.getTimeIIS_QE();
+						timeIISCR=timeIISCR+allmcslowerk.getTimeIIS_CR();
+						globalTimeIIS_DF = globalTimeIIS_DF + allmcslowerk.getTimeIIS_DF();
+						globalTimeIIS_QE = globalTimeIIS_QE + allmcslowerk.getTimeIIS_QE();
+						globalTimeIIS_CR = globalTimeIIS_CR + allmcslowerk.getTimeIIS_CR();
+						globalTimeMCS = globalTimeMCS + allmcslowerk.getTimeMCS();
+						
+						nbIISCal = nbIISCal + allmcslowerk.getNbIISCal();
+					}else if (solverName=="CP OPTIMIZER"){
 						CPOPTIMIZERAllMCSlowerK allmcslowerk = new CPOPTIMIZERAllMCSlowerK(csp,ctrInfos,k,suspInsts);
 						this.condDeviated.remove(cd);
 						this.condDeviatedExp.remove(branchingNode.getCondition());
@@ -451,9 +595,20 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 				       	 String elts = allmcslowerk.SuspInsts1.get(i);
 				    	 suspInsts.add(elts);
 			    	    }
-				    
+				        suspInstsDF.addAll(allmcslowerk.getSuspInstsDF());
+						suspInstsQE.addAll(allmcslowerk.getSuspInstsQE());
+						suspInstsCR.addAll(allmcslowerk.getSuspInstsCR());
 						// For summing the MCS computation time during exploration
-						timeMCS=timeMCS+allmcslowerk.timeMCS;
+				        timeMCS=timeMCS+allmcslowerk.getTimeMCS();
+						timeIISDF=timeIISDF+allmcslowerk.getTimeIIS_DF();
+						timeIISQE=timeIISQE+allmcslowerk.getTimeIIS_QE();
+						timeIISCR=timeIISCR+allmcslowerk.getTimeIIS_CR();
+						globalTimeIIS_DF = globalTimeIIS_DF + allmcslowerk.getTimeIIS_DF();
+						globalTimeIIS_QE = globalTimeIIS_QE + allmcslowerk.getTimeIIS_QE();
+						globalTimeIIS_CR = globalTimeIIS_CR + allmcslowerk.getTimeIIS_CR();
+						globalTimeMCS = globalTimeMCS + allmcslowerk.getTimeMCS();
+						
+						nbIISCal = nbIISCal + allmcslowerk.getNbIISCal();
 					}
 				}
 			}else if (/*this.k>1*/this.kc<nbFaultyCond-1 && (this.kc+1<branchingNode.marked || branchingNode.marked==-1)){
@@ -474,9 +629,10 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 	
 	
 	
-	private ArrayList<Integer> PrintAddMCSCondition() {
+	protected ArrayList<Integer> PrintAddMCSCondition() {
 		ArrayList<Integer> arrListMCS = new ArrayList<Integer>();		
 		int size=this.condDeviated.size();
+		System.out.println("\nSolver: "+solverName);
 		if (size!=0){
 			System.out.println("1. CSP_d:");
 		}
@@ -488,9 +644,14 @@ public class DFSdevieVisitor extends RhsExpressionComputer  implements CFGVisito
 			TypeCondDeviated next=iter.next();
 			
 			System.out.println("line "+Integer.toString(next.cond.startLine)+"("+next.branch+")"+" : "+next.cond.getCondition());
-			arrListMCS.add(next.cond.startLine);
-			if (!suspInsts.contains(Integer.toString(next.cond.startLine)))
-				suspInsts.add(Integer.toString(next.cond.startLine));					
+			int line = next.cond.startLine;
+			arrListMCS.add(line);
+			if (!suspInsts.contains(Integer.toString(line))) {
+				suspInsts.add(Integer.toString(line));
+				suspInstsDF.add(line);
+				suspInstsQE.add(line);
+				suspInstsCR.add(line);
+			}	
 		}
 		return arrListMCS;
 	}

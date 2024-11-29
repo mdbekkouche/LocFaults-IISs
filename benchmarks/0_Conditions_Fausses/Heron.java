@@ -9,10 +9,10 @@ class Heron {
 
 	/*@ requires (i >= 0 && j >= 0 && k >= 0) && (2*((i+j+k)/2)==(i+j+k));
 	  @ ensures
-	  @ (((((i+j) <= k || (j+k) <= i || (i+k) <= j) || (i==0 && j==0 && k==0)) ==> (\result == -1))
-	  @  && ( !(((i+j) <= k || (j+k) <= i || (i+k) <= j) || (i==0 && j==0 && k==0)) ) ==> 
-                ( \result == (i+j+k)/2 * (((i+j+k)/2)-i)*(((i+j+k)/2)-j)*(((i+j+k)/2)-k)));
-	  @*/
+	    @ ((((i+j) <= k || (j+k) <= i || (i+k) <= j) || (i==0 || j==0 || k==0)) ==> (\result == -1))
+	    @  && (( !(((i+j) <= k || (j+k) <= i || (i+k) <= j) || (i==0 || j==0 || k==0)) ) ==>
+	    ( \result == (i+j+k)/2 * (((i+j+k)/2)-i)*(((i+j+k)/2)-j)*(((i+j+k)/2)-k)));
+	    @*/
 	static int caller (int i, int j, int k) {
 		int trityp = 0;
 		int res = 0;
@@ -58,7 +58,7 @@ class Heron {
 						if (trityp == 2 && (i+k) > j) {
 							trityp = 2;
 							// i==k
-						        res = s*(s-i)*(s-j)*(s-j); /*error: res = s*(s-i)*(s-j)*(s-i); */  
+						        res = s*(s-i)*(s-j)*(s-i); /*error: res = s*(s-i)*(s-j)*(s-i); */  
 						}
 						else {
 							if (trityp == 3 && (j+k) > i) {

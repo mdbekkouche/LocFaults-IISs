@@ -58,7 +58,8 @@ class tcastest
         Positive_RA_Alt_Thresh[1] = 500;
         Positive_RA_Alt_Thresh[2] = 640;
         Positive_RA_Alt_Thresh[3] = 740;
-        enabled = (High_Confidence) && (Own_Tracked_Alt_Rate <= OLEV) && (Cur_Vertical_Sep > MAXALTDIFF);
+        //enabled = (High_Confidence) && (Own_Tracked_Alt_Rate <= OLEV) && (Cur_Vertical_Sep > MAXALTDIFF);
+	enabled = High_Confidence && (Own_Tracked_Alt_Rate <= OLEV); /* error : the instruction should be : enabled = (High_Confidence) && (Own_Tracked_Alt_Rate <= OLEV) && (Cur_Vertical_Sep > MAXALTDIFF);*/
 	tcas_equipped = (Other_Capability == TCAS_TA);
 	intent_not_known = ((Two_of_Three_Reports_Valid) && (Other_RAC == NO_INTENT));
 	alt_sep = UNRESOLVED;
@@ -74,11 +75,11 @@ class tcastest
 		
 		if (Inhibit_Biased_Climb > Down_Separation)
 		    {  
-			resultat = (!(Own_Tracked_Alt < Other_Tracked_Alt) || ((Own_Tracked_Alt < Other_Tracked_Alt) && !(Down_Separation >= Positive_RA_Alt_Thresh[Alt_Layer_Value])));
+			resultat = (!(Own_Tracked_Alt < Other_Tracked_Alt) || ((Own_Tracked_Alt < Other_Tracked_Alt) && !(Down_Separation >= 640)));
 		    }
 		else
 		    {  
-			resultat = (Other_Tracked_Alt < Own_Tracked_Alt) && (Cur_Vertical_Sep >= MINSEP) && (Up_Separation >= Positive_RA_Alt_Thresh[Alt_Layer_Value]);
+			resultat = (Other_Tracked_Alt < Own_Tracked_Alt) && (Cur_Vertical_Sep >= MINSEP) && (Up_Separation >= 640);
 		    }  
 		
 		need_upward_RA= (resultat) && (Own_Tracked_Alt < Other_Tracked_Alt);
@@ -91,11 +92,11 @@ class tcastest
 		
 		if (Inhibit_Biased_Climb > Down_Separation)
 		    {
-			resultat = (Own_Tracked_Alt < Other_Tracked_Alt) && (Cur_Vertical_Sep >= MINSEP) && (Down_Separation >= Positive_RA_Alt_Thresh[Alt_Layer_Value]);
+			resultat = (Own_Tracked_Alt < Other_Tracked_Alt) && (Cur_Vertical_Sep >= MINSEP) && (Down_Separation >= 640);
 		    }
 		else
 		    {
-			resultat = !(Other_Tracked_Alt < Own_Tracked_Alt) || (((Other_Tracked_Alt < Own_Tracked_Alt)) && (Up_Separation >= Positive_RA_Alt_Thresh[Alt_Layer_Value]));
+			resultat = !(Other_Tracked_Alt < Own_Tracked_Alt) || (((Other_Tracked_Alt < Own_Tracked_Alt)) && (Up_Separation >= 640));
 		    } 
 		
 		need_downward_RA=(resultat) && (Other_Tracked_Alt < Own_Tracked_Alt);

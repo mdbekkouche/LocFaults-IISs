@@ -460,7 +460,7 @@ public class DPVSInformationVisitor implements CFGVisitor {
 	}
 	
 	@Override
-	public void visit(BlockNode n) throws CFGVisitException {
+	public void visit(BlockNode n) throws CFGVisitException { 
 		accept(n);
 		addOneAncestor(n.getKey(), n.getLeftFather());
 		visitBlock(n);

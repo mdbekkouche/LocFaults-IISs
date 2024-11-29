@@ -11,11 +11,13 @@
 
 class TriPerimetreKO{
 
-	/*@ requires 
-          @ ((i ==2) && (j == 1) && (k ==2));
-	  @ ensures
-	  @ (res == 4);
-	  @*/
+	/*@ requires (i >= 0 && j >= 0 && k >= 0);
+	@ ensures
+	@ (((i+j) <= k || (j+k) <= i || (i+k) <= j) ==> (\result == -1))
+	@ && ((!((i+j) <= k || (j+k) <= i || (i+k) <= j) && (i==j && j==k)) ==> (\result == i*j*k))
+	@ && ((!((i+j) <= k || (j+k) <= i || (i+k) <= j) && !(i==j && j==k) && (i==j || j==k || i==k)) ==> (\result == i*j*k))
+	@ && ((!((i+j) <= k || (j+k) <= i || (i+k) <= j) && !(i==j && j==k) && !(i==j || j==k || i==k)) ==> (\result == i*j*k));
+	@*/
 	static int caller (int i, int j, int k) {
 		int trityp = 0;
 		int res;

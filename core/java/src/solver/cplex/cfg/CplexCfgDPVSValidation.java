@@ -25,6 +25,8 @@ import expression.variables.Variable;
  */
 public class CplexCfgDPVSValidation extends CfgSingleCspValidation {
 	
+	private Solution counterexample;
+	
 	// the verifier
 	private DPVSVerifier verif;
 	
@@ -67,6 +69,12 @@ public class CplexCfgDPVSValidation extends CfgSingleCspValidation {
 				System.out.println("\n###########################");
 			}
 			System.out.println("Program is NOT conform with some specification case!");
+			
+			if (Validation.counterExampleFileName != null) {
+				this.counterexample = csp.solution();
+				this.counterexample.setTime(csp.getElapsedTime());
+				this.counterexample.writeToFile(Validation.counterExampleFileName);
+			}
 		}
 		if (VerboseLevel.TERSE.mayPrint()) {
 			System.out.println(this.printStatus());
@@ -97,6 +105,10 @@ public class CplexCfgDPVSValidation extends CfgSingleCspValidation {
 		
 		if (VerboseLevel.TERSE.mayPrint()) {
 			if (foundSolution) {
+				// Store the counterexample found and notify it to the user interface
+				this.counterexample = csp.solution();
+				this.counterexample.setTime(csp.getElapsedTime());
+				
 				System.out.println("Assertion is violated!");
 				System.out.println(csp.solution().toString());
 			}
@@ -116,6 +128,7 @@ public class CplexCfgDPVSValidation extends CfgSingleCspValidation {
 		if (VerboseLevel.TERSE.mayPrint()) {
 			System.out.println("\n###########################");
 			System.out.println("End of path #" + this.pathNumber() + " reached");
+
 		}
 
 		csp.addConstraint(new NotExpression(postcond));
@@ -132,6 +145,10 @@ public class CplexCfgDPVSValidation extends CfgSingleCspValidation {
 		if (foundSolution) {
 			//Notifier à l'IHM la solution
 			if (VerboseLevel.TERSE.mayPrint()) {
+				// Store the counterexample found and notify it to the user interface
+				this.counterexample = csp.solution(); 
+				this.counterexample.setTime(csp.getElapsedTime());	
+				
 				Solution sol = csp.solution();
 				sol.setTime(csp.getElapsedTime());		
 				System.out.println(sol.toString());
